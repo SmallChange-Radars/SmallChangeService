@@ -77,7 +77,7 @@ public class ClientDaoOracleImpl implements ClientDao {
 		Objects.requireNonNull(client);
 		try(Connection connection = dataSource.getConnection()) {
 			insertClient(client, connection);
-			//insertIdentification(client, connection);
+			insertIdentification(client, connection);
 		} catch (SQLException e) {
 			logger.error("Cannot insert client with Client Id: " + client.getClientId(), e);
 			throw new DatabaseException("Cannot insert client with Client Id: " + client.getClientId(), e);
@@ -86,8 +86,24 @@ public class ClientDaoOracleImpl implements ClientDao {
 	
 	private void insertClient(Client client, Connection connection) throws SQLException {
 		try(PreparedStatement stmt = connection.prepareStatement(insertClient)) {
+			stmt.setString(1, client.getClientId());
+			stmt.setString(2, client.getEmail());
+			stmt.setString(3, client.getDateOfBirth());
+			stmt.setString(4, client.getCountry().getCode());
+			stmt.setString(5, client.getPostalCode());
 			
+			stmt.executeUpdate();
 		}
+	}
+	
+	private void insertIdentification(Client client, Connection connection) throws SQLException {
+		try(PreparedStatement stmt = connection.prepareStatement(insertClientIdentification)) {
+			ClientIdentification ci = client.getClientIdentification().get(0);
+			stmt.setString(1, ci.getType());
+			stmt.setString(2, ci.getValue());
+			stmt.setString(3, client.getClientId());
+			
+			stmt.executeUpdate();
 		}
 	}
 

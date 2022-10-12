@@ -12,6 +12,20 @@ public class Trade {
 	private Order order;
 	private String tradeId;
 	private BigDecimal cashValue;
+	
+	
+	
+	public Trade(String instrumentId, BigDecimal quantity, BigDecimal executionPrice, String direction, Order order,
+			String tradeId, BigDecimal cashValue) {
+		super();
+		this.instrumentId = instrumentId;
+		this.quantity = quantity;
+		this.executionPrice = executionPrice;
+		this.direction = direction;
+		this.order = order;
+		this.tradeId = tradeId;
+		this.cashValue = cashValue;
+	}
 	public String getInstrumentId() {
 		return instrumentId;
 	}

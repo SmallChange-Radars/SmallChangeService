@@ -2,11 +2,9 @@ package com.fidelity.smallchange.integration;
 
 import java.math.BigDecimal;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,7 +39,7 @@ public class PortfolioDaoOracleImpl implements PortfolioDao {
 	}	
 
 	@Override
-	public List<Portfolio> getPortfolioById(String clientId) {
+	public List<Portfolio> getPortfolioByClientId(String clientId) {
 		String queryAllPortfolios = """
 				SELECT clientId, instrumentId, quantity, value
 				FROM portfolio
@@ -76,7 +74,7 @@ public class PortfolioDaoOracleImpl implements PortfolioDao {
 			stmt.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new DatabaseException ("Cannot insert portfolio");
 		}
 	}
 
@@ -97,7 +95,7 @@ public class PortfolioDaoOracleImpl implements PortfolioDao {
 				stmt.executeUpdate();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				throw new DatabaseException ("Cannot update portfolio");
 			}		
 	}
 	

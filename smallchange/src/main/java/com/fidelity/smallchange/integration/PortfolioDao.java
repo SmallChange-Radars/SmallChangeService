@@ -6,7 +6,7 @@ import com.fidelity.smallchange.model.Portfolio;
 
 public interface PortfolioDao {
 	List<Portfolio> getAllPortfolios(); 
-	List<Portfolio> getPortfolioById(String clientId); 
+	List<Portfolio> getPortfolioByClientId(String clientId); 
 	void insertPortfolio(Portfolio portfolio);
 	void updatePortfolio(Portfolio portfolio);
 }

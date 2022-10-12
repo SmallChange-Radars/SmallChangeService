@@ -77,8 +77,35 @@ CREATE TABLE portfolio (
 CREATE TABLE preferences (
     clientId VARCHAR2(20),
     investmentPurpose VARCHAR(255),
-    riskTolerance VARCHAR2(20),
+    riskTolerance VARCHAR2(5),
     incomeCategory VARCHAR2(50),
     lengthOfInvestment VARCHAR2(20),
     FOREIGN KEY (clientId) REFERENCES client(clientId)
 );
+
+INSERT INTO client (clientId, email, dob, country, postalCode) VALUES ('1234', 'aadrs@gmail.com','19900101', 'US','123456');
+INSERT INTO client (clientId, email, dob, country, postalCode) VALUES ('1235', 'sara@gmail.com','20002512', 'US','123477');
+INSERT INTO client (clientId, email, dob, country, postalCode) VALUES ('1236', 'priya@gmail.com','19990303', 'US','123333');
+INSERT INTO client (clientId, email, dob, country, postalCode) VALUES ('1237', 'stephen@gmail.com','19801112', 'US','123558');
+INSERT INTO client (clientId, email, dob, country, postalCode) VALUES ('1238', 'prabhu@gmail.com','20011230', 'US','123777');
+
+INSERT INTO instrument(instrumentId, externalIdType, externalId, categoryId, description, maxQuantity, minQuantity)
+     VALUES('Q123', 'CUSIP', '02079K107', 'STOCK', 'Alphabet', 1000, 1);
+INSERT INTO instrument(instrumentId, externalIdType, externalId, categoryId, description, maxQuantity, minQuantity)
+     VALUES('Q456', 'CUSIP', '88160R101', 'STOCK', 'Tesla, Inc. Common Stock', 1000, 1);
+INSERT INTO instrument(instrumentId, externalIdType, externalId, categoryId, description, maxQuantity, minQuantity)
+     VALUES('C100', 'CUSIP', '48123Y5A0', 'CD', 'JPMorgan Chase Bank, National Association 01/19', 1000, 100);
+INSERT INTO instrument(instrumentId, externalIdType, externalId, categoryId, description, maxQuantity, minQuantity)
+     VALUES('T67890', 'CUSIP', '9128285M8', 'GOVT', 'USA, Note 3.125 15nov2028 10Y', 10000, 100);
+INSERT INTO instrument(instrumentId, externalIdType, externalId, categoryId, description, maxQuantity, minQuantity)
+     VALUES('T67894', 'CUSIP', '9128285Z9', 'GOVT', 'USA, Note 2.5 31jan2024 5Y', 10000, 100);
+     
+
+INSERT INTO portfolio (clientId, instrumentId,quantity,value) VALUES ('1234','Q456',50,450.89);
+INSERT INTO portfolio (clientId, instrumentId,quantity,value) VALUES ('1236','T67890',70,670.89);
+INSERT INTO portfolio (clientId, instrumentId,quantity,value) VALUES ('1236','T67894',91,1350.71);
+INSERT INTO portfolio (clientId, instrumentId,quantity,value) VALUES ('1238','C100',101,4563.67);
+INSERT INTO portfolio (clientId, instrumentId,quantity,value) VALUES ('1238','Q123',370,10037.32);
+INSERT INTO portfolio (clientId, instrumentId,quantity,value) VALUES ('1238','T67894',91,10657.32);
+
+COMMIT;

@@ -7,10 +7,9 @@ public class Client {
 	private String clientId;
 	private String email;
 	private String dateOfBirth;
-	private String country;
+	private Country country;
 	private String postalCode;
 	private ClientIdentification[] clientIdentification;
-	private ClientPreferences clientPreferences;
 	
 	public String getClientId() {
 		return clientId;
@@ -21,7 +20,7 @@ public class Client {
 	public String getDateOfBirth() {
 		return dateOfBirth;
 	}
-	public String getCountry() {
+	public Country getCountry() {
 		return country;
 	}
 	public String getPostalCode() {
@@ -30,15 +29,12 @@ public class Client {
 	public ClientIdentification[] getClientIdentification() {
 		return clientIdentification;
 	}
-	public ClientPreferences getClientPreferences() {
-		return clientPreferences;
-	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + Arrays.hashCode(clientIdentification);
-		result = prime * result + Objects.hash(clientId, clientPreferences, country, dateOfBirth, email, postalCode);
+		result = prime * result + Objects.hash(clientId, country, dateOfBirth, email, postalCode);
 		return result;
 	}
 	@Override
@@ -51,8 +47,7 @@ public class Client {
 			return false;
 		Client other = (Client) obj;
 		return Objects.equals(clientId, other.clientId)
-				&& Arrays.equals(clientIdentification, other.clientIdentification)
-				&& Objects.equals(clientPreferences, other.clientPreferences) && Objects.equals(country, other.country)
+				&& Arrays.equals(clientIdentification, other.clientIdentification) && country == other.country
 				&& Objects.equals(dateOfBirth, other.dateOfBirth) && Objects.equals(email, other.email)
 				&& Objects.equals(postalCode, other.postalCode);
 	}
@@ -60,7 +55,7 @@ public class Client {
 	public String toString() {
 		return "Client [clientId=" + clientId + ", email=" + email + ", dateOfBirth=" + dateOfBirth + ", country="
 				+ country + ", postalCode=" + postalCode + ", clientIdentification="
-				+ Arrays.toString(clientIdentification) + ", clientPreferences=" + clientPreferences + "]";
+				+ Arrays.toString(clientIdentification) + "]";
 	}
 	
 }

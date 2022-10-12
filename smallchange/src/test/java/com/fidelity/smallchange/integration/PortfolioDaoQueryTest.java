@@ -2,6 +2,7 @@ package com.fidelity.smallchange.integration;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.junit.jupiter.api.AfterEach;
@@ -30,8 +31,16 @@ class PortfolioDaoQueryTest {
 	}
 
 	@Test
+	void testGetAllPortfolio() {
+		List<Portfolio> p = dao.getAllPortfolios();
+		assertEquals(6, p.size());
+		Portfolio portfolio = new Portfolio("1238", "T67894", 91, new BigDecimal("10657.32"));
+		assertTrue(p.contains(portfolio));
+	}
+	
+	@Test
 	void testGetPortfolioByClientId() {
-		List<Portfolio> p = dao.getPortfolioById("1238");
+		List<Portfolio> p = dao.getPortfolioByClientId("1238");
 		assertEquals(3, p.size());
 	}
 

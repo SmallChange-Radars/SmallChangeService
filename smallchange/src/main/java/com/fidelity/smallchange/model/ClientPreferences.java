@@ -3,26 +3,30 @@ package com.fidelity.smallchange.model;
 import java.util.Objects;
 
 public class ClientPreferences {
+	private String clientId;
 	private String investmentPurpose;
-	private String riskTolerance;
-	private String incomeCategory;
-	private String investmentLength;
+	private RiskTolerance riskTolerance;
+	private IncomeCategory incomeCategory;
+	private InvestmentLength investmentLength;
 	
+	public String getClientId() {
+		return clientId;
+	}
 	public String getInvestmentPurpose() {
 		return investmentPurpose;
 	}
-	public String getRiskTolerance() {
+	public RiskTolerance getRiskTolerance() {
 		return riskTolerance;
 	}
-	public String getIncomeCategory() {
+	public IncomeCategory getIncomeCategory() {
 		return incomeCategory;
 	}
-	public String getInvestmentLength() {
+	public InvestmentLength getInvestmentLength() {
 		return investmentLength;
 	}
 	@Override
 	public int hashCode() {
-		return Objects.hash(incomeCategory, investmentLength, investmentPurpose, riskTolerance);
+		return Objects.hash(clientId, incomeCategory, investmentLength, investmentPurpose, riskTolerance);
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -33,14 +37,16 @@ public class ClientPreferences {
 		if (getClass() != obj.getClass())
 			return false;
 		ClientPreferences other = (ClientPreferences) obj;
-		return Objects.equals(incomeCategory, other.incomeCategory)
-				&& Objects.equals(investmentLength, other.investmentLength)
-				&& Objects.equals(investmentPurpose, other.investmentPurpose)
-				&& Objects.equals(riskTolerance, other.riskTolerance);
+		return Objects.equals(clientId, other.clientId) && incomeCategory == other.incomeCategory
+				&& investmentLength == other.investmentLength
+				&& Objects.equals(investmentPurpose, other.investmentPurpose) && riskTolerance == other.riskTolerance;
 	}
 	@Override
 	public String toString() {
-		return "ClientPreferences [investmentPurpose=" + investmentPurpose + ", riskTolerance=" + riskTolerance
-				+ ", incomeCategory=" + incomeCategory + ", investmentLength=" + investmentLength + "]";
+		return "ClientPreferences [clientId=" + clientId + ", investmentPurpose=" + investmentPurpose
+				+ ", riskTolerance=" + riskTolerance + ", incomeCategory=" + incomeCategory + ", investmentLength="
+				+ investmentLength + "]";
 	}
+	
+	
 }

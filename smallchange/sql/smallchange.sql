@@ -77,7 +77,7 @@ CREATE TABLE portfolio (
 CREATE TABLE preferences (
     clientId VARCHAR2(20),
     investmentPurpose VARCHAR(255),
-    riskTolerance VARCHAR2(5),
+    riskTolerance VARCHAR2(20),
     incomeCategory VARCHAR2(50),
     lengthOfInvestment VARCHAR2(20),
     FOREIGN KEY (clientId) REFERENCES client(clientId)

@@ -10,6 +10,18 @@ public class Order {
 	private String direction;
 	private String clientId;
 	private String orderId;
+	
+	
+	public Order(String instrumentId, BigDecimal quantity, BigDecimal targetPrice, String direction, String clientId,
+			String orderId) {
+		super();
+		this.instrumentId = instrumentId;
+		this.quantity = quantity;
+		this.targetPrice = targetPrice;
+		this.direction = direction;
+		this.clientId = clientId;
+		this.orderId = orderId;
+	}
 	public String getInstrumentId() {
 		return instrumentId;
 	}

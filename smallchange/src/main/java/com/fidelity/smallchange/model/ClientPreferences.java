@@ -3,6 +3,17 @@ package com.fidelity.smallchange.model;
 import java.util.Objects;
 
 public class ClientPreferences {
+	
+	
+	public ClientPreferences(String clientId, String investmentPurpose, String riskTolerance,
+			String incomeCategory, String investmentLength) {
+		super();
+		this.clientId = clientId;
+		this.investmentPurpose = investmentPurpose;
+		this.riskTolerance = RiskTolerance.of(riskTolerance);
+		this.incomeCategory = IncomeCategory.of(incomeCategory);
+		this.investmentLength = InvestmentLength.of(investmentLength);
+	}
 	private String clientId;
 	private String investmentPurpose;
 	private RiskTolerance riskTolerance;

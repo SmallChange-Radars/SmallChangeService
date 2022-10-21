@@ -20,13 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.fidelity.smallchange.model.Portfolio;
 
-
-@ExtendWith(SpringExtension.class)
-//@ContextConfiguration("classpath:beans.xml")
-//@RunWith(SpringRunner.class)
-//@SpringBootTest(classes = Application.class, webEnvironment = WebEnvironment.RANDOM_PORT)
-@MapperScan(basePackages = { "com.fidelity.smallchange.integration.mapper" }, annotationClass = Mapper.class)
-
+@SpringBootTest
 class PortfolioMapperTest {
 	
 	@Autowired

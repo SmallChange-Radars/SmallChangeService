@@ -5,21 +5,24 @@ DROP TABLE price;
 DROP TABLE orderInstrument;
 DROP TABLE instrument;
 DROP TABLE clientIdentification;
-DROP TABLE client;
+DROP TABLE clientDB;
 
-CREATE TABLE client (    
+CREATE TABLE clientDB (    
     clientId VARCHAR2(20) PRIMARY KEY,
     email VARCHAR2(100),
     dob VARCHAR2(8),
     country VARCHAR2(2),
-    postalCode VARCHAR2(6)
+    postalCode VARCHAR2(6),
+    password VARCHAR2(20),
+    wallet NUMBER(20,3),
+    walletCurrency VARCHAR2(8)
 );
 
 CREATE TABLE clientIdentification (
     type VARCHAR2(20),
     value VARCHAR2(50),
     clientId VARCHAR2(20),
-    FOREIGN KEY (clientId) REFERENCES client(clientId)
+    FOREIGN KEY (clientId) REFERENCES clientDB (clientId)
 );
 
 CREATE TABLE instrument (
@@ -40,7 +43,7 @@ CREATE TABLE orderInstrument (
     clientId VARCHAR2(20),
     instrumentId VARCHAR2(20),
     FOREIGN KEY (instrumentId) REFERENCES instrument(instrumentId),
-    FOREIGN KEY (clientId) REFERENCES client(clientId)
+    FOREIGN KEY (clientId) REFERENCES clientDB (clientId)
 );
 
 CREATE TABLE price (
@@ -61,7 +64,7 @@ CREATE TABLE trade (
     executionPrice NUMBER(10,2),
     cashValue NUMBER(10,2),
     FOREIGN KEY (instrumentId) REFERENCES instrument(instrumentId),
-    FOREIGN KEY (clientId) REFERENCES client(clientId),
+    FOREIGN KEY (clientId) REFERENCES clientDB (clientId),
     FOREIGN KEY (orderId) REFERENCES orderInstrument(orderId)
 );
 
@@ -70,7 +73,7 @@ CREATE TABLE portfolio (
     instrumentId VARCHAR2(20),
     quantity NUMBER(10,0),
     value NUMBER(10,2),
-    FOREIGN KEY (clientId) REFERENCES client(clientId),
+    FOREIGN KEY (clientId) REFERENCES clientDB (clientId),
     FOREIGN KEY (instrumentId) REFERENCES instrument(instrumentId)
 );
 
@@ -80,14 +83,14 @@ CREATE TABLE preferences (
     riskTolerance VARCHAR2(5),
     incomeCategory VARCHAR2(50),
     lengthOfInvestment VARCHAR2(20),
-    FOREIGN KEY (clientId) REFERENCES client(clientId)
+    FOREIGN KEY (clientId) REFERENCES clientDB (clientId)
 );
 
-INSERT INTO client (clientId, email, dob, country, postalCode) VALUES ('1234', 'aadrs@gmail.com','19900101', 'US','123456');
-INSERT INTO client (clientId, email, dob, country, postalCode) VALUES ('1235', 'sara@gmail.com','20002512', 'US','123477');
-INSERT INTO client (clientId, email, dob, country, postalCode) VALUES ('1236', 'priya@gmail.com','19990303', 'US','123333');
-INSERT INTO client (clientId, email, dob, country, postalCode) VALUES ('1237', 'stephen@gmail.com','19801112', 'US','123558');
-INSERT INTO client (clientId, email, dob, country, postalCode) VALUES ('1238', 'prabhu@gmail.com','20011230', 'US','123777');
+INSERT INTO clientDB (clientId, email, dob, country, postalCode, password, wallet, walletCurrency) VALUES ('1234', 'aadrs@gmail.com','19900101', 'US','123456','pass123',12345.45,'USD');
+INSERT INTO clientDB (clientId, email, dob, country, postalCode, password, wallet, walletCurrency) VALUES ('1235', 'sara@gmail.com','20002512', 'US','123477','pass1234',748295.45,'USD');
+INSERT INTO clientDB (clientId, email, dob, country, postalCode, password, wallet, walletCurrency) VALUES ('1236', 'priya@gmail.com','19990303', 'US','123333','pass1234',748295.45,'USD');
+INSERT INTO clientDB (clientId, email, dob, country, postalCode, password, wallet, walletCurrency) VALUES ('1237', 'stephen@gmail.com','19801112', 'US','123558','pass1234',748295.45,'USD');
+INSERT INTO clientDB (clientId, email, dob, country, postalCode, password, wallet, walletCurrency) VALUES ('1238', 'prabhu@gmail.com','20011230', 'US','123777','pass1234',748295.45,'USD');
 
 INSERT INTO instrument(instrumentId, externalIdType, externalId, categoryId, description, maxQuantity, minQuantity)
      VALUES('Q123', 'CUSIP', '02079K107', 'STOCK', 'Alphabet', 1000, 1);

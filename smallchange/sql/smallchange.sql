@@ -7,6 +7,8 @@ DROP TABLE instrument;
 DROP TABLE clientIdentification;
 DROP TABLE client;
 
+
+
 CREATE TABLE client (    
     clientId VARCHAR2(20) PRIMARY KEY,
     email VARCHAR2(100),
@@ -18,12 +20,16 @@ CREATE TABLE client (
     walletCurrency VARCHAR2(8)
 );
 
+
+
 CREATE TABLE clientIdentification (
     type VARCHAR2(20),
     value VARCHAR2(50),
     clientId VARCHAR2(20),
     FOREIGN KEY (clientId) REFERENCES client (clientId)
 );
+
+
 
 CREATE TABLE instrument (
     instrumentId VARCHAR2(20) PRIMARY KEY,
@@ -34,6 +40,8 @@ CREATE TABLE instrument (
     minQuantity NUMBER(10,0),
     maxQuantity NUMBER(10,0)
 );
+
+
 
 CREATE TABLE orderInstrument (
     orderId VARCHAR2(50) PRIMARY KEY,
@@ -46,6 +54,8 @@ CREATE TABLE orderInstrument (
     FOREIGN KEY (clientId) REFERENCES client (clientId)
 );
 
+
+
 CREATE TABLE price (
     instrumentId VARCHAR2(20),
     bidPrice NUMBER(10,2),
@@ -53,6 +63,8 @@ CREATE TABLE price (
     timestamp VARCHAR2(50),
     FOREIGN KEY (instrumentId) REFERENCES instrument(instrumentId)
 );
+
+
 
 CREATE TABLE trade (
     tradeId VARCHAR2(50) PRIMARY KEY,
@@ -68,6 +80,8 @@ CREATE TABLE trade (
     FOREIGN KEY (orderId) REFERENCES orderInstrument(orderId)
 );
 
+
+
 CREATE TABLE portfolio (
     clientId VARCHAR2(20),    
     instrumentId VARCHAR2(20),
@@ -77,12 +91,14 @@ CREATE TABLE portfolio (
     FOREIGN KEY (instrumentId) REFERENCES instrument(instrumentId)
 );
 
+
+
 CREATE TABLE preferences (
-    clientId VARCHAR2(20),
+    clientId VARCHAR2(20) UNIQUE,
     investmentPurpose VARCHAR(255),
-    riskTolerance VARCHAR2(5),
-    incomeCategory VARCHAR2(50),
-    lengthOfInvestment VARCHAR2(20),
+    riskTolerance int,
+    incomeCategory int,
+    lengthOfInvestment int,
     FOREIGN KEY (clientId) REFERENCES client (clientId)
 );
 
@@ -91,6 +107,13 @@ INSERT INTO client (clientId, email, dob, country, postalCode, password, wallet,
 INSERT INTO client (clientId, email, dob, country, postalCode, password, wallet, walletCurrency) VALUES ('1236', 'priya@gmail.com','19990303', 'US','123333','pass1234',748295.45,'USD');
 INSERT INTO client (clientId, email, dob, country, postalCode, password, wallet, walletCurrency) VALUES ('1237', 'stephen@gmail.com','19801112', 'US','123558','pass1234',748295.45,'USD');
 INSERT INTO client (clientId, email, dob, country, postalCode, password, wallet, walletCurrency) VALUES ('1238', 'prabhu@gmail.com','20011230', 'US','123777','pass1234',748295.45,'USD');
+
+INSERT INTO preferences (clientId, investmentPurpose, riskTolerance, incomeCategory, lengthOfInvestment) 
+    VALUES ('1235', 'Savings', 5, 3, 4);    
+INSERT INTO preferences (clientId, investmentPurpose, riskTolerance, incomeCategory, lengthOfInvestment) 
+    VALUES ('1236', 'Savings', 1, 1, 1);
+INSERT INTO preferences (clientId, investmentPurpose, riskTolerance, incomeCategory, lengthOfInvestment) 
+    VALUES ('1238', 'Savings', 2, 4, 2);
 
 INSERT INTO instrument(instrumentId, externalIdType, externalId, categoryId, description, maxQuantity, minQuantity)
      VALUES('Q123', 'CUSIP', '02079K107', 'STOCK', 'Alphabet', 1000, 1);
@@ -104,11 +127,15 @@ INSERT INTO instrument(instrumentId, externalIdType, externalId, categoryId, des
      VALUES('T67894', 'CUSIP', '9128285Z9', 'GOVT', 'USA, Note 2.5 31jan2024 5Y', 10000, 100);
      
 
+
+
 INSERT INTO portfolio (clientId, instrumentId,quantity,value) VALUES ('1234','Q456',50,450.89);
 INSERT INTO portfolio (clientId, instrumentId,quantity,value) VALUES ('1236','T67890',70,670.89);
 INSERT INTO portfolio (clientId, instrumentId,quantity,value) VALUES ('1236','T67894',91,1350.71);
 INSERT INTO portfolio (clientId, instrumentId,quantity,value) VALUES ('1238','C100',101,4563.67);
 INSERT INTO portfolio (clientId, instrumentId,quantity,value) VALUES ('1238','Q123',370,10037.32);
 INSERT INTO portfolio (clientId, instrumentId,quantity,value) VALUES ('1238','T67894',91,10657.32);
+
+
 
 COMMIT;

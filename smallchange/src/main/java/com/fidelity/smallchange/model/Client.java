@@ -12,6 +12,7 @@ public class Client {
 	private Country country;
 	private String postalCode;
 	private List<ClientIdentification> clientIdentification;
+	private String token;
 	
 	public Client(String clientId, String email, String dateOfBirth, Country country, String postalCode, ClientIdentification clientIdentification) {
 		this.clientId = clientId;

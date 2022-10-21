@@ -6,6 +6,9 @@ public class ClientIdentification {
 	private String type;
 	private String value;
 	
+	public ClientIdentification() {
+		
+	}
 	public ClientIdentification(String type, String value) {
 		this.type = type;
 		this.value = value;
@@ -17,6 +20,12 @@ public class ClientIdentification {
 		return value;
 	}
 	
+	public void setType(String type) {
+		this.type = type;
+	}
+	public void setValue(String value) {
+		this.value = value;
+	}
 	@Override
 	public int hashCode() {
 		return Objects.hash(type, value);

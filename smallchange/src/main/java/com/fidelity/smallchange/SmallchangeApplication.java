@@ -9,6 +9,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.fidelity.smallchange.integration.mapper.ClientPreferencesMapper;
 import com.fidelity.smallchange.integration.mapper.PortfolioMapper;
 import com.fidelity.smallchange.model.Portfolio;
 
@@ -20,6 +21,9 @@ public class SmallchangeApplication implements CommandLineRunner {
 	
 	@Autowired
     private PortfolioMapper port;
+	
+	@Autowired
+    private ClientPreferencesMapper cp;
 	
 	@Override
     public void run(String...args) throws Exception {

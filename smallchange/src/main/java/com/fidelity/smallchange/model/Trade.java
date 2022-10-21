@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class Trade {
 	private String instrumentId;
-	private BigDecimal quantity;
+	private int quantity;
 	private BigDecimal executionPrice;
 	private String direction;
 	private Order order;
@@ -14,7 +14,7 @@ public class Trade {
 	private BigDecimal cashValue;
 	
 	
-	public Trade(String instrumentId, BigDecimal quantity, BigDecimal executionPrice, String direction, Order order,
+	public Trade(String instrumentId, int quantity, BigDecimal executionPrice, String direction, Order order,
 			String tradeId, BigDecimal cashValue) {
 		super();
 		this.instrumentId = instrumentId;
@@ -31,10 +31,10 @@ public class Trade {
 	public void setInstrumentId(String instrumentId) {
 		this.instrumentId = instrumentId;
 	}
-	public BigDecimal getQuantity() {
+	public int getQuantity() {
 		return quantity;
 	}
-	public void setQuantity(BigDecimal quantity) {
+	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
 	public BigDecimal getExecutionPrice() {

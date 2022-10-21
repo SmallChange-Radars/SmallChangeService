@@ -51,11 +51,11 @@ public class TradeOrderDaoImpl implements TradeOrderDao {
 		try (Connection conn = dataSource.getConnection();
 				PreparedStatement stmt = conn.prepareStatement(getTradesByClient)) {
 			ResultSet rs = stmt.executeQuery();
-			while (rs.next()) {
-				Order order = new Order(rs.getString("instrumentid"), rs.getBigDecimal("quantity"), rs.getBigDecimal("targetprice"), rs.getString("direction"), rs.getString("clientid"), rs.getString("orderid"));
-				Trade trade = new Trade(rs.getString("instrumentid"), rs.getBigDecimal("quantity"), rs.getBigDecimal("executionprice"), rs.getString("direction"), order, rs.getString("tradeid"), rs.getBigDecimal("cashvalue"));
-				trades.add(trade);
-			}
+//			while (rs.next()) {
+//				Order order = new Order(rs.getString("instrumentid"), rs.getBigDecimal("quantity"), rs.getBigDecimal("targetprice"), rs.getString("direction"), rs.getString("clientid"), rs.getString("orderid"));
+//				Trade trade = new Trade(rs.getString("instrumentid"), rs.getBigDecimal("quantity"), rs.getBigDecimal("executionprice"), rs.getString("direction"), order, rs.getString("tradeid"), rs.getBigDecimal("cashvalue"));
+//				trades.add(trade);
+//			}
 
 		} catch (SQLException e) {
 			String msg = "Cannot retrieve clients";

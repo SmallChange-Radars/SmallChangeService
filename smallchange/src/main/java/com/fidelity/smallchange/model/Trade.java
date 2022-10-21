@@ -14,7 +14,6 @@ public class Trade {
 	private BigDecimal cashValue;
 	
 	
-	
 	public Trade(String instrumentId, BigDecimal quantity, BigDecimal executionPrice, String direction, Order order,
 			String tradeId, BigDecimal cashValue) {
 		super();

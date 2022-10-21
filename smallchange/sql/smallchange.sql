@@ -96,28 +96,17 @@ CREATE TABLE portfolio (
 CREATE TABLE preferences (
     clientId VARCHAR2(20) UNIQUE,
     investmentPurpose VARCHAR(255),
-    riskTolerance int,
-    incomeCategory int,
-    lengthOfInvestment int,
+    riskTolerance VARCHAR2(5),
+    incomeCategory VARCHAR2(50),
+    lengthOfInvestment VARCHAR2(20),
     FOREIGN KEY (clientId) REFERENCES client (clientId)
 );
-
-
 
 INSERT INTO client (clientId, email, dob, country, postalCode, password, wallet, walletCurrency) VALUES ('1234', 'aadrs@gmail.com','19900101', 'US','123456','pass123',12345.45,'USD');
 INSERT INTO client (clientId, email, dob, country, postalCode, password, wallet, walletCurrency) VALUES ('1235', 'sara@gmail.com','20002512', 'US','123477','pass1234',748295.45,'USD');
 INSERT INTO client (clientId, email, dob, country, postalCode, password, wallet, walletCurrency) VALUES ('1236', 'priya@gmail.com','19990303', 'US','123333','pass1234',748295.45,'USD');
 INSERT INTO client (clientId, email, dob, country, postalCode, password, wallet, walletCurrency) VALUES ('1237', 'stephen@gmail.com','19801112', 'US','123558','pass1234',748295.45,'USD');
 INSERT INTO client (clientId, email, dob, country, postalCode, password, wallet, walletCurrency) VALUES ('1238', 'prabhu@gmail.com','20011230', 'US','123777','pass1234',748295.45,'USD');
-
-INSERT INTO preferences (clientId, investmentPurpose, riskTolerance, incomeCategory, lengthOfInvestment) 
-    VALUES ('1235', 'Savings', 5, 3, 4);
-INSERT INTO preferences (clientId, investmentPurpose, riskTolerance, incomeCategory, lengthOfInvestment) 
-    VALUES ('1236', 'Future', 3, 2, 4);
-INSERT INTO preferences (clientId, investmentPurpose, riskTolerance, incomeCategory, lengthOfInvestment) 
-    VALUES ('1237', 'Investment', 1, 2, 3);
-INSERT INTO preferences (clientId, investmentPurpose, riskTolerance, incomeCategory, lengthOfInvestment) 
-    VALUES ('1238', 'Retirement', 2, 4, 2);
 
 INSERT INTO instrument(instrumentId, externalIdType, externalId, categoryId, description, maxQuantity, minQuantity)
      VALUES('Q123', 'CUSIP', '02079K107', 'STOCK', 'Alphabet', 1000, 1);

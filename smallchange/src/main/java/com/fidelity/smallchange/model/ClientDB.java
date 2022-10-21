@@ -3,8 +3,8 @@ package com.fidelity.smallchange.model;
 import java.math.BigDecimal;
 
 public class ClientDB {
-	Client client;
-	String password;
-	BigDecimal wallet;
-	String walletCurrency;
+	private Client client;
+	private String password;
+	private BigDecimal wallet;
+	private String walletCurrency;
 }

@@ -14,6 +14,6 @@ public interface TradeOrderDao {
 	
 	List<Trade> getTradesByClient(Client client);
 	
-	void insertTrade(Trade trade);
+	boolean insertTrade(Trade trade);
 
 }

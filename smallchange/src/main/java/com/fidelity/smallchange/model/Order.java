@@ -10,7 +10,7 @@ public class Order {
 	private String direction;
 	private String clientId;
 	private String orderId;
-	
+	private String token;
 	
 	public Order(String instrumentId, BigDecimal quantity, BigDecimal targetPrice, String direction, String clientId,
 			String orderId) {

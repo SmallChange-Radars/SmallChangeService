@@ -25,6 +25,9 @@ public class Trade {
 		this.tradeId = tradeId;
 		this.cashValue = cashValue;
 	}
+	public Trade() {
+		// TODO Auto-generated constructor stub
+	}
 	public String getInstrumentId() {
 		return instrumentId;
 	}

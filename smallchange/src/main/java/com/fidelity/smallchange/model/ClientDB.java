@@ -1,7 +1,6 @@
 package com.fidelity.smallchange.model;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -21,6 +20,18 @@ public class ClientDB {
 		
 	}
 	
+	public ClientDB(String clientId, String email, String dateOfBirth, Country country, String postalCode,
+			List<ClientIdentification> ciList, BigDecimal wallet, String walletCurrency) {
+		this.clientId = clientId;
+		this.email = email;
+		this.dateOfBirth = dateOfBirth;
+		this.country = country;
+		this.postalCode = postalCode;
+		this.clientIdentification = ciList;
+		this.wallet = wallet;
+		this.walletCurrency = walletCurrency;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(clientId, clientIdentification, country, dateOfBirth, email, password, postalCode, token,

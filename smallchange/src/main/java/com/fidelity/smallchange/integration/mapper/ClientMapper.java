@@ -6,6 +6,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Many;
 
 import com.fidelity.smallchange.model.ClientDB;
@@ -21,7 +23,35 @@ public interface ClientMapper {
 	@Results({
 		@Result(property="clientId", column="clientId", id=true),
 		@Result(property="clientIdentification", column="clientId",
-				many=@Many(select="com.fidelity.smallchange.integration.mapper.ClientIdentificationMapper.getClientIdentificationByClient"))
+				many=@Many(select="com.fidelity.smallchange.integration.mapper.ClientIdentificationMapper.getClientIdentificationByClientId"))
 	})
 	public List<ClientDB> getAllClients();
+	
+	@Select("""
+			SELECT clientId, email, dob as dateOfBirth, country, postalCode, wallet, walletCurrency
+			FROM client
+			WHERE clientId=${clientId}
+			""")
+	@Results({
+		@Result(property="clientId", column="clientId", id=true),
+		@Result(property="clientIdentification", column="clientId",
+				many=@Many(select="com.fidelity.smallchange.integration.mapper.ClientIdentificationMapper.getClientIdentificationByClientId"))
+	})
+	public ClientDB getClientByClientId(String clientId);
+	
+	@Insert("""
+			INSERT into client
+			(clientId, email, dob, country, postalCode, wallet, walletCurrency)
+			VALUES(#{clientId}, #{email}, #{dateOfBirth}, #{country}, #{postalCode}, #{wallet}, #{walletCurrency})
+			""")
+	public void insertClient(ClientDB client);
+	
+	@Update("""
+			UPDATE client
+			SET email = #{email}, dob = #{dateOfBirth}, country = #{country},
+			postalCode = #{postalCode}, wallet = #{wallet}, walletCurrency = #{walletCurrency}
+			WHERE clientId = #{clientId}
+			""")
+	public void updateClient(ClientDB client);
+	
 }

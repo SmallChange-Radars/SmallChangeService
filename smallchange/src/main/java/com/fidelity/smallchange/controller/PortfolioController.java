@@ -1,5 +1,6 @@
 package com.fidelity.smallchange.controller;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,11 @@ public class PortfolioController {
 	@PostMapping(path = "insertportfolio")
 	public void insertPortfolio(@RequestBody Portfolio portfolio) {
 		portfolioService.insertPortfolio(portfolio);
+	}
+	
+	@GetMapping(path = "portfolio/{clientId}/summary")
+	public BigDecimal getPortfolioSummary(@PathVariable String clientId) {
+		return portfolioService.getPortfolioSummary(clientId);
 	}
 	
 }

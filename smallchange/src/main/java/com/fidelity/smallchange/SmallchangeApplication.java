@@ -10,7 +10,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.fidelity.smallchange.integration.mapper.PortfolioMapper;
+import com.fidelity.smallchange.integration.mapper.TradeExecutionMapper;
 import com.fidelity.smallchange.model.Portfolio;
+import com.fidelity.smallchange.model.Trade;
 
 @SpringBootApplication
 @MapperScan(basePackages = { "com.fidelity.smallchange.integration.mapper" }, annotationClass = Mapper.class)
@@ -19,12 +21,11 @@ public class SmallchangeApplication implements CommandLineRunner {
 //	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
-    private PortfolioMapper port;
+    private TradeExecutionMapper tradeExecutionMapper;
 	
 	@Override
     public void run(String...args) throws Exception {
-		List<Portfolio> p = port.getAllPortfolios();
-        System.out.println(p.toString());
+		
     }
 
 	public static void main(String[] args) {

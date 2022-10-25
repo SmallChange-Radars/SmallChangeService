@@ -6,35 +6,45 @@ import java.util.Objects;
 
 public class Trade {
 	private String instrumentId;
-	private BigDecimal quantity;
+	private int quantity;
 	private BigDecimal executionPrice;
 	private String direction;
 	private Order order;
 	private String tradeId;
 	private BigDecimal cashValue;
 	
+	public Trade() {
+		
+	}
 	
-	public Trade(String instrumentId, BigDecimal quantity, BigDecimal executionPrice, String direction, Order order,
-			String tradeId, BigDecimal cashValue) {
+	
+	public Trade(String tradeId,String instrumentId, int quantity, String direction,  BigDecimal executionPrice,
+			 BigDecimal cashValue,Order order) {
 		super();
 		this.instrumentId = instrumentId;
 		this.quantity = quantity;
 		this.executionPrice = executionPrice;
 		this.direction = direction;
-		this.order = order;
 		this.tradeId = tradeId;
-		this.cashValue = cashValue;
+		this.cashValue =cashValue;
+		this.order=order;
 	}
+	
+	public Trade(String tradeId,String instrumentId, int quantity, String direction,  BigDecimal executionPrice,
+			 BigDecimal cashValue) {
+		this(tradeId, instrumentId, quantity, direction, executionPrice, cashValue, null);
+	}
+	
 	public String getInstrumentId() {
 		return instrumentId;
 	}
 	public void setInstrumentId(String instrumentId) {
 		this.instrumentId = instrumentId;
 	}
-	public BigDecimal getQuantity() {
+	public int getQuantity() {
 		return quantity;
 	}
-	public void setQuantity(BigDecimal quantity) {
+	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
 	public BigDecimal getExecutionPrice() {
@@ -67,10 +77,14 @@ public class Trade {
 	public void setCashValue(BigDecimal cashValue) {
 		this.cashValue = cashValue;
 	}
+
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(cashValue, direction, executionPrice, instrumentId, order, quantity, tradeId);
 	}
+
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -83,14 +97,17 @@ public class Trade {
 		return Objects.equals(cashValue, other.cashValue) && Objects.equals(direction, other.direction)
 				&& Objects.equals(executionPrice, other.executionPrice)
 				&& Objects.equals(instrumentId, other.instrumentId) && Objects.equals(order, other.order)
-				&& Objects.equals(quantity, other.quantity) && Objects.equals(tradeId, other.tradeId);
+				&& quantity == other.quantity && Objects.equals(tradeId, other.tradeId);
 	}
+
+
 	@Override
 	public String toString() {
 		return "Trade [instrumentId=" + instrumentId + ", quantity=" + quantity + ", executionPrice=" + executionPrice
 				+ ", direction=" + direction + ", order=" + order + ", tradeId=" + tradeId + ", cashValue=" + cashValue
 				+ "]";
 	}
+	
 	
 	
 

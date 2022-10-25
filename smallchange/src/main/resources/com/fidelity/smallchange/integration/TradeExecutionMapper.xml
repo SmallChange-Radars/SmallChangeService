@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fidelity.smallchange.integration.TradeExecutionMapper">
+	<resultMap type="com.fidelity.smallchange.model.Trade" id="GetTradesMap">
+		<id property="tradeId" column="TRADEID" />
+		<result property="instrumentId" column="INSTRUMENTID" />
+		<result property="quantity" column="QUANTITY" />
+		<result property="direction" column="DIRECTION" />
+		<result property="executionPrice" column="EXECUTIONPRICE" />
+		<result property="cashValue" column="CASHVALUE" />
+		<result property="order.instrumentId" column="INSTRUMENTID" />
+		<result property="order.quantity" column="QUANTITY" />
+		<result property="order.targetPrice" column="TARGETPRICE" />
+		<result property="order.direction" column="DIRECTION" />
+		<result property="order.clientId" column="CLIENTID" />
+		<result property="order.orderId" column="ORDERID" />
+		
+	</resultMap>
+	<resultMap type="com.fidelity.smallchange.model.Order" id="OrderMap">
+		
+	</resultMap>
+	
+	
+</mapper>

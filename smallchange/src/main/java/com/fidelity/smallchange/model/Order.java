@@ -5,19 +5,23 @@ import java.util.Objects;
 
 public class Order {
 	private String instrumentId;
-	private BigDecimal quantity;
+	private int quantity;
 	private BigDecimal targetPrice;
 	private String direction;
 	private String clientId;
 	private String orderId;
 	private String token;
 	
-	public Order(String instrumentId, BigDecimal quantity, BigDecimal targetPrice, String direction, String clientId,
+	public Order() {
+		
+	}
+	
+	public Order(String instrumentId, int quantity, BigDecimal targetPrice, String direction, String clientId,
 			String orderId) {
 		super();
 		this.instrumentId = instrumentId;
 		this.quantity = quantity;
-		this.targetPrice = targetPrice;
+		this.targetPrice =targetPrice;
 		this.direction = direction;
 		this.clientId = clientId;
 		this.orderId = orderId;
@@ -28,10 +32,10 @@ public class Order {
 	public void setInstrumentId(String instrumentId) {
 		this.instrumentId = instrumentId;
 	}
-	public BigDecimal getQuantity() {
+	public int getQuantity() {
 		return quantity;
 	}
-	public void setQuantity(BigDecimal quantity) {
+	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
 	public BigDecimal getTargetPrice() {
@@ -80,6 +84,7 @@ public class Order {
 		return "order [instrumentId=" + instrumentId + ", quantity=" + quantity + ", targetPrice=" + targetPrice
 				+ ", direction=" + direction + ", clientId=" + clientId + ", orderId=" + orderId + "]";
 	}
+	
 	
 	
 }

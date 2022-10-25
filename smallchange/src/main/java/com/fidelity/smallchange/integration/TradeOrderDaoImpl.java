@@ -26,9 +26,11 @@ public class TradeOrderDaoImpl implements TradeOrderDao {
 	
 	private final Logger logger = LoggerFactory.getLogger(TradeOrderDaoImpl.class);
 
+	
+	// change int clientID to Client client
 	@Override
-	public List<Trade> getTradesByClient(Client client) {
-		return tradeExecutionMapper.getTradesByClient(client);
+	public List<Trade> getTradesByClient(String clientId) {
+		return tradeExecutionMapper.getTradesByClient(clientId);
 	}
 	
 	@Override

@@ -35,15 +35,26 @@ class ClientIdentificationMapperTest {
 		cIList.add(obj);
 		assertEquals(cIList, dao.getClientIdentificationByClientId("1234"));
 	}
-//	
-//	@Test
-//	@Transactional
-//	void testInsertClientIdentification() {
-//		ClientIdentification obj = new ClientIdentification("SSN", "ThisIsAVal");
-//		dao.insertClientIdentification(obj, "1235");
-//		List<ClientIdentification> cIList = new ArrayList<>();
-//		cIList.add(obj);
-//		assertEquals(cIList, dao.getClientIdentificationByClientId("1235"));
-//}
+	
+	@Test
+	@Transactional
+	void testInsertClientIdentification() {
+		ClientIdentification obj = new ClientIdentification("SSN", "ThisIsAVal");
+		dao.insertClientIdentification(obj.getType(), obj.getValue(), "1235");
+		List<ClientIdentification> cIList = new ArrayList<>();
+		cIList.add(obj);
+		assertEquals(cIList, dao.getClientIdentificationByClientId("1235"));
+	}
+	
+	@Test
+	@Transactional
+	void testUpdateClientIdentification() {
+		ClientIdentification obj = new ClientIdentification("Passport", "Passport1");
+		List<ClientIdentification> cIList = new ArrayList<>();
+		cIList.add(obj);
+		assertNotEquals(cIList, dao.getClientIdentificationByClientId("1234"));
+		dao.updateClientIdentification(obj.getType(), obj.getValue(), "1234");
+		assertEquals(cIList, dao.getClientIdentificationByClientId("1234"));
+	}
 
 }

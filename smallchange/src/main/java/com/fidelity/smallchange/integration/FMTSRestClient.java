@@ -9,6 +9,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -31,7 +32,7 @@ public class FMTSRestClient {
 	@Autowired
 	ObjectMapper objectMapper;
 
-	public Client clientVerification(Client client) throws JsonProcessingException {
+	public Client clientVerification(Client client) throws JsonProcessingException, HttpClientErrorException {
 		HttpHeaders headers = new HttpHeaders();
 		headers.set("Content-Type", "application/json");
 
@@ -39,20 +40,29 @@ public class FMTSRestClient {
 		ResponseEntity<String> response = restTemplate.exchange(url + "/client", HttpMethod.POST, request,
 				String.class);
 
+		// from analysing the code, their isn't really a possibility that 404 is
+		// returned...
+
+		// automatically throws HttpClientErrorException if 4xx though idk what to do
+		// abt it, so assuming 406 and 404 both means invalid client it should be fine
+
 		Client verified = (Client) restJSONMapper(new Client(), response, new TypeReference<Client>() {
 		});
 		return verified;
 	}
-	
+
 	public Trade tradeExecution(Order order) throws JsonProcessingException {
 		HttpHeaders headers = new HttpHeaders();
 		headers.set("Content-Type", "application/json");
 
 		HttpEntity<Order> request = new HttpEntity<>(order, headers);
-		
+
 		ResponseEntity<String> response = restTemplate.exchange(url + "/trades/trade", HttpMethod.POST, request,
 				String.class);
 
+		// TODO:
+		// Trade doesnt return 409 for invalid trade object instead returns a null
+		// object
 		Trade verified = (Trade) restJSONMapper(new Trade(), response, new TypeReference<Trade>() {
 		});
 		return verified;
@@ -72,7 +82,7 @@ public class FMTSRestClient {
 				}), Price.class);
 		return verified;
 	}
-	
+
 	public List<Instrument> getInstruments(String categoryId) throws JsonProcessingException {
 		HttpHeaders headers = new HttpHeaders();
 		headers.set("Content-Type", "application/json");
@@ -101,21 +111,11 @@ public class FMTSRestClient {
 
 	public <T> Object restJSONMapper(Object respObj, ResponseEntity<String> response, TypeReference<T> typeReference)
 			throws JsonProcessingException {
-		// prolly have a check block to throw and catch appropriate errors based on
-		// error code.
-		// response.getStatusCodeValue() returns error code
-
-		try {
-			respObj = objectMapper.readValue(response.getBody(), typeReference);
-		} catch (JsonProcessingException e) {
-			// TODO Auto-generated catch block
-			// Handle in service layer to
-			// handle 406 and 409 throws needed errors!
-			// this error is only for parsing error
-			// mostly need to remove it to handle in service layer
-			// or figure out how to use a error controller and handler
-			throw e;
-		}
+		// TODO:
+		// this parsing error only means it couldnt be mapped properly so need to see
+		// how to handle this...
+		// mostly should return 5xx
+		respObj = objectMapper.readValue(response.getBody(), typeReference);
 		return respObj;
 	}
 

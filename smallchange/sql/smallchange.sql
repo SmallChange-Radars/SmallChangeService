@@ -5,19 +5,19 @@ DROP TABLE price;
 DROP TABLE orderInstrument;
 DROP TABLE instrument;
 DROP TABLE clientIdentification;
-DROP TABLE client;
-
-
+DROP TABLE fmtsToken;
+DROP TABLE client cascade constraints;
 
 CREATE TABLE client (    
-    clientId VARCHAR2(20) PRIMARY KEY,
+    clientId VARCHAR2(40) PRIMARY KEY,
     email VARCHAR2(100),
     dob VARCHAR2(8),
     country VARCHAR2(2),
     postalCode VARCHAR2(6),
-    password VARCHAR2(20),
+    password VARCHAR2(200),
     wallet NUMBER(20,3),
-    walletCurrency VARCHAR2(8)
+    walletCurrency VARCHAR2(8),
+    role VARCHAR2(40)
 );
 
 
@@ -25,6 +25,13 @@ CREATE TABLE client (
 CREATE TABLE clientIdentification (
     type VARCHAR2(20),
     value VARCHAR2(50),
+    clientId VARCHAR2(20),
+    FOREIGN KEY (clientId) REFERENCES client (clientId)
+);
+
+CREATE TABLE fmtsToken (
+    token VARCHAR2(50),
+    timestamp VARCHAR2(50),
     clientId VARCHAR2(20),
     FOREIGN KEY (clientId) REFERENCES client (clientId)
 );
@@ -102,7 +109,7 @@ CREATE TABLE preferences (
     FOREIGN KEY (clientId) REFERENCES client (clientId)
 );
 
-INSERT INTO client (clientId, email, dob, country, postalCode, password, wallet, walletCurrency) VALUES ('1234', 'aadrs@gmail.com','19900101', 'US','123456','pass123',12345.45,'USD');
+INSERT INTO client (clientId, email, dob, country, postalCode, password, wallet, walletCurrency) VALUES ('1234', 'aadrs@gmail.com','19900101', 'US','123456','pass13',12345.45,'USD');
 INSERT INTO client (clientId, email, dob, country, postalCode, password, wallet, walletCurrency) VALUES ('1235', 'sara@gmail.com','20002512', 'US','123477','pass1234',748295.45,'USD');
 INSERT INTO client (clientId, email, dob, country, postalCode, password, wallet, walletCurrency) VALUES ('1236', 'priya@gmail.com','19990303', 'US','123333','pass1234',748295.45,'USD');
 INSERT INTO client (clientId, email, dob, country, postalCode, password, wallet, walletCurrency) VALUES ('1237', 'stephen@gmail.com','19801112', 'US','123558','pass1234',748295.45,'USD');

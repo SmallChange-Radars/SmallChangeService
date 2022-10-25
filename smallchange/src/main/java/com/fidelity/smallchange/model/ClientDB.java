@@ -15,22 +15,30 @@ public class ClientDB {
 	private String password;
 	private BigDecimal wallet;
 	private String walletCurrency;
+	private String role;
 	
 	public ClientDB() {
 		
 	}
-	
+
 	public ClientDB(String clientId, String email, String dateOfBirth, Country country, String postalCode,
-			List<ClientIdentification> ciList, BigDecimal wallet, String walletCurrency) {
+			List<ClientIdentification> clientIdentification, String token, String password, BigDecimal wallet,
+			String walletCurrency, String role) {
+		super();
 		this.clientId = clientId;
 		this.email = email;
 		this.dateOfBirth = dateOfBirth;
 		this.country = country;
 		this.postalCode = postalCode;
-		this.clientIdentification = ciList;
+		this.clientIdentification = clientIdentification;
+		this.token = token;
+		this.password = password;
 		this.wallet = wallet;
 		this.walletCurrency = walletCurrency;
+		this.role = role;
 	}
+
+
 
 	@Override
 	public int hashCode() {
@@ -57,7 +65,8 @@ public class ClientDB {
 	public String toString() {
 		return "ClientDB [clientId=" + clientId + ", email=" + email + ", dateOfBirth=" + dateOfBirth + ", country="
 				+ country + ", postalCode=" + postalCode + ", clientIdentification=" + clientIdentification + ", token="
-				+ token + ", password=" + password + ", wallet=" + wallet + ", walletCurrency=" + walletCurrency + "]";
+				+ token + ", password=" + password + ", wallet=" + wallet + ", walletCurrency=" + walletCurrency
+				+ ", role=" + role + "]";
 	}
 	public String getClientId() {
 		return clientId;
@@ -129,4 +138,13 @@ public class ClientDB {
 	public void setWalletCurrency(String walletCurrency) {
 		this.walletCurrency = walletCurrency;
 	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+	
 }

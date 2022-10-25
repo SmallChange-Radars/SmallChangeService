@@ -2,6 +2,8 @@ package com.fidelity.smallchange.controller;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.fidelity.smallchange.integration.mapper.ClientMapper;
 import com.fidelity.smallchange.model.Client;
@@ -37,7 +39,7 @@ public class AuthController {
 
 	@Autowired
 	ClientMapper userRepository;
-	
+
 	@Autowired
 	ClientService cs;
 
@@ -70,13 +72,16 @@ public class AuthController {
 
 	@PostMapping("/signup")
 	public ResponseEntity<?> registerUser(@Validated @RequestBody ClientDB signUpRequest) {
+		Client client = new Client();
+		try {
+			client = cs.clientVerification(signUpRequest);
+		} catch (HttpClientErrorException e) {
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid Credentials", e);
+		}
 
-		Client client=cs.clientVerification(signUpRequest);
-		
 		if (userRepository.getClientByEmail(signUpRequest.getEmail()) != null) {
 			return ResponseEntity.badRequest().body(new MessageResponse("Error: Email is already in use!"));
 		}
-
 
 		// Create new user's account
 		signUpRequest.setPassword(encoder.encode(signUpRequest.getPassword()));

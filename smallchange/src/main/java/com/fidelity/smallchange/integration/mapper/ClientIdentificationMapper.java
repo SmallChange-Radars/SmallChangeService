@@ -22,14 +22,14 @@ public interface ClientIdentificationMapper {
 	@Insert("""
 			INSERT into ClientIdentification
 			(clientId, type, value)
-			VALUES(#{clientId}, ${type}, ${value})
+			VALUES(#{clientId}, #{type}, #{value})
 			""")
-	public void insertClientIdentification(ClientIdentification clientIdentification, String clientId);
+	public void insertClientIdentification(String type, String value, String clientId);
 	
 	@Update("""
 			UPDATE ClientIdentification
 			SET type = #{type}, value = #{value}
-			WHERE clientId = ${clientId}
+			WHERE clientId = #{clientId}
 			""")
-	void updateClientIdentification(ClientIdentification clientIdentification, String clientId);
+	void updateClientIdentification(String type, String value, String clientId);
 }

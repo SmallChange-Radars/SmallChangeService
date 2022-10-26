@@ -72,6 +72,11 @@ public class AuthController {
 
 	@PostMapping("/signup")
 	public ResponseEntity<?> registerUser(@Validated @RequestBody ClientDB signUpRequest) {
+		if (userRepository.getClientByEmail(signUpRequest.getEmail()) != null) {
+			return ResponseEntity.badRequest().body(new MessageResponse("Error: Email is already in use!"));
+		}
+		
+		//first check db and then make request
 		Client client = new Client();
 		try {
 			client = cs.clientVerification(signUpRequest);
@@ -79,10 +84,7 @@ public class AuthController {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid Credentials", e);
 		}
 
-		if (userRepository.getClientByEmail(signUpRequest.getEmail()) != null) {
-			return ResponseEntity.badRequest().body(new MessageResponse("Error: Email is already in use!"));
-		}
-
+		
 		// Create new user's account
 		signUpRequest.setPassword(encoder.encode(signUpRequest.getPassword()));
 		signUpRequest.setClientId(client.getClientId());

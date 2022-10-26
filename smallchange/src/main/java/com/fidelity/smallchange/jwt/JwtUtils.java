@@ -2,6 +2,8 @@ package com.fidelity.smallchange.jwt;
 
 import java.util.Date;
 
+import javax.crypto.SecretKey;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -17,8 +19,7 @@ import io.jsonwebtoken.security.Keys;
 public class JwtUtils {
 	private static final Logger logger = LoggerFactory.getLogger(JwtUtils.class);
 
-	@Value("${jwtSecret}")
-	private String jwtSecret;
+	final private SecretKey jwtSecret = Keys.secretKeyFor(SignatureAlgorithm.HS256);;
 
 	@Value("${jwtExpirationMs}")
 	private int jwtExpirationMs;
@@ -28,8 +29,7 @@ public class JwtUtils {
 		UserDetailsImpl userPrincipal = (UserDetailsImpl) authentication.getPrincipal();
 
 		return Jwts.builder().setSubject((userPrincipal.getUsername())).setIssuedAt(new Date())
-				.setExpiration(new Date((new Date()).getTime() + jwtExpirationMs))
-				.signWith(Keys.secretKeyFor(SignatureAlgorithm.HS256)).compact();
+				.setExpiration(new Date((new Date()).getTime() + jwtExpirationMs)).signWith(jwtSecret).compact();
 	}
 
 	public String getUserNameFromJwtToken(String token) {

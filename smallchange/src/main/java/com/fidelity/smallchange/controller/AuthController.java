@@ -10,14 +10,15 @@ import com.fidelity.smallchange.model.Client;
 import com.fidelity.smallchange.model.ClientDB;
 import com.fidelity.smallchange.model.JwtResponse;
 import com.fidelity.smallchange.model.MessageResponse;
-import com.fidelity.smallchange.services.ClientService;
-import com.fidelity.smallchange.services.UserDetailsImpl;
+import com.fidelity.smallchange.service.ClientService;
+import com.fidelity.smallchange.service.UserDetailsImpl;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -49,7 +50,8 @@ public class AuthController {
 	@Autowired
 	com.fidelity.smallchange.jwt.JwtUtils jwtUtils;
 
-	@PostMapping("/signin")
+	@PostMapping(value="/signin", produces=MediaType.APPLICATION_JSON_VALUE,
+			consumes=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> authenticateUser(@Validated @RequestBody ClientDB loginRequest) {
 
 		try {
@@ -70,7 +72,8 @@ public class AuthController {
 		}
 	}
 
-	@PostMapping("/signup")
+	@PostMapping(value="/signup", produces=MediaType.APPLICATION_JSON_VALUE,
+			consumes=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> registerUser(@Validated @RequestBody ClientDB signUpRequest) {
 		if (userRepository.getClientByEmail(signUpRequest.getEmail()) != null) {
 			return ResponseEntity.badRequest().body(new MessageResponse("Error: Email is already in use!"));
@@ -84,8 +87,10 @@ public class AuthController {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid Credentials", e);
 		}
 
+		//TODO: encrypt whats to be encrypted
 		
-		// Create new user's account
+		// Create new user's account 
+		
 		signUpRequest.setPassword(encoder.encode(signUpRequest.getPassword()));
 		signUpRequest.setClientId(client.getClientId());
 

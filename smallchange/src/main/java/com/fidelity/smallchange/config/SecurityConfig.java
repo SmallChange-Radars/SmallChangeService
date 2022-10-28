@@ -16,7 +16,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import com.fidelity.smallchange.jwt.AuthEntryPointJwt;
 import com.fidelity.smallchange.jwt.AuthTokenFilter;
-import com.fidelity.smallchange.services.UserDetailsServiceImpl;
+import com.fidelity.smallchange.service.UserDetailsServiceImpl;
 
 @Configuration
 @EnableGlobalMethodSecurity(

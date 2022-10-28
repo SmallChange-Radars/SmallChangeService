@@ -1,4 +1,4 @@
-package com.fidelity.smallchange.services;
+package com.fidelity.smallchange.service;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

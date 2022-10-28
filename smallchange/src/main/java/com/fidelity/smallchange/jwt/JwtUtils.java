@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
-import com.fidelity.smallchange.services.UserDetailsImpl;
+import com.fidelity.smallchange.service.UserDetailsImpl;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
@@ -19,13 +19,12 @@ import io.jsonwebtoken.security.Keys;
 public class JwtUtils {
 	private static final Logger logger = LoggerFactory.getLogger(JwtUtils.class);
 
-	final private SecretKey jwtSecret = Keys.secretKeyFor(SignatureAlgorithm.HS256);;
+	final private SecretKey jwtSecret = Keys.secretKeyFor(SignatureAlgorithm.HS512);;
 
 	@Value("${jwtExpirationMs}")
 	private int jwtExpirationMs;
 
 	public String generateJwtToken(Authentication authentication) {
-
 		UserDetailsImpl userPrincipal = (UserDetailsImpl) authentication.getPrincipal();
 
 		return Jwts.builder().setSubject((userPrincipal.getUsername())).setIssuedAt(new Date())

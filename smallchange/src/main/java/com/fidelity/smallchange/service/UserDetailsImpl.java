@@ -1,4 +1,4 @@
-package com.fidelity.smallchange.services;
+package com.fidelity.smallchange.service;
 
 import java.util.ArrayList;
 import java.util.Collection;

@@ -6,6 +6,7 @@ import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.fidelity.smallchange.integration.mapper.ClientMapper;
+import com.fidelity.smallchange.jwt.JwtUtils;
 import com.fidelity.smallchange.model.Client;
 import com.fidelity.smallchange.model.ClientDB;
 import com.fidelity.smallchange.model.JwtResponse;
@@ -48,13 +49,14 @@ public class AuthController {
 	PasswordEncoder encoder;
 
 	@Autowired
-	com.fidelity.smallchange.jwt.JwtUtils jwtUtils;
+	JwtUtils jwtUtils;
 
 	@PostMapping(value="/signin", produces=MediaType.APPLICATION_JSON_VALUE,
 			consumes=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> authenticateUser(@Validated @RequestBody ClientDB loginRequest) {
 
 		try {
+			//all except response message
 			Authentication authentication = authenticationManager.authenticate(
 					new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword()));
 
@@ -88,13 +90,15 @@ public class AuthController {
 		}
 
 		//TODO: encrypt whats to be encrypted
-		
 		// Create new user's account 
 		
 		signUpRequest.setPassword(encoder.encode(signUpRequest.getPassword()));
 		signUpRequest.setClientId(client.getClientId());
 
 		userRepository.insertClient(signUpRequest);
+		
+		// Insert into client identification
+		
 		cs.insertToken(client);
 
 		return ResponseEntity.ok(new MessageResponse("User registered successfully!"));

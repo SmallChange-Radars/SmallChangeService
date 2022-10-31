@@ -39,26 +39,25 @@ class TokenMapperTest {
 
 	@Test
 	void testInsertToken() {
-		assertEquals(0, JdbcTestUtils.countRowsInTable(jdbcTemplate, "fmtsToken"));
+		int noOfTokens = JdbcTestUtils.countRowsInTable(jdbcTemplate, "fmtsToken");
 		dao.insertToken(new Token("1234", "", ""));
-		assertEquals(1, JdbcTestUtils.countRowsInTable(jdbcTemplate, "fmtsToken"));
+		assertEquals(1 + noOfTokens, JdbcTestUtils.countRowsInTable(jdbcTemplate, "fmtsToken"));
 	}
-	
+
 	@Test
 	void testSelectToken() {
 		Token token = dao.getTokenByClientId("1234");
-		assertEquals(token,null);
+		assertEquals(token, null);
 	}
-	
+
 	@Test
 	void testUpdatesToken() {
-		assertEquals(0, JdbcTestUtils.countRowsInTable(jdbcTemplate, "fmtsToken"));
+		int noOfTokens = JdbcTestUtils.countRowsInTable(jdbcTemplate, "fmtsToken");
 		dao.insertToken(new Token("1234", "", ""));
-		assertEquals(1, JdbcTestUtils.countRowsInTable(jdbcTemplate, "fmtsToken"));
+		assertEquals(1 + noOfTokens, JdbcTestUtils.countRowsInTable(jdbcTemplate, "fmtsToken"));
 		dao.updateToken(new Token("1234", "2323", ""));
 		Token token = dao.getTokenByClientId("1234");
-		assertEquals(token.getToken(),"2323");
-		assertEquals(token,new Token("1234", "2323", ""));
+		assertEquals(token.getToken(), "2323");
 	}
 
 }

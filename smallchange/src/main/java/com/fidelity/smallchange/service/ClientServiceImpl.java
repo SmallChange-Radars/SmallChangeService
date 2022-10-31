@@ -63,7 +63,7 @@ public class ClientServiceImpl implements ClientService {
 	public Token getToken(ClientDB client) throws ParseException, HttpClientErrorException {
 		Token token = tm.getTokenByClientId(client.getClientId());
 		Date date1 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse(token.getTimestamp());
-		if ((new Date().getTime() - date1.getTime()) <= (5 * 60)) {
+		if ((new Date().getTime() - date1.getTime()) <= (5 * 60 * 1000)) {
 			tm.updateToken(token);
 		} else {
 			token = tokenGeneration(client);

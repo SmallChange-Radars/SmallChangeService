@@ -12,6 +12,8 @@ import javax.sql.DataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.fidelity.smallchange.integration.mapper.TradeExecutionMapper;
@@ -19,6 +21,7 @@ import com.fidelity.smallchange.model.Client;
 import com.fidelity.smallchange.model.Order;
 import com.fidelity.smallchange.model.Trade;
 
+@Component
 public class TradeOrderDaoImpl implements TradeOrderDao {
 
 	@Autowired

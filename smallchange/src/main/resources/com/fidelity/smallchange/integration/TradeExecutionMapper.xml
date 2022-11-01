@@ -17,9 +17,4 @@
 		<result property="order.orderId" column="ORDERID" />
 		
 	</resultMap>
-	<resultMap type="com.fidelity.smallchange.model.Order" id="OrderMap">
-		
-	</resultMap>
-	
-	
 </mapper>

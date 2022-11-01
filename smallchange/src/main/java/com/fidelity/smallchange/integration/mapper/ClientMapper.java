@@ -39,17 +39,24 @@ public interface ClientMapper {
 	})
 	public ClientDB getClientByClientId(String clientId);
 	
+	@Select("""
+			SELECT clientId, email, dob as dateOfBirth, country, postalCode, wallet, walletCurrency,role,password
+			FROM client
+			WHERE email like #{email}
+			""")
+	public ClientDB getClientByEmail(String email);
+	
 	@Insert("""
 			INSERT into client
-			(clientId, email, dob, country, postalCode, wallet, walletCurrency)
-			VALUES(#{clientId}, #{email}, #{dateOfBirth}, #{country}, #{postalCode}, #{wallet}, #{walletCurrency})
+			(clientId, email, dob, country, postalCode, wallet, walletCurrency, role,password)
+			VALUES(#{clientId}, #{email}, #{dateOfBirth}, #{country}, #{postalCode}, #{wallet}, #{walletCurrency}, #{role},#{password})
 			""")
 	public void insertClient(ClientDB client);
 	
 	@Update("""
 			UPDATE client
 			SET email = #{email}, dob = #{dateOfBirth}, country = #{country},
-			postalCode = #{postalCode}, wallet = #{wallet}, walletCurrency = #{walletCurrency}
+			postalCode = #{postalCode}, wallet = #{wallet}, walletCurrency = #{walletCurrency}, role=#{role}
 			WHERE clientId = #{clientId}
 			""")
 	public void updateClient(ClientDB client);

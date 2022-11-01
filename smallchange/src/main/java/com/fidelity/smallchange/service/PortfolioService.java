@@ -1,5 +1,7 @@
 package com.fidelity.smallchange.service;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,5 +26,13 @@ public class PortfolioService {
 
 	public void insertPortfolio(Portfolio portfolio) {
 		dao.insertPortfolio(portfolio);
+	}
+
+	public BigDecimal getPortfolioSummary(String clientId) {
+		BigDecimal summary = BigDecimal.ZERO;
+		for(Portfolio p: dao.getPortfolioByClientId(clientId)) {
+			summary = summary.add(p.getValue());
+		}
+		return summary.setScale(2, RoundingMode.HALF_EVEN);
 	}
 }

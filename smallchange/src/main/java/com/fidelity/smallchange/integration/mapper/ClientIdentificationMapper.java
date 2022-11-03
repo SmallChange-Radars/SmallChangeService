@@ -24,12 +24,12 @@ public interface ClientIdentificationMapper {
 			(clientId, type, value)
 			VALUES(#{clientId}, #{type}, #{value})
 			""")
-	public void insertClientIdentification(String type, String value, String clientId);
+	public int insertClientIdentification(String type, String value, String clientId);
 	
 	@Update("""
 			UPDATE ClientIdentification
 			SET type = #{type}, value = #{value}
 			WHERE clientId = #{clientId}
 			""")
-	void updateClientIdentification(String type, String value, String clientId);
+	int updateClientIdentification(String type, String value, String clientId);
 }

@@ -12,4 +12,8 @@ public interface ClientService {
 	Token getToken(ClientDB client) throws ParseException;
 
 	void insertToken(Client verified);
+	
+	ClientDB getClientByClientId(String clientId);
+	
+	int insertClient(ClientDB client);
 }

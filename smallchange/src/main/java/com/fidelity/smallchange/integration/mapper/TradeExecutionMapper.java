@@ -27,7 +27,7 @@ public interface TradeExecutionMapper {
 			+ "FROM\r\n"
 			+ "    trade            t\r\n"
 			+ "    LEFT JOIN orderinstrument  o ON t.clientid = o.clientid WHERE\r\n"
-			+ "    t.clientid = '1234'")
+			+ "    t.clientid = #{clientId}")
 	@ResultMap("com.fidelity.smallchange.integration.TradeExecutionMapper.GetTradesMap")
 	public List<Trade> getTradesByClient(String clientId);
 
@@ -35,8 +35,9 @@ public interface TradeExecutionMapper {
 			+ " values (#{orderId},#{quantity},#{targetPrice},#{direction},#{clientId},#{instrumentId})")
 	public int insertOrder(Order order);
 	
-	@Insert("INSERT INTO trade values (#{tradeId},#{order.orderId},#{quantity},#{direction},#{clientId},#{instrumentId}"
-			+ "#{exceutionPrice},#{cashValue})")
+	@Insert("INSERT INTO trade (tradeid, orderid,quantity, direction, clientid, instrumentid,executionprice,cashvalue)"
+			+ " values (#{tradeId},#{order.orderId},#{quantity},#{direction},#{order.clientId},#{instrumentId},"
+			+ "#{executionPrice},#{cashValue})")
 	public int insertTrade(Trade trade);
 
 }

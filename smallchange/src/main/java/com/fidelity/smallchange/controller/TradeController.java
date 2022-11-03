@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.server.ServerErrorException;
 
+import com.fidelity.smallchange.model.MessageResponse;
 import com.fidelity.smallchange.model.Order;
 import com.fidelity.smallchange.model.Trade;
 import com.fidelity.smallchange.service.TradeService;
@@ -31,9 +33,7 @@ public class TradeController {
 	
 	
 	@GetMapping(value="/tradeActivity", produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<Trade>> getTradeActivity(Authentication authentication){
-		UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
-		System.out.println(userDetails.getClientId());
+	public ResponseEntity<List<Trade>> getTradeActivity(@AuthenticationPrincipal UserDetailsImpl userDetails){
 		try {
 			List<Trade> tradeHistory = tradeService.getTradeActivityByClientId(userDetails.getClientId());
 			if(tradeHistory.size()==0 || tradeHistory == null) {
@@ -46,14 +46,12 @@ public class TradeController {
 	}
 	
 	@PostMapping(value="/tradeExecution", produces=MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> tradeExecution(Authentication authentication, @RequestBody Order order){
-		UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
-		String clientId = userDetails.getClientId();
+	public ResponseEntity<?> tradeExecution(@AuthenticationPrincipal UserDetailsImpl userDetails, @RequestBody Order order){
 		try {
-			if(tradeService.tradeExecution(order, clientId)) {
-				return ResponseEntity.status(HttpStatus.OK).build();
+			if(tradeService.tradeExecution(order, userDetails.getClientId())) {
+				return ResponseEntity.status(HttpStatus.OK).body(new MessageResponse("Trade executed successfully"));
 			}
-			return ResponseEntity.status(HttpStatus.CONFLICT).build();			
+			return ResponseEntity.status(HttpStatus.CONFLICT).body(new MessageResponse("Price mismatch"));			
 		}catch(Exception e) {
 			throw new ServerErrorException("Error while conencting to DB",e);
 		}

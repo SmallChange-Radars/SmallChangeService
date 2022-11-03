@@ -41,14 +41,12 @@ public class TradeServiceImpl implements TradeService {
 	@Override
 	public boolean tradeExecution(Order order, String clientId) throws Exception {
 		try {
-			System.out.println("hello");
 			Token token = clientService.getToken(clientId);
 			order.setClientId(clientId);
 			order.setToken(token.getToken());
-			System.out.println(order.toString());
 			dao.insertOrder(order);
 			Trade trade = fmtsRestClient.tradeExecution(order);
-			System.out.println(trade.toString());
+			trade.getOrder().setOrderId(order.getOrderId());
 			if(trade==null) {
 				return false;
 			}

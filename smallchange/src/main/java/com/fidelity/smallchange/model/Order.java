@@ -9,7 +9,7 @@ public class Order {
 	private BigDecimal targetPrice;
 	private String direction;
 	private String clientId;
-	private String orderId;
+	private int orderId;
 	private String token;
 	
 	public Order() {
@@ -17,7 +17,7 @@ public class Order {
 	}
 	
 	public Order(String instrumentId, int quantity, BigDecimal targetPrice, String direction, String clientId,
-			String orderId) {
+			int orderId) {
 		super();
 		this.instrumentId = instrumentId;
 		this.quantity = quantity;
@@ -66,11 +66,11 @@ public class Order {
 		this.clientId = clientId;
 	}
 
-	public String getOrderId() {
+	public int getOrderId() {
 		return orderId;
 	}
 
-	public void setOrderId(String orderId) {
+	public void setOrderId(int orderId) {
 		this.orderId = orderId;
 	}
 	

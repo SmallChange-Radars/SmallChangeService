@@ -90,6 +90,7 @@ public class ClientServiceImpl implements ClientService {
 	@Override
 	public Token getToken(String clientId) throws ParseException, HttpClientErrorException {
 		Token token = tm.getTokenByClientId(clientId);
+		System.out.println("here"+token.getToken());
 		Date date1 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse(token.getTimestamp());
 		if ((new Date().getTime() - date1.getTime()) <= (5 * 60 * 1000)) {
 			tm.updateToken(token);

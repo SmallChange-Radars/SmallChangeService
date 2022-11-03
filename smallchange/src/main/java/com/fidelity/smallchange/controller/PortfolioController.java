@@ -1,6 +1,7 @@
 package com.fidelity.smallchange.controller;
 
 import java.math.BigDecimal;
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ public class PortfolioController {
 		this.portfolioService = portfolioService;
 	}
 
-	@GetMapping(path = "portfolio")
+	@GetMapping(path = "portfolio/all")
 	public List<Portfolio> getAllPortfolios(Authentication authentication) {
 		UserDetailsImpl userDetails = (UserDetailsImpl) authentication
                 .getPrincipal();
@@ -33,9 +34,12 @@ public class PortfolioController {
 		return portfolioService.getAllPortfolios();
 	}
 
-	@GetMapping(path = "portfolio/{clientId}")
-	public List<Portfolio> getPortfolioByClientId(@PathVariable String clientId) {
-		return portfolioService.getPortfolioByClientId(clientId);
+	@GetMapping(path = "portfolio")
+	public List<Portfolio> getPortfolioByClientId(Authentication authentication) {
+		UserDetailsImpl userDetails = (UserDetailsImpl) authentication
+                .getPrincipal();
+		System.out.println(userDetails.getClientId());
+		return portfolioService.getPortfolioByClientId(userDetails.getClientId());
 	}
 
 	@PostMapping(path = "insertportfolio")

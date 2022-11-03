@@ -12,7 +12,7 @@ public interface TradeOrderDao {
 	
 	
 	
-	List<Trade> getTradesByClient(String clientId);
+	List<Trade> getTradeActivityByClient(String clientId);
 	
 	boolean insertTrade(Trade trade);
 

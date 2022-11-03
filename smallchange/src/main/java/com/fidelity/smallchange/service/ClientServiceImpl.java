@@ -120,6 +120,7 @@ public class ClientServiceImpl implements ClientService {
 		List<ClientIdentification> identification = signUpRequest.getClientIdentification();
 		try {
 			count = dao.insertClient(signUpRequest);
+			if(identification!=null)
 			for(ClientIdentification id: identification) {
 				identificationDao.insertClientIdentification(id.getType(), encoder.encode(id.getValue()), client.getClientId());
 			}

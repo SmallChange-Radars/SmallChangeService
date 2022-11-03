@@ -73,6 +73,15 @@ public class Order {
 	public void setOrderId(String orderId) {
 		this.orderId = orderId;
 	}
+	
+
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+	}
 
 	@Override
 	public int hashCode() {
@@ -95,9 +104,12 @@ public class Order {
 
 	@Override
 	public String toString() {
-		return "order [instrumentId=" + instrumentId + ", quantity=" + quantity + ", targetPrice=" + targetPrice
-				+ ", direction=" + direction + ", clientId=" + clientId + ", orderId=" + orderId + "]";
+		return "Order [instrumentId=" + instrumentId + ", quantity=" + quantity + ", targetPrice=" + targetPrice
+				+ ", direction=" + direction + ", clientId=" + clientId + ", orderId=" + orderId + ", token=" + token
+				+ "]";
 	}
+
+	
 	
 	
 	

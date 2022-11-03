@@ -27,7 +27,7 @@ public class ClientPreferencesServiceImpl implements ClientPreferencesService{
 	}
 
 	@Override
-	public int insertClientPreferences(ClientPreferences preferences) {
+	public int insertClientPreferences(ClientPreferences preferences, String clientId) {
 		int count = 0;
 		try {
 			count = dao.insertClientPreferences(preferences);
@@ -40,7 +40,7 @@ public class ClientPreferencesServiceImpl implements ClientPreferencesService{
 	}
 
 	@Override
-	public int updateClientPreferences(ClientPreferences preferences) {
+	public int updateClientPreferences(ClientPreferences preferences, String clientId) {
 		int count = 0;
 		try {
 			count = dao.updateClientPreferences(preferences);

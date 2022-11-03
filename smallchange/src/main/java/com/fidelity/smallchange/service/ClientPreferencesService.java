@@ -5,6 +5,6 @@ import com.fidelity.smallchange.model.ClientPreferences;
 public interface ClientPreferencesService {
 
 	ClientPreferences getClientPreferencesById(String clientId);
-	int insertClientPreferences(ClientPreferences preferences);
-	int updateClientPreferences(ClientPreferences preferences);
+	int insertClientPreferences(ClientPreferences preferences,String clientId);
+	int updateClientPreferences(ClientPreferences preferences, String clientId);
 }

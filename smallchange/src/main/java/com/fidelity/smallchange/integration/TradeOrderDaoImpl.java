@@ -37,8 +37,15 @@ public class TradeOrderDaoImpl implements TradeOrderDao {
 	
 	@Override
 	@Transactional
+	public boolean insertOrder(Order order) {
+		return tradeExecutionMapper.insertOrder(order)==1;
+	}
+	
+	
+	@Override
+	@Transactional
 	public boolean insertTrade(Trade trade) {
-		tradeExecutionMapper.insertOrder(trade.getOrder());
+		
 		return tradeExecutionMapper.insertTrade(trade) == 1;
 	}
 

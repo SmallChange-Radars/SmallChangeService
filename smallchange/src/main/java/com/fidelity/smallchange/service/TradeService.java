@@ -8,5 +8,5 @@ import com.fidelity.smallchange.model.Trade;
 public interface TradeService {
 	public List<Trade> getTradeActivityByClientId(String clientId) throws Exception;
 	
-	public void tradeExecution(Order order) throws Exception;
+	public boolean tradeExecution(Order order, String clientId) throws Exception;
 }

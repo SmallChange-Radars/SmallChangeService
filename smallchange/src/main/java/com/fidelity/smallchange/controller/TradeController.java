@@ -4,14 +4,17 @@ import java.util.List;
 
 import java.security.Principal;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.server.ServerErrorException;
 
 import com.fidelity.smallchange.model.Order;
@@ -42,15 +45,19 @@ public class TradeController {
 		}
 	}
 	
-	@GetMapping(value="/tradeExecution", produces=MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(value="/tradeExecution", produces=MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> tradeExecution(Authentication authentication, @RequestBody Order order){
 		UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
-		System.out.println(userDetails.getClientId());
-		
+		String clientId = userDetails.getClientId();
 		try {
-			
+			if(tradeService.tradeExecution(order, clientId)) {
+				return ResponseEntity.status(HttpStatus.OK).build();
+			}
+			return ResponseEntity.status(HttpStatus.CONFLICT).build();			
 		}catch(Exception e) {
-			
+			throw new ServerErrorException("Error while conencting to DB",e);
 		}
+		
+		
 	}
 }

@@ -1,5 +1,6 @@
 package com.fidelity.smallchange.service;
 
+import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -18,6 +19,7 @@ import org.springframework.web.client.HttpClientErrorException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fidelity.smallchange.integration.ClientDao;
 import com.fidelity.smallchange.integration.ClientIdentificationDao;
+import com.fidelity.smallchange.integration.ClientPreferencesDao;
 import com.fidelity.smallchange.integration.DatabaseException;
 import com.fidelity.smallchange.integration.FMTSRestClient;
 import com.fidelity.smallchange.integration.mapper.TokenMapper;
@@ -25,6 +27,7 @@ import com.fidelity.smallchange.jwt.JwtUtils;
 import com.fidelity.smallchange.model.Client;
 import com.fidelity.smallchange.model.ClientDB;
 import com.fidelity.smallchange.model.ClientIdentification;
+import com.fidelity.smallchange.model.ClientPreferences;
 import com.fidelity.smallchange.model.JwtResponse;
 import com.fidelity.smallchange.model.Token;
 
@@ -39,6 +42,9 @@ public class ClientServiceImpl implements ClientService {
 	
 	@Autowired
 	ClientDao dao;
+	
+	@Autowired
+	ClientPreferencesDao prefDao;
 	
 	@Autowired
 	ClientIdentificationDao identificationDao;
@@ -120,6 +126,7 @@ public class ClientServiceImpl implements ClientService {
 		List<ClientIdentification> identification = signUpRequest.getClientIdentification();
 		try {
 			count = dao.insertClient(signUpRequest);
+			if(identification!=null)
 			for(ClientIdentification id: identification) {
 				identificationDao.insertClientIdentification(id.getType(), encoder.encode(id.getValue()), client.getClientId());
 			}
@@ -161,5 +168,74 @@ public class ClientServiceImpl implements ClientService {
 				.collect(Collectors.toList());
 		return new JwtResponse(accessToken, userDetails.getUsername(), roles);
 	}
+
+
+	@Override
+	public ClientDB getClientWalletByClientId(String clientId) {
+		ClientDB client = null;
+		try {
+			client = dao.getClientWalletById(clientId);
+		}
+		catch(Exception e) {
+			String msg = "Error querying for Client wallet in the Smallchange database.";
+			throw new DatabaseException(msg, e);
+		}
+		return client;
+	}
+
+
+	@Override
+	public int updateClientWallet(String clientId, BigDecimal wallet) {
+		int count = 0;
+		try {
+			count = dao.updateClientWallet(wallet, clientId);
+		}
+		catch(Exception e) {
+			String msg = "Error updating Client wallet in the Smallchange database.";
+			throw new DatabaseException(msg, e);
+		}
+		return count;
+	}
+	
+	@Override
+	public ClientPreferences getClientPreferencesById(String clientId) {
+		ClientPreferences preferences = null;
+		try {
+			preferences = prefDao.getClientPreferences(clientId);
+		}
+		catch(Exception e) {
+			String msg = String.format("Error querying For ClientPreferences with id = %s in the Smallchange database.", clientId);
+			throw new DatabaseException(msg, e);
+		}
+		return preferences;
+	}
+
+	@Override
+	public int insertClientPreferences(ClientPreferences preferences) {
+		int count = 0;
+		try {
+			count = prefDao.insertClientPreferences(preferences);
+		}
+		catch(Exception e) {
+			String msg = "Error inserting ClientPreferences in the Smallchange database.";
+			throw new DatabaseException(msg, e);
+		}
+		return count;
+	}
+
+	@Override
+	public int updateClientPreferences(ClientPreferences preferences) {
+		int count = 0;
+		try {
+			count = prefDao.updateClientPreferences(preferences);
+		}
+		catch(Exception e) {
+			String msg = "Error updating ClientPreferences in the Smallchange database.";
+			throw new DatabaseException(msg, e);
+		}
+		return count;
+	}
+	
+	
 
 }

@@ -12,8 +12,8 @@ public interface TradeOrderDao {
 	
 	
 	
-	List<Trade> getTradesByClient(Client client);
+	List<Trade> getTradesByClient(String clientId);
 	
-	void insertTrade(Trade trade);
+	boolean insertTrade(Trade trade);
 
 }

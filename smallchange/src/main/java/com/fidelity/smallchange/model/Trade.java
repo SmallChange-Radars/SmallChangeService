@@ -13,21 +13,28 @@ public class Trade {
 	private String tradeId;
 	private BigDecimal cashValue;
 	
+	public Trade() {
+		
+	}
 	
-	public Trade(String instrumentId, int quantity, BigDecimal executionPrice, String direction, Order order,
-			String tradeId, BigDecimal cashValue) {
+	
+	public Trade(String tradeId,String instrumentId, int quantity, String direction,  BigDecimal executionPrice,
+			 BigDecimal cashValue,Order order) {
 		super();
 		this.instrumentId = instrumentId;
 		this.quantity = quantity;
 		this.executionPrice = executionPrice;
 		this.direction = direction;
-		this.order = order;
 		this.tradeId = tradeId;
-		this.cashValue = cashValue;
+		this.cashValue =cashValue;
+		this.order=order;
 	}
-	public Trade() {
-		// TODO Auto-generated constructor stub
+	
+	public Trade(String tradeId,String instrumentId, int quantity, String direction,  BigDecimal executionPrice,
+			 BigDecimal cashValue) {
+		this(tradeId, instrumentId, quantity, direction, executionPrice, cashValue, null);
 	}
+	
 	public String getInstrumentId() {
 		return instrumentId;
 	}
@@ -70,10 +77,14 @@ public class Trade {
 	public void setCashValue(BigDecimal cashValue) {
 		this.cashValue = cashValue;
 	}
+
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(cashValue, direction, executionPrice, instrumentId, order, quantity, tradeId);
 	}
+
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -86,14 +97,17 @@ public class Trade {
 		return Objects.equals(cashValue, other.cashValue) && Objects.equals(direction, other.direction)
 				&& Objects.equals(executionPrice, other.executionPrice)
 				&& Objects.equals(instrumentId, other.instrumentId) && Objects.equals(order, other.order)
-				&& Objects.equals(quantity, other.quantity) && Objects.equals(tradeId, other.tradeId);
+				&& quantity == other.quantity && Objects.equals(tradeId, other.tradeId);
 	}
+
+
 	@Override
 	public String toString() {
 		return "Trade [instrumentId=" + instrumentId + ", quantity=" + quantity + ", executionPrice=" + executionPrice
 				+ ", direction=" + direction + ", order=" + order + ", tradeId=" + tradeId + ", cashValue=" + cashValue
 				+ "]";
 	}
+	
 	
 	
 

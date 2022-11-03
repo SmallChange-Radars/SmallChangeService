@@ -51,7 +51,7 @@ public interface ClientMapper {
 			(clientId, email, dob, country, postalCode, wallet, walletCurrency, role,password)
 			VALUES(#{clientId}, #{email}, #{dateOfBirth}, #{country}, #{postalCode}, #{wallet}, #{walletCurrency}, #{role},#{password})
 			""")
-	public void insertClient(ClientDB client);
+	public int insertClient(ClientDB client);
 	
 	@Update("""
 			UPDATE client

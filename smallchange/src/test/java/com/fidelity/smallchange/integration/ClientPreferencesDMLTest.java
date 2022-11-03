@@ -28,7 +28,7 @@ class ClientPreferencesDMLTest {
 		dbTestUtils = new DbTestUtils(connection);
 		jdbcTemplate = dbTestUtils.initJdbcTemplate();
 
-		dao = new ClientPreferencesDaoOracleImpl(dataSource);
+		//dao = new ClientPreferencesDaoOracleImpl(dataSource);
 	}
 
 	@AfterEach

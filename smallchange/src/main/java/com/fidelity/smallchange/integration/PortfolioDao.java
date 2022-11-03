@@ -9,4 +9,5 @@ public interface PortfolioDao {
 	List<Portfolio> getPortfolioByClientId(String clientId); 
 	void insertPortfolio(Portfolio portfolio);
 	void updatePortfolio(Portfolio portfolio);
+	void deletePortfolioByClientIdAndInstrumentId(String clientId, String instrumentId);
 }

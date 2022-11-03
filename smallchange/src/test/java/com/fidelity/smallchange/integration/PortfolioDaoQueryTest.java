@@ -22,7 +22,7 @@ class PortfolioDaoQueryTest {
 	void setUp() throws Exception {
 		dataSource = new SimpleDataSource();
 		
-		dao = new PortfolioDaoOracleImpl(dataSource);
+		dao = new PortfolioDaoMyBatisImpl(dataSource);
 	}
 
 	@AfterEach

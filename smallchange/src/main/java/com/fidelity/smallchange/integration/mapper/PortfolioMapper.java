@@ -18,9 +18,10 @@ public interface PortfolioMapper {
 	public List<Portfolio> getAllPortfolios();
 	
 	@Select("""
-			SELECT clientId, instrumentId, quantity, value
+			SELECT clientId, instrumentId, SUM(quantity) AS quantity, SUM(value) AS value
 			FROM portfolio
-			WHERE clientId = #{clientId}
+            WHERE clientId = #{clientId}
+            GROUP BY instrumentId, clientId
 			""")
 	public List<Portfolio> getPortfolioByClientId(String clientId);
 	

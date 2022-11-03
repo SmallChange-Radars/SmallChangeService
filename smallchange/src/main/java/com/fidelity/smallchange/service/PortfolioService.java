@@ -7,14 +7,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.fidelity.smallchange.integration.mapper.PortfolioMapper;
+import com.fidelity.smallchange.integration.PortfolioDaoMyBatisImpl;
 import com.fidelity.smallchange.model.Portfolio;
 
 @Service
 public class PortfolioService {
 	
 	@Autowired 
-	PortfolioMapper dao;
+	PortfolioDaoMyBatisImpl dao;
 	
 	public List<Portfolio> getAllPortfolios() {
 		return dao.getAllPortfolios();

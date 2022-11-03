@@ -21,7 +21,7 @@ import com.fidelity.smallchange.model.Client;
 import com.fidelity.smallchange.model.Order;
 import com.fidelity.smallchange.model.Trade;
 
-@Component
+@Repository
 public class TradeOrderDaoImpl implements TradeOrderDao {
 
 	@Autowired
@@ -29,17 +29,23 @@ public class TradeOrderDaoImpl implements TradeOrderDao {
 	
 	private final Logger logger = LoggerFactory.getLogger(TradeOrderDaoImpl.class);
 
-	
-	// change int clientID to Client client
+
 	@Override
-	public List<Trade> getTradesByClient(String clientId) {
+	public List<Trade> getTradeActivityByClient(String clientId) {
 		return tradeExecutionMapper.getTradesByClient(clientId);
 	}
 	
 	@Override
 	@Transactional
+	public boolean insertOrder(Order order) {
+		return tradeExecutionMapper.insertOrder(order)==1;
+	}
+	
+	
+	@Override
+	@Transactional
 	public boolean insertTrade(Trade trade) {
-		tradeExecutionMapper.insertOrder(trade.getOrder());
+		
 		return tradeExecutionMapper.insertTrade(trade) == 1;
 	}
 

@@ -11,13 +11,17 @@ public class Order {
 	private String clientId;
 	private String orderId;
 	private String token;
-
+	
+	public Order() {
+		
+	}
+	
 	public Order(String instrumentId, int quantity, BigDecimal targetPrice, String direction, String clientId,
-			String orderId, String token) {
+			String orderId) {
 		super();
 		this.instrumentId = instrumentId;
 		this.quantity = quantity;
-		this.targetPrice = targetPrice;
+		this.targetPrice =targetPrice;
 		this.direction = direction;
 		this.clientId = clientId;
 		this.orderId = orderId;
@@ -31,11 +35,9 @@ public class Order {
 	public void setInstrumentId(String instrumentId) {
 		this.instrumentId = instrumentId;
 	}
-
 	public int getQuantity() {
 		return quantity;
 	}
-
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
@@ -96,13 +98,7 @@ public class Order {
 		return "order [instrumentId=" + instrumentId + ", quantity=" + quantity + ", targetPrice=" + targetPrice
 				+ ", direction=" + direction + ", clientId=" + clientId + ", orderId=" + orderId + "]";
 	}
-
-	public String getToken() {
-		return token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-	}
-
+	
+	
+	
 }

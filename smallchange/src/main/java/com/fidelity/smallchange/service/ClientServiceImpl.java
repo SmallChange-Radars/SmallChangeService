@@ -3,18 +3,29 @@ package com.fidelity.smallchange.service;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fidelity.smallchange.integration.ClientDao;
+import com.fidelity.smallchange.integration.ClientIdentificationDao;
 import com.fidelity.smallchange.integration.DatabaseException;
 import com.fidelity.smallchange.integration.FMTSRestClient;
 import com.fidelity.smallchange.integration.mapper.TokenMapper;
+import com.fidelity.smallchange.jwt.JwtUtils;
 import com.fidelity.smallchange.model.Client;
 import com.fidelity.smallchange.model.ClientDB;
+import com.fidelity.smallchange.model.ClientIdentification;
+import com.fidelity.smallchange.model.JwtResponse;
 import com.fidelity.smallchange.model.Token;
 
 @Service
@@ -28,6 +39,18 @@ public class ClientServiceImpl implements ClientService {
 	
 	@Autowired
 	ClientDao dao;
+	
+	@Autowired
+	ClientIdentificationDao identificationDao;
+	
+	@Autowired
+	PasswordEncoder encoder;
+	
+	@Autowired
+	AuthenticationManager authenticationManager;
+	
+	@Autowired
+	JwtUtils jwtUtils;
 
 	@Override
 	public Client clientVerification(ClientDB client) throws HttpClientErrorException {
@@ -42,8 +65,8 @@ public class ClientServiceImpl implements ClientService {
 		return verified;
 	}
 
-	@Override
-	public void insertToken(Client verified) {
+	
+	private void insertToken(Client verified) {
 		tm.insertToken(new Token(verified.getClientId(), verified.getToken(),
 				new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").format(new Date())));
 	}
@@ -90,16 +113,22 @@ public class ClientServiceImpl implements ClientService {
 	}
 
 	@Override
-	public int insertClient(ClientDB client) {
+	public int insertClient(ClientDB signUpRequest, Client client) {
 		int count = 0;
-		
+		signUpRequest.setPassword(encoder.encode(signUpRequest.getPassword()));
+		signUpRequest.setClientId(client.getClientId());
+		List<ClientIdentification> identification = signUpRequest.getClientIdentification();
 		try {
-			count = dao.insertClient(client);
+			count = dao.insertClient(signUpRequest);
+			for(ClientIdentification id: identification) {
+				identificationDao.insertClientIdentification(id.getType(), encoder.encode(id.getValue()), client.getClientId());
+			}
 		}
 		catch(Exception e) {
 			String msg = "Error inserting Client in the Smallchange database.";
 			throw new DatabaseException(msg, e);
 		}
+		insertToken(client);
 		return count;
 	}
 
@@ -117,6 +146,20 @@ public class ClientServiceImpl implements ClientService {
 			throw new DatabaseException(msg, e);
 		}
 		return result;
+	}
+
+	@Override
+	public JwtResponse loginClient(ClientDB loginRequest) {
+		Authentication authentication = authenticationManager.authenticate(
+				new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword()));
+
+		SecurityContextHolder.getContext().setAuthentication(authentication);
+		String accessToken = jwtUtils.generateJwtToken(authentication);
+
+		UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
+		List<String> roles = userDetails.getAuthorities().stream().map(item -> item.getAuthority())
+				.collect(Collectors.toList());
+		return new JwtResponse(accessToken, userDetails.getUsername(), roles);
 	}
 
 }

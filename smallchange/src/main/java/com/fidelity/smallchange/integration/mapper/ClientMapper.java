@@ -46,6 +46,12 @@ public interface ClientMapper {
 			""")
 	public ClientDB getClientByEmail(String email);
 	
+	@Select("""
+			SELECT count(*) FROM client
+			WHERE email like #(email)
+			""")
+	public int getNumberOfClientsByEmail(String email);
+	
 	@Insert("""
 			INSERT into client
 			(clientId, email, dob, country, postalCode, wallet, walletCurrency, role,password)

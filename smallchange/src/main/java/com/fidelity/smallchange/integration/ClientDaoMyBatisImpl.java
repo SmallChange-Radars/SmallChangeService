@@ -24,4 +24,10 @@ public class ClientDaoMyBatisImpl implements ClientDao {
 		return count;
 	}
 
+	@Override
+	public int checkClientByEmail(String email) {
+		int count = mapper.getNumberOfClientsByEmail(email);
+		return count;
+	}
+
 }

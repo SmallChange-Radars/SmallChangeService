@@ -6,4 +6,5 @@ public interface ClientDao {
 	
 	ClientDB getClientById(String clientId);
 	int insertClient(ClientDB client);
+	int checkClientByEmail(String email);
 }

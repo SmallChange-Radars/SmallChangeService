@@ -65,13 +65,13 @@ public class ClientServiceImpl implements ClientService {
 	}
 
 	@Override
-	public Token getToken(ClientDB client) throws ParseException, HttpClientErrorException {
-		Token token = tm.getTokenByClientId(client.getClientId());
+	public Token getToken(String clientId) throws ParseException, HttpClientErrorException {
+		Token token = tm.getTokenByClientId(clientId);
 		Date date1 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse(token.getTimestamp());
 		if ((new Date().getTime() - date1.getTime()) <= (5 * 60 * 1000)) {
 			tm.updateToken(token);
 		} else {
-			token = tokenGeneration(client);
+			token = tokenGeneration(dao.getClientById(clientId));
 		}
 		return token;
 	}
@@ -101,6 +101,22 @@ public class ClientServiceImpl implements ClientService {
 			throw new DatabaseException(msg, e);
 		}
 		return count;
+	}
+
+	@Override
+	public boolean checkClientByEmail(String email) {
+		boolean result = true;
+		int count = 0;
+		
+		try {
+			count = dao.checkClientByEmail(email);
+			result = count>0? true : false;
+		}
+		catch(Exception e) {
+			String msg = "Error checking for client in the Smallchange database.";
+			throw new DatabaseException(msg, e);
+		}
+		return result;
 	}
 
 }

@@ -77,7 +77,7 @@ public class AuthController {
 	@PostMapping(value="/signup", produces=MediaType.APPLICATION_JSON_VALUE,
 			consumes=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> registerUser(@Validated @RequestBody ClientDB signUpRequest) {
-		if (userRepository.getClientByEmail(signUpRequest.getEmail()) != null) {
+		if (cs.checkClientByEmail(signUpRequest.getEmail()) == true) {
 			return ResponseEntity.badRequest().body(new MessageResponse("Error: Email is already in use!"));
 		}
 		

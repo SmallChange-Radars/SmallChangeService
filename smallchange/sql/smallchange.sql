@@ -24,7 +24,7 @@ CREATE TABLE client (
 
 CREATE TABLE clientIdentification (
     type VARCHAR2(20),
-    value VARCHAR2(50),
+    value VARCHAR2(200),
     clientId VARCHAR2(20),
     FOREIGN KEY (clientId) REFERENCES client (clientId)
 );

@@ -9,7 +9,13 @@ import com.fidelity.smallchange.model.Token;
 public interface ClientService {
 	Client clientVerification(ClientDB client);
 
-	Token getToken(ClientDB client) throws ParseException;
+	Token getToken(String clientId) throws ParseException;
 
 	void insertToken(Client verified);
+	
+	ClientDB getClientByClientId(String clientId);
+	
+	int insertClient(ClientDB client);
+	
+	boolean checkClientByEmail (String email);
 }

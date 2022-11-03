@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -35,9 +36,7 @@ public class PortfolioController {
 	}
 
 	@GetMapping(path = "portfolio")
-	public List<Portfolio> getPortfolioByClientId(Authentication authentication) {
-		UserDetailsImpl userDetails = (UserDetailsImpl) authentication
-                .getPrincipal();
+	public List<Portfolio> getPortfolioByClientId(@AuthenticationPrincipal UserDetailsImpl userDetails) {
 		System.out.println(userDetails.getClientId());
 		return portfolioService.getPortfolioByClientId(userDetails.getClientId());
 	}

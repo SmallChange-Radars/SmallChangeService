@@ -23,7 +23,7 @@ public interface ClientPreferencesMapper {
 			(clientId,investmentPurpose, riskTolerance, incomeCategory,lengthOfInvestment)
 			VALUES (#{clientId}, #{investmentPurpose}, #{riskTolerance}, #{incomeCategory}, #{lengthOfInvestment})
 			""")
-	void insertClientPreferences(ClientPreferences clientPreferences);
+	int insertClientPreferences(ClientPreferences clientPreferences);
 	
 	@Update("""
 			UPDATE preferences
@@ -31,5 +31,5 @@ public interface ClientPreferencesMapper {
 			incomeCategory = #{incomeCategory},lengthOfInvestment = #{lengthOfInvestment}
 			WHERE clientId = #{clientId}
 			""")
-	void updateClientPreferences(ClientPreferences clientPreferences);
+	int updateClientPreferences(ClientPreferences clientPreferences);
 }

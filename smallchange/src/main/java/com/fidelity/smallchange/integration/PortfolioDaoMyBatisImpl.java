@@ -42,6 +42,13 @@ public class PortfolioDaoMyBatisImpl implements PortfolioDao {
 	@Override
 	public void deletePortfolioByClientIdAndInstrumentId(String clientId, String instrumentId) {
 		mapper.deletePortfolioByClientIdAndInstrumentId(clientId, instrumentId);
+	}
+
+
+	@Override
+	public Portfolio getPortfolioByClientIdAndInstrumentId(String clientId, String instrumentId) {
+		mapper.getPortfolioByClientIdAndInstrumentId(clientId, instrumentId);
+		return null;
 	}	
 
 	

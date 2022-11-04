@@ -24,9 +24,15 @@ public interface PortfolioMapper {
 			SELECT clientId, instrumentId, quantity, value
 			FROM portfolio
             WHERE clientId = #{clientId}
-            GROUP BY instrumentId, clientId
 			""")
 	public List<Portfolio> getPortfolioByClientId(String clientId);
+	
+	@Select("""
+			SELECT clientId, instrumentId, quantity, value
+			FROM portfolio
+            WHERE clientId = #{clientId} AND instrumentId = #{instrumentId}
+			""")
+	public void getPortfolioByClientIdAndInstrumentId(String clientId, String instrumentId);
 	
 	@Insert("""
 			INSERT 

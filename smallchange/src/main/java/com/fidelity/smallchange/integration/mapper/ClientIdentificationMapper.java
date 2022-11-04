@@ -17,14 +17,14 @@ public interface ClientIdentificationMapper {
 			FROM ClientIdentification
 			WHERE clientId = ${clientId}
 			""")
-	public List<ClientIdentification> getClientIdentificationByClientId(String clientId);
+	List<ClientIdentification> getClientIdentificationByClientId(String clientId);
 	
 	@Insert("""
 			INSERT into ClientIdentification
-			(clientId, type, value)
-			VALUES(#{clientId}, #{type}, #{value})
+			(type, value, clientId)
+			VALUES(#{type}, #{value}, #{clientId})
 			""")
-	public int insertClientIdentification(String type, String value, String clientId);
+	int insertClientIdentification(String type, String value, String clientId);
 	
 	@Update("""
 			UPDATE ClientIdentification

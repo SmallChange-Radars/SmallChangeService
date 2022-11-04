@@ -1,5 +1,6 @@
 package com.fidelity.smallchange.integration.mapper;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -48,14 +49,14 @@ public interface ClientMapper {
 	
 	@Select("""
 			SELECT count(*) FROM client
-			WHERE email like #(email)
+			WHERE email like #{email}
 			""")
 	public int getNumberOfClientsByEmail(String email);
 	
 	@Insert("""
 			INSERT into client
-			(clientId, email, dob, country, postalCode, wallet, walletCurrency, role,password)
-			VALUES(#{clientId}, #{email}, #{dateOfBirth}, #{country}, #{postalCode}, #{wallet}, #{walletCurrency}, #{role},#{password})
+			(clientId, email, dob, country, postalCode, wallet, walletCurrency, role, password)
+			VALUES(#{clientId}, #{email}, #{dateOfBirth}, #{country}, #{postalCode}, #{wallet}, #{walletCurrency}, #{role}, #{password})
 			""")
 	public int insertClient(ClientDB client);
 	
@@ -66,5 +67,20 @@ public interface ClientMapper {
 			WHERE clientId = #{clientId}
 			""")
 	public void updateClient(ClientDB client);
+	
+	@Select("""
+			SELECT wallet, walletCurrency
+			FROM client
+			WHERE clientId = #{clientId}
+			""")
+	public ClientDB getClientWalletByClientId(String clientId);
+	
+	@Update("""
+			UPDATE client
+			SET wallet = #{wallet}
+			WHERE clientId = #{clientId}
+			""")
+	public int updateClientWallet(BigDecimal wallet, String clientId);
+
 	
 }

@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.server.ResponseStatusException;
+import org.springframework.web.server.ServerErrorException;
 
 import com.fidelity.smallchange.integration.mapper.ClientMapper;
 import com.fidelity.smallchange.jwt.JwtUtils;
@@ -36,38 +37,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
-	@Autowired
-	AuthenticationManager authenticationManager;
-
-	@Autowired
-	ClientMapper userRepository;
 
 	@Autowired
 	ClientService cs;
 
-	@Autowired
-	PasswordEncoder encoder;
-
-	@Autowired
-	JwtUtils jwtUtils;
+	
+	private static final String DB_ERROR_MSG = "Error communicating with the Smallchange database";
 
 	@PostMapping(value="/signin", produces=MediaType.APPLICATION_JSON_VALUE,
 			consumes=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> authenticateUser(@Validated @RequestBody ClientDB loginRequest) {
 
+		JwtResponse response;
 		try {
-			//all except response message
-			Authentication authentication = authenticationManager.authenticate(
-					new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword()));
-
-			SecurityContextHolder.getContext().setAuthentication(authentication);
-			String accessToken = jwtUtils.generateJwtToken(authentication);
-
-			UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
-			List<String> roles = userDetails.getAuthorities().stream().map(item -> item.getAuthority())
-					.collect(Collectors.toList());
-
-			return ResponseEntity.ok(new JwtResponse(accessToken, userDetails.getUsername(), roles));
+			response = cs.loginClient(loginRequest);
+			return ResponseEntity.ok(response);
 
 		} catch (BadCredentialsException ex) {
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
@@ -77,11 +61,10 @@ public class AuthController {
 	@PostMapping(value="/signup", produces=MediaType.APPLICATION_JSON_VALUE,
 			consumes=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> registerUser(@Validated @RequestBody ClientDB signUpRequest) {
-		if (cs.checkClientByEmail(signUpRequest.getEmail()) == true) {
+		if (cs.checkClientByEmail(signUpRequest.getEmail())) {
 			return ResponseEntity.badRequest().body(new MessageResponse("Error: Email is already in use!"));
 		}
 		
-		//first check db and then make request
 		Client client = new Client();
 		try {
 			client = cs.clientVerification(signUpRequest);
@@ -89,18 +72,13 @@ public class AuthController {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid Credentials", e);
 		}
 
-		//TODO: encrypt whats to be encrypted
-		// Create new user's account 
+		try {
+			cs.insertClient(signUpRequest, client);
+		}
+		catch(RuntimeException e) {
+			throw new ServerErrorException(DB_ERROR_MSG, e);
+		}
 		
-		signUpRequest.setPassword(encoder.encode(signUpRequest.getPassword()));
-		signUpRequest.setClientId(client.getClientId());
-
-		userRepository.insertClient(signUpRequest);
-		
-		// Insert into client identification
-		
-		cs.insertToken(client);
-
 		return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
 	}
 }

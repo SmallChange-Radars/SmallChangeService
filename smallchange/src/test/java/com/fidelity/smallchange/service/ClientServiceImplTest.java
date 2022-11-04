@@ -33,6 +33,7 @@ class ClientServiceImplTest {
 
 	@Mock
 	FMTSRestClient rc;
+
 	@Mock
 	TokenMapper tm;
 
@@ -69,8 +70,7 @@ class ClientServiceImplTest {
 			throws HttpClientErrorException, JsonProcessingException, ParseException {
 		when(tm.getTokenByClientId(anyString())).thenReturn(
 				new Token("1234", "4321", new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").format(new Date())));
-		Token token = cs
-				.getToken(new ClientDB("1234", null, null, Country.of("US"), null, null, null, null, null, null, null));
+		Token token = cs.getToken("1234");
 		assertThat(token,
 				equalTo(new Token("1234", "4321", new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").format(new Date()))));
 
@@ -82,12 +82,12 @@ class ClientServiceImplTest {
 			throws HttpClientErrorException, JsonProcessingException, ParseException {
 		when(rc.clientVerification(any())).thenReturn(new Client("1234", null, null, null, null, null, "4321"));
 		when(tm.getTokenByClientId(anyString())).thenReturn(new Token("1234", "4321", "2022-10-27T11:35:00"));
-		Token token = cs
-				.getToken(new ClientDB("1234", null, null, Country.of("US"), null, null, null, null, null, null, null));
+		Token token = cs.getToken("1234");
 		assertThat(token,
 				equalTo(new Token("1234", "4321", new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").format(new Date()))));
 
 		verify(tm, times(1)).updateToken(any());
 	}
+	
 
 }

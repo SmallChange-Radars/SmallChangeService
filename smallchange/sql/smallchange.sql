@@ -122,18 +122,6 @@ INSERT INTO preferences (clientId, investmentPurpose, riskTolerance, incomeCateg
 INSERT INTO preferences (clientId, investmentPurpose, riskTolerance, incomeCategory, lengthOfInvestment) 
     VALUES ('1238', 'Savings', 2, 4, 2);
 
-INSERT INTO instrument(instrumentId, externalIdType, externalId, categoryId, description, maxQuantity, minQuantity)
-     VALUES('Q123', 'CUSIP', '02079K107', 'STOCK', 'Alphabet', 1000, 1);
-INSERT INTO instrument(instrumentId, externalIdType, externalId, categoryId, description, maxQuantity, minQuantity)
-     VALUES('Q456', 'CUSIP', '88160R101', 'STOCK', 'Tesla, Inc. Common Stock', 1000, 1);
-INSERT INTO instrument(instrumentId, externalIdType, externalId, categoryId, description, maxQuantity, minQuantity)
-     VALUES('C100', 'CUSIP', '48123Y5A0', 'CD', 'JPMorgan Chase Bank, National Association 01/19', 1000, 100);
-INSERT INTO instrument(instrumentId, externalIdType, externalId, categoryId, description, maxQuantity, minQuantity)
-     VALUES('T67890', 'CUSIP', '9128285M8', 'GOVT', 'USA, Note 3.125 15nov2028 10Y', 10000, 100);
-INSERT INTO instrument(instrumentId, externalIdType, externalId, categoryId, description, maxQuantity, minQuantity)
-     VALUES('T67894', 'CUSIP', '9128285Z9', 'GOVT', 'USA, Note 2.5 31jan2024 5Y', 10000, 100);
-     
-
 
 
 INSERT INTO portfolio (clientId, instrumentId,quantity,value) VALUES ('1234','Q456',50,450.89);

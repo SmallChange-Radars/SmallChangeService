@@ -59,7 +59,8 @@ public class SecurityConfig {
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http.cors().and().csrf().disable().exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
-				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().authorizeRequests()
+				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+				.requiresChannel(channel -> channel.anyRequest().requiresSecure()).authorizeRequests()
 				.antMatchers("/api/auth/**").permitAll().anyRequest().authenticated();
 
 		http.authenticationProvider(authenticationProvider());

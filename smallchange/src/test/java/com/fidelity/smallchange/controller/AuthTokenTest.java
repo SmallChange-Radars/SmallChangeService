@@ -16,6 +16,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 
 import com.fidelity.smallchange.SmallchangeApplication;
@@ -23,6 +24,7 @@ import com.fidelity.smallchange.model.ClientDB;
 import com.fidelity.smallchange.model.Country;
 
 @SpringBootTest(classes = SmallchangeApplication.class, webEnvironment = WebEnvironment.RANDOM_PORT)
+@Transactional
 class AuthTokenTest {
 	@Autowired
 	private TestRestTemplate restTemplate;

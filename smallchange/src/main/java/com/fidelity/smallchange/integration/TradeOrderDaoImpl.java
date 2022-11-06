@@ -1,5 +1,6 @@
 package com.fidelity.smallchange.integration;
 
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -47,6 +48,16 @@ public class TradeOrderDaoImpl implements TradeOrderDao {
 	public boolean insertTrade(Trade trade) {
 		
 		return tradeExecutionMapper.insertTrade(trade) == 1;
+	}
+
+	@Override
+	public BigDecimal getWalletAmount(String clientId) {
+		return tradeExecutionMapper.getWalletAmount(clientId); 
+	}
+
+	@Override
+	public int getInstrumentQuantity(String clientId, String instrumentId) {
+		return tradeExecutionMapper.getInstrumentQuantity(clientId, instrumentId);
 	}
 
 }

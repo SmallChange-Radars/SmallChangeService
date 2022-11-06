@@ -1,6 +1,8 @@
 package com.fidelity.smallchange.service;
 
+import java.math.BigDecimal;
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,22 +44,46 @@ public class TradeServiceImpl implements TradeService {
 	public boolean tradeExecution(Order order, String clientId) throws Exception {
 		try {
 			Token token = clientService.getToken(clientId);
+			String orderId = UUID.randomUUID().toString();
 			order.setClientId(clientId);
 			order.setToken(token.getToken());
-			dao.insertOrder(order);
-			Trade trade = fmtsRestClient.tradeExecution(order);
-			trade.getOrder().setOrderId(order.getOrderId());
-			if(trade==null) {
+			order.setOrderId(orderId);
+			// verify order (balance and all)
+			if(verifyTrade(order)) {
+				dao.insertOrder(order);
+				Trade trade = fmtsRestClient.tradeExecution(order);
+				if(trade==null) {
+					return false;
+				}
+				trade.getOrder().setOrderId(order.getOrderId());
+				dao.insertTrade(trade);
+			}
+			else {
 				return false;
 			}
-			dao.insertTrade(trade);
-//			Portfolio portfolio = new Portfolio(order.getClientId(), order.getInstrumentId(), order.getQuantity(), trade.getCashValue());
-//			portfolioMapper.insertPortfolio(portfolio);
 			return true;
 			
 		}catch(Exception e) {
 			throw new Exception("Error while executing trade",e);
 		}
+	}
+	
+	public boolean verifyTrade(Order order) {
+		if(order.getDirection()=="S") {
+			int availableQuantity = dao.getInstrumentQuantity(order.getClientId(), order.getInstrumentId());
+			if(availableQuantity < order.getQuantity()) {
+				return false;
+			}
+			return true;
+		}
+		if(order.getDirection() == "B") {
+			BigDecimal walletAmount = dao.getWalletAmount(order.getClientId());
+			if(walletAmount.compareTo(order.getTargetPrice()) <0) {
+				return false;
+			}
+			return true;
+		}
+		return true;
 	}
 	
 }

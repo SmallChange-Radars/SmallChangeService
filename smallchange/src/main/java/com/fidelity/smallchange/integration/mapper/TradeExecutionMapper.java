@@ -1,5 +1,6 @@
 package com.fidelity.smallchange.integration.mapper;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Insert;
@@ -39,5 +40,11 @@ public interface TradeExecutionMapper {
 			+ " values (#{tradeId},#{order.orderId},#{quantity},#{direction},#{order.clientId},#{instrumentId},"
 			+ "#{executionPrice},#{cashValue})")
 	public int insertTrade(Trade trade);
+	
+	@Select("SELECT wallet from client where clientid=#{clientId}")
+	public BigDecimal getWalletAmount(String clientId);
+	
+	@Select("SELECT quantity from portfolio where clientid=#{clientId} and instrumentid=#{instrumentId}")
+	public int getInstrumentQuantity(String clientId, String instrumentId);
 
 }

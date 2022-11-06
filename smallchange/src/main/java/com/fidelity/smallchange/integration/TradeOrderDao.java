@@ -1,5 +1,6 @@
 package com.fidelity.smallchange.integration;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import com.fidelity.smallchange.model.Client;
@@ -17,5 +18,9 @@ public interface TradeOrderDao {
 	boolean insertOrder(Order order);
 	
 	boolean insertTrade(Trade trade);
+	
+	BigDecimal getWalletAmount(String clientId);
+	
+	int getInstrumentQuantity(String clientId, String instrumentId);
 
 }

@@ -51,7 +51,7 @@ public class TradeController {
 			if(tradeService.tradeExecution(order, userDetails.getClientId())) {
 				return ResponseEntity.status(HttpStatus.OK).body(new MessageResponse("Trade executed successfully"));
 			}
-			return ResponseEntity.status(HttpStatus.CONFLICT).body(new MessageResponse("Price mismatch"));			
+			return ResponseEntity.status(HttpStatus.CONFLICT).body(new MessageResponse("Price mismatch or unavailable resources to execute Trade."));			
 		}catch(Exception e) {
 			throw new ServerErrorException("Error while conencting to DB",e);
 		}

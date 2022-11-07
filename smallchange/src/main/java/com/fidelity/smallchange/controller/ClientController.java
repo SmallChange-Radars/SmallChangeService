@@ -2,7 +2,7 @@ package com.fidelity.smallchange.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,11 +28,9 @@ public class ClientController {
 	private ClientService service;
 	
 	@GetMapping("/clientInfo")
-	public ResponseEntity<ClientDB> getClient(Authentication authentication) {
+	public ResponseEntity<ClientDB> getClient(@AuthenticationPrincipal UserDetailsImpl userDetails) {
 		ClientDB client;
 		ResponseEntity<ClientDB> result;
-		UserDetailsImpl userDetails = (UserDetailsImpl) authentication
-                .getPrincipal();
 		String clientId = userDetails.getClientId();
 		try {
 			client = service.getClientByClientId(clientId);
@@ -49,11 +47,9 @@ public class ClientController {
 	}
 	
 	@GetMapping("/wallet")
-	public ResponseEntity<ClientDB> getClientWallet(Authentication authentication) {
+	public ResponseEntity<ClientDB> getClientWallet(@AuthenticationPrincipal UserDetailsImpl userDetails) {
 		ClientDB client;
 		ResponseEntity<ClientDB> result;
-		UserDetailsImpl userDetails = (UserDetailsImpl) authentication
-                .getPrincipal();
 		String clientId = userDetails.getClientId();
 		try {
 			client = service.getClientWalletByClientId(clientId);
@@ -97,14 +93,14 @@ public class ClientController {
 	}
 	
 	@GetMapping("/preferences")
-	public ResponseEntity<ClientPreferences> getPreferences(Authentication authentication){
+	public ResponseEntity<ClientPreferences> getPreferences(@AuthenticationPrincipal UserDetailsImpl userDetails){
 		ClientPreferences preferences;
 		ResponseEntity<ClientPreferences> result;
-		UserDetailsImpl userDetails = (UserDetailsImpl) authentication
-                .getPrincipal();
 		String clientId = userDetails.getClientId();
 		try {
 			preferences = service.getClientPreferencesById(clientId);
+			if(preferences!=null)
+			System.out.println(preferences.toString());
 		}
 		catch(RuntimeException e) {
 			throw new ServerErrorException(DB_ERROR_MSG, e);

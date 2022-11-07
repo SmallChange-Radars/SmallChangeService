@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Instrument {
 	private String instrumentId;
-	private String description;
+	private String instrumentDescription;
 	private String externalIdType;
 	private String externalId;
 	private String categoryId;
@@ -19,12 +19,12 @@ public class Instrument {
 		this.instrumentId = instrumentId;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getInstrumentDescription() {
+		return instrumentDescription;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setInstrumentDescription(String instrumentDescription) {
+		this.instrumentDescription = instrumentDescription;
 	}
 
 	public String getExternalIdType() {
@@ -69,7 +69,7 @@ public class Instrument {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(categoryId, description, externalId, externalIdType, instrumentId, maxQuantity,
+		return Objects.hash(categoryId, externalId, externalIdType, instrumentDescription, instrumentId, maxQuantity,
 				minQuantity);
 	}
 
@@ -82,17 +82,25 @@ public class Instrument {
 		if (getClass() != obj.getClass())
 			return false;
 		Instrument other = (Instrument) obj;
-		return Objects.equals(categoryId, other.categoryId) && Objects.equals(description, other.description)
-				&& Objects.equals(externalId, other.externalId) && Objects.equals(externalIdType, other.externalIdType)
+		return Objects.equals(categoryId, other.categoryId) && Objects.equals(externalId, other.externalId)
+				&& Objects.equals(externalIdType, other.externalIdType)
+				&& Objects.equals(instrumentDescription, other.instrumentDescription)
 				&& Objects.equals(instrumentId, other.instrumentId) && maxQuantity == other.maxQuantity
 				&& minQuantity == other.minQuantity;
 	}
 
-	public Instrument(String instrumentId, String description, String externalIdType, String externalId,
+	@Override
+	public String toString() {
+		return "Instrument [instrumentId=" + instrumentId + ", instrumentDescription=" + instrumentDescription
+				+ ", externalIdType=" + externalIdType + ", externalId=" + externalId + ", categoryId=" + categoryId
+				+ ", minQuantity=" + minQuantity + ", maxQuantity=" + maxQuantity + "]";
+	}
+	
+	public Instrument(String instrumentId, String instrumentDescription, String externalIdType, String externalId,
 			String categoryId, int minQuantity, int maxQuantity) {
 		super();
 		this.instrumentId = instrumentId;
-		this.description = description;
+		this.instrumentDescription = instrumentDescription;
 		this.externalIdType = externalIdType;
 		this.externalId = externalId;
 		this.categoryId = categoryId;
@@ -100,10 +108,7 @@ public class Instrument {
 		this.maxQuantity = maxQuantity;
 	}
 
-	@Override
-	public String toString() {
-		return "Instrument [instrumentId=" + instrumentId + ", description=" + description + ", externalIdType="
-				+ externalIdType + ", externalId=" + externalId + ", categoryId=" + categoryId + ", minQuantity="
-				+ minQuantity + ", maxQuantity=" + maxQuantity + "]";
+	public Instrument() {
+		super();
 	}
 }

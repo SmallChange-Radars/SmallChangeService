@@ -20,8 +20,6 @@ CREATE TABLE client (
     role VARCHAR2(40)
 );
 
-
-
 CREATE TABLE clientIdentification (
     type VARCHAR2(20),
     value VARCHAR2(200),
@@ -47,16 +45,12 @@ CREATE TABLE orderInstrument (
     FOREIGN KEY (clientId) REFERENCES client (clientId)
 );
 
-
-
 CREATE TABLE price (
     instrumentId VARCHAR2(20),
     bidPrice NUMBER(10,2),
     askPrice NUMBER(10,2),
     timestamp VARCHAR2(50)
 );
-
-
 
 CREATE TABLE trade (
     tradeId VARCHAR2(50) PRIMARY KEY,
@@ -71,8 +65,6 @@ CREATE TABLE trade (
     FOREIGN KEY (orderId) REFERENCES orderInstrument(orderId)
 );
 
-
-
 CREATE TABLE portfolio (
     clientId VARCHAR2(20),    
     instrumentId VARCHAR2(20),
@@ -80,8 +72,6 @@ CREATE TABLE portfolio (
     value NUMBER(10,2),
     FOREIGN KEY (clientId) REFERENCES client (clientId)
 );
-
-
 
 CREATE TABLE preferences (
     clientId VARCHAR2(20) UNIQUE,
@@ -115,7 +105,5 @@ INSERT INTO portfolio (clientId, instrumentId,quantity,value) VALUES ('1236','T6
 INSERT INTO portfolio (clientId, instrumentId,quantity,value) VALUES ('1238','C100',101,4563.67);
 INSERT INTO portfolio (clientId, instrumentId,quantity,value) VALUES ('1238','Q123',370,10037.32);
 INSERT INTO portfolio (clientId, instrumentId,quantity,value) VALUES ('1238','T67894',91,10657.32);
-
-
 
 COMMIT;

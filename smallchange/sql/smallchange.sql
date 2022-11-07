@@ -34,8 +34,9 @@ CREATE TABLE fmtsToken (
     FOREIGN KEY (clientId) REFERENCES client (clientId)
 );
 
+
 CREATE TABLE orderInstrument (
-    orderId VARCHAR2(50) PRIMARY KEY,
+    orderId varchar2(50) PRIMARY KEY,
     quantity NUMBER(10,0),
     targetPrice NUMBER(10,2),
     direction VARCHAR2(1),
@@ -93,6 +94,10 @@ INSERT INTO preferences (clientId, investmentPurpose, riskTolerance, incomeCateg
     VALUES ('1236', 'Savings', 1, 1, 1);
 INSERT INTO preferences (clientId, investmentPurpose, riskTolerance, incomeCategory, lengthOfInvestment) 
     VALUES ('1238', 'Savings', 2, 4, 2);
+
+
+
+
 
 INSERT INTO portfolio (clientId, instrumentId,quantity,value) VALUES ('1234','Q456',50,450.89);
 INSERT INTO portfolio (clientId, instrumentId,quantity,value) VALUES ('1236','T67890',70,670.89);

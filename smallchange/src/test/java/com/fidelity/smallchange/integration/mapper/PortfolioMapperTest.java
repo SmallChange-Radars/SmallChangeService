@@ -50,5 +50,15 @@ class PortfolioMapperTest {
 		int newSize = dao.getPortfolioByClientId("1238").size();
 		assertEquals(2, newSize);
 	}
+	
+	@Test
+	void testGetPortfolioByClientIdandInstrumentID() {
+		Portfolio portfolio = dao.getPortfolioByClientIdAndInstrumentId("1234", "Q456");
+		if(portfolio==null)
+		System.out.println("hello");
+		else {
+			System.out.println(portfolio.toString());
+		}
+	}
 
 }

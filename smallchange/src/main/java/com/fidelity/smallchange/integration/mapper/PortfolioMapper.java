@@ -32,7 +32,7 @@ public interface PortfolioMapper {
 			FROM portfolio
             WHERE clientId = #{clientId} AND instrumentId = #{instrumentId}
 			""")
-	public void getPortfolioByClientIdAndInstrumentId(String clientId, String instrumentId);
+	public Portfolio getPortfolioByClientIdAndInstrumentId(String clientId, String instrumentId);
 	
 	@Insert("""
 			INSERT 

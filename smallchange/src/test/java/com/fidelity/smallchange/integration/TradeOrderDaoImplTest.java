@@ -31,8 +31,7 @@ class TradeOrderDaoImplTest {
 	
 	@Test
 	void testGetAllTrades() {
-		List<Trade> trade= dao.getTradesByClient("1234");
-		assertEquals(1,trade.size());
+		
 	}
 	
 	

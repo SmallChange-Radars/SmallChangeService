@@ -9,7 +9,11 @@ public class Portfolio {
     private int quantity;
     private BigDecimal value;
     
-	public Portfolio(String clientId, String instrumentId, int quantity, BigDecimal value) {
+	public Portfolio() {
+		
+	}
+    
+    public Portfolio(String clientId, String instrumentId, int quantity, BigDecimal value) {
 		this.clientId = clientId;
 		this.instrumentId = instrumentId;
 		this.quantity = quantity;

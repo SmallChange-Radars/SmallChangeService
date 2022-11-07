@@ -8,12 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.fidelity.smallchange.integration.FMTSRestClient;
+import com.fidelity.smallchange.integration.PortfolioDao;
 import com.fidelity.smallchange.integration.TradeOrderDao;
 import com.fidelity.smallchange.integration.mapper.PortfolioMapper;
 import com.fidelity.smallchange.model.Order;
 import com.fidelity.smallchange.model.Portfolio;
 import com.fidelity.smallchange.model.Token;
 import com.fidelity.smallchange.model.Trade;
+
+import oracle.net.aso.f;
 
 @Service
 public class TradeServiceImpl implements TradeService {
@@ -25,7 +28,7 @@ public class TradeServiceImpl implements TradeService {
 	private ClientService clientService;
 	
 	@Autowired
-	private PortfolioMapper portfolioMapper;
+	private PortfolioDao portfolioDao;
 	
 	@Autowired
 	private FMTSRestClient fmtsRestClient;
@@ -57,6 +60,7 @@ public class TradeServiceImpl implements TradeService {
 				}
 				trade.getOrder().setOrderId(order.getOrderId());
 				dao.insertTrade(trade);
+				aggregateInPortfolio(trade);
 			}
 			else {
 				return false;
@@ -69,14 +73,24 @@ public class TradeServiceImpl implements TradeService {
 	}
 	
 	public boolean verifyTrade(Order order) {
-		if(order.getDirection()=="S") {
-			int availableQuantity = dao.getInstrumentQuantity(order.getClientId(), order.getInstrumentId());
-			if(availableQuantity < order.getQuantity()) {
+		Portfolio portfolio;
+		if(order.getDirection().compareTo("S")==0) {
+			portfolio=dao.getInstrumentQuantity(order.getClientId(), order.getInstrumentId());
+			if(portfolio!=null) {
+				int availableQuantity=portfolio.getQuantity();
+				if(availableQuantity>=order.getQuantity()) {
+					return true;
+				}else {
+					
+					return false;
+				}
+			}
+			else {
+				
 				return false;
 			}
-			return true;
 		}
-		if(order.getDirection() == "B") {
+		if(order.getDirection().compareTo("B")==0) {
 			BigDecimal walletAmount = dao.getWalletAmount(order.getClientId());
 			if(walletAmount.compareTo(order.getTargetPrice()) <0) {
 				return false;
@@ -84,6 +98,49 @@ public class TradeServiceImpl implements TradeService {
 			return true;
 		}
 		return true;
+	}
+	
+	public void aggregateInPortfolio(Trade trade) throws Exception {
+		Portfolio portfolio=null;
+		try {
+			portfolio = portfolioDao.getPortfolioByClientIdAndInstrumentId(trade.getOrder().getClientId(), trade.getInstrumentId());
+			if(portfolio == null) {
+				portfolio = new Portfolio(trade.getOrder().getClientId(),trade.getInstrumentId(),trade.getQuantity(),trade.getCashValue());
+				portfolioDao.insertPortfolio(portfolio);
+				BigDecimal walletAmount = dao.getWalletAmount(trade.getOrder().getClientId());
+				walletAmount=walletAmount.subtract(trade.getOrder().getTargetPrice());
+				clientService.updateClientWallet(trade.getOrder().getClientId(), walletAmount);
+			}
+			else {
+				
+				
+				if(trade.getDirection().compareTo("B") ==0) {
+					
+					BigDecimal originalValue = portfolio.getValue();
+					originalValue=originalValue.add(trade.getCashValue());
+					
+					portfolio.setValue(originalValue);
+					portfolio.setQuantity(portfolio.getQuantity()+trade.getQuantity());
+					portfolioDao.updatePortfolio(portfolio);
+					BigDecimal walletAmount = dao.getWalletAmount(trade.getOrder().getClientId());
+					walletAmount=walletAmount.subtract(trade.getOrder().getTargetPrice());
+					clientService.updateClientWallet(trade.getOrder().getClientId(), walletAmount);
+					
+				}else {
+					BigDecimal originalValue = portfolio.getValue();
+					originalValue=originalValue.subtract(trade.getCashValue());
+					portfolio.setValue(originalValue);
+					portfolio.setQuantity(portfolio.getQuantity()-trade.getQuantity());
+					portfolioDao.updatePortfolio(portfolio);
+					BigDecimal walletAmount = dao.getWalletAmount(trade.getOrder().getClientId());
+					walletAmount=walletAmount.add(trade.getOrder().getTargetPrice());
+					clientService.updateClientWallet(trade.getOrder().getClientId(), walletAmount);
+				}
+			}
+		}catch(Exception e) {
+			throw new Exception("Exception while aggregating portfolio");
+		}
+		
 	}
 	
 }

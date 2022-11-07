@@ -9,6 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.config.annotation.authentication.configurers.userdetails.DaoAuthenticationConfigurer;
 
 import com.fidelity.smallchange.model.Trade;
 
@@ -28,8 +29,8 @@ class TradeOrderDaoMapperTest {
 
 	@Test
 	void testGetAllTrades() {
-		List<Trade> trade= tradeExecutionMapper.getTradesByClient("1234");
-		assertEquals(1,trade.size());
+		if(tradeExecutionMapper.getInstrumentQuantity("123544", "qwqwe")==null);
+		System.out.println("Hello");
 	}
 
 }

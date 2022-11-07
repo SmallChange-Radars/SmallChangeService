@@ -35,14 +35,20 @@ public class PortfolioDaoMyBatisImpl implements PortfolioDao {
 
 	@Override
 	public void updatePortfolio(Portfolio portfolio) {
-		// TODO Auto-generated method stub
-		
+		mapper.updatePortfolio(portfolio.getClientId(), portfolio.getInstrumentId(), portfolio.getQuantity(), portfolio.getValue());		
 	}
 
 
 	@Override
 	public void deletePortfolioByClientIdAndInstrumentId(String clientId, String instrumentId) {
 		mapper.deletePortfolioByClientIdAndInstrumentId(clientId, instrumentId);
+	}
+
+
+	@Override
+	public Portfolio getPortfolioByClientIdAndInstrumentId(String clientId, String instrumentId) {
+		return mapper.getPortfolioByClientIdAndInstrumentId(clientId, instrumentId);
+
 	}	
 
 	

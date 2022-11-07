@@ -61,6 +61,12 @@ public class SecurityConfig {
 		http.cors().and().csrf().disable().exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
 				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().authorizeRequests()
 				.antMatchers("/api/auth/**").permitAll().anyRequest().authenticated();
+		
+		//https
+//		http.cors().and().csrf().disable().exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
+//		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+//		.requiresChannel(channel -> channel.anyRequest().requiresSecure()).authorizeRequests()
+//		.antMatchers("/api/auth/**").permitAll().anyRequest().authenticated();
 
 		http.authenticationProvider(authenticationProvider());
 		http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);

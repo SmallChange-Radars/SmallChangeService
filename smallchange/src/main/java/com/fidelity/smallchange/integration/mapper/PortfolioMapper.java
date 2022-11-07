@@ -1,11 +1,14 @@
 package com.fidelity.smallchange.integration.mapper;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
+
 import com.fidelity.smallchange.model.Portfolio;
 
 @Mapper
@@ -18,12 +21,18 @@ public interface PortfolioMapper {
 	public List<Portfolio> getAllPortfolios();
 	
 	@Select("""
-			SELECT clientId, instrumentId, SUM(quantity) AS quantity, SUM(value) AS value
+			SELECT clientId, instrumentId, quantity, value
 			FROM portfolio
             WHERE clientId = #{clientId}
-            GROUP BY instrumentId, clientId
 			""")
 	public List<Portfolio> getPortfolioByClientId(String clientId);
+	
+	@Select("""
+			SELECT clientId, instrumentId, quantity, value
+			FROM portfolio
+            WHERE clientId = #{clientId} AND instrumentId = #{instrumentId}
+			""")
+	public Portfolio getPortfolioByClientIdAndInstrumentId(String clientId, String instrumentId);
 	
 	@Insert("""
 			INSERT 
@@ -39,4 +48,12 @@ public interface PortfolioMapper {
 			AND clientId = #{clientId}
 			""")
 	public void deletePortfolioByClientIdAndInstrumentId(String clientId, String instrumentId);
+	
+	@Update("""
+			UPDATE portfolio
+			SET quantity = #{quantity}, value = #{value}
+			WHERE instrumentId = #{instrumentId}
+			AND clientId = #{clientId}
+			""")
+	public void updatePortfolio(String clientId, String instrumentId, int quantity, BigDecimal value);
 }

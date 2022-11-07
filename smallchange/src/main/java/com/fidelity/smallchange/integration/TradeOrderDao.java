@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.fidelity.smallchange.model.Client;
 import com.fidelity.smallchange.model.Order;
+import com.fidelity.smallchange.model.Portfolio;
 import com.fidelity.smallchange.model.Trade;
 
 
@@ -21,6 +22,6 @@ public interface TradeOrderDao {
 	
 	BigDecimal getWalletAmount(String clientId);
 	
-	int getInstrumentQuantity(String clientId, String instrumentId);
+	Portfolio getInstrumentQuantity(String clientId, String instrumentId);
 
 }

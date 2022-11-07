@@ -5,16 +5,33 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.ResultMap;
+import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
 
 import com.fidelity.smallchange.model.Client;
 import com.fidelity.smallchange.model.Order;
+import com.fidelity.smallchange.model.Portfolio;
 import com.fidelity.smallchange.model.Trade;
 
 @Mapper
 public interface TradeExecutionMapper {
-
+	
+	@Results({
+		@Result(property="tradeId", column="TRADEID", id=true),
+		@Result(property="instrumentId", column="INSTRUMENTID"),
+		@Result(property="quantity", column="QUANTITY"),
+		@Result(property="direction", column="DIRECTION"),
+		@Result(property="executionPrice", column="EXECUTIONPRICE"),
+		@Result(property="cashValue", column="CASHVALUE"),
+		@Result(property="order.instrumentId", column="INSTRUMENTID"),
+		@Result(property="order.quantity", column="QUANTITY"),
+		@Result(property="order.targetPrice", column="TARGETPRICE"),
+		@Result(property="order.direction", column="DIRECTION"),
+		@Result(property="order.clientId", column="CLIENTID"),
+		@Result(property="order.orderId", column="ORDERID")
+	})
 	@Select("SELECT\r\n"
 			+ "    t.tradeid,\r\n"
 			+ "    t.instrumentid,\r\n"
@@ -29,7 +46,6 @@ public interface TradeExecutionMapper {
 			+ "    trade            t\r\n"
 			+ "    LEFT JOIN orderinstrument  o ON t.clientid = o.clientid WHERE\r\n"
 			+ "    t.clientid = #{clientId}")
-	@ResultMap("com.fidelity.smallchange.integration.TradeExecutionMapper.GetTradesMap")
 	public List<Trade> getTradesByClient(String clientId);
 
 	@Insert("INSERT INTO orderinstrument ( orderid,quantity, targetprice, direction, clientid, instrumentid)"
@@ -44,7 +60,7 @@ public interface TradeExecutionMapper {
 	@Select("SELECT wallet from client where clientid=#{clientId}")
 	public BigDecimal getWalletAmount(String clientId);
 	
-	@Select("SELECT quantity from portfolio where clientid=#{clientId} and instrumentid=#{instrumentId}")
-	public int getInstrumentQuantity(String clientId, String instrumentId);
+	@Select("SELECT * from portfolio where clientid=#{clientId} and instrumentid=#{instrumentId}")
+	public Portfolio getInstrumentQuantity(String clientId, String instrumentId);
 
 }

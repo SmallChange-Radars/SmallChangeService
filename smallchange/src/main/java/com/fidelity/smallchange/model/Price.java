@@ -4,17 +4,11 @@ import java.math.BigDecimal;
 import java.util.Objects;
 
 public class Price {
-	private String instrumentId;
 	private BigDecimal bidPrice;
 	private BigDecimal askPrice;
 	private String timestamp;
 	private Instrument instrument;
-	public String getInstrumentId() {
-		return instrumentId;
-	}
-	public void setInstrumentId(String instrumentId) {
-		this.instrumentId = instrumentId;
-	}
+	
 	public BigDecimal getBidPrice() {
 		return bidPrice;
 	}
@@ -41,7 +35,7 @@ public class Price {
 	}
 	@Override
 	public int hashCode() {
-		return Objects.hash(askPrice, bidPrice, instrument, instrumentId, timestamp);
+		return Objects.hash(askPrice, bidPrice, instrument, timestamp);
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -53,12 +47,12 @@ public class Price {
 			return false;
 		Price other = (Price) obj;
 		return Objects.equals(askPrice, other.askPrice) && Objects.equals(bidPrice, other.bidPrice)
-				&& Objects.equals(instrument, other.instrument) && Objects.equals(instrumentId, other.instrumentId)
-				&& Objects.equals(timestamp, other.timestamp);
+				&& Objects.equals(instrument, other.instrument) && Objects.equals(timestamp, other.timestamp);
 	}
 	@Override
 	public String toString() {
-		return "Price [instrumentId=" + instrumentId + ", bidPrice=" + bidPrice + ", askPrice=" + askPrice
-				+ ", timestamp=" + timestamp + ", instrument=" + instrument + "]";
+		return "Price [bidPrice=" + bidPrice + ", askPrice=" + askPrice + ", timestamp=" + timestamp + ", instrument="
+				+ instrument + "]";
 	}
+
 }

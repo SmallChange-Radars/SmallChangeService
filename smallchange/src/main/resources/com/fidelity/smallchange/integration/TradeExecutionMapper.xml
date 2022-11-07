@@ -11,7 +11,7 @@
 		<result property="cashValue" column="CASHVALUE" />
 		<result property="order.instrumentId" column="INSTRUMENTID" />
 		<result property="order.quantity" column="QUANTITY" />
-		<result property="order.targetPrice" column="TARGETPRICE" />
+  		<result property="order.targetPrice" column="TARGETPRICE" />
 		<result property="order.direction" column="DIRECTION" />
 		<result property="order.clientId" column="CLIENTID" />
 		<result property="order.orderId" column="ORDERID" />

@@ -65,7 +65,6 @@ public class ClientServiceImpl implements ClientService {
 			verified = rc.clientVerification(new Client("", client.getEmail(), client.getDateOfBirth(),
 					client.getCountry().getCode(), client.getPostalCode(), client.getClientIdentification(), ""));
 		} catch (JsonProcessingException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return verified;

@@ -55,4 +55,8 @@ public class Price {
 				+ instrument + "]";
 	}
 
+	
+	public String toCheckString() {
+		return instrument.getInstrumentId() + instrument.getInstrumentDescription() + instrument.getCategoryId();
+	}
 }

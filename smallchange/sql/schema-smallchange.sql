@@ -60,6 +60,7 @@ CREATE TABLE trade (
     instrumentId VARCHAR2(20),
     executionPrice NUMBER(10,2),
     cashValue NUMBER(10,2),
+    timestamp VARCHAR2(50),
     FOREIGN KEY (clientId) REFERENCES client (clientId),
     FOREIGN KEY (orderId) REFERENCES orderInstrument(orderId)
 );

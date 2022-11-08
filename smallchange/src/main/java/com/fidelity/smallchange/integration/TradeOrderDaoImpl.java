@@ -33,8 +33,9 @@ public class TradeOrderDaoImpl implements TradeOrderDao {
 
 
 	@Override
-	public List<Trade> getTradeActivityByClient(String clientId) {
-		return tradeExecutionMapper.getTradesByClient(clientId);
+	public List<Trade> getTradeActivityByClient(String clientId,String q,String _sort,String _order,int offset,int _limit) {
+		
+		return tradeExecutionMapper.getTradesByClient(clientId,q,_sort,_order,offset,_limit);
 	}
 	
 	@Override
@@ -59,6 +60,11 @@ public class TradeOrderDaoImpl implements TradeOrderDao {
 	@Override
 	public Portfolio getInstrumentQuantity(String clientId, String instrumentId) {
 		return tradeExecutionMapper.getInstrumentQuantity(clientId, instrumentId);
+	}
+
+	@Override
+	public int totalTradesByClientId(String clientId) {
+		return tradeExecutionMapper.totalTradesByClientId(clientId);
 	}
 
 }

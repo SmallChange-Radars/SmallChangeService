@@ -78,7 +78,9 @@ public class ClientController {
 	}
 	
 	@PostMapping(value="/preferences", produces=MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
-	public DatabaseRequestResult insertPreferences(@RequestBody ClientPreferences clientPref) {
+	public DatabaseRequestResult insertPreferences(@AuthenticationPrincipal UserDetailsImpl userDetails, @RequestBody ClientPreferences clientPref) {
+		String clientId = userDetails.getClientId();
+		clientPref.setClientId(clientId);
 		int count = 0;
 		try {
 			count = service.insertClientPreferences(clientPref);
@@ -99,8 +101,6 @@ public class ClientController {
 		String clientId = userDetails.getClientId();
 		try {
 			preferences = service.getClientPreferencesById(clientId);
-			if(preferences!=null)
-			System.out.println(preferences.toString());
 		}
 		catch(RuntimeException e) {
 			throw new ServerErrorException(DB_ERROR_MSG, e);
@@ -114,8 +114,10 @@ public class ClientController {
 	}
 	
 	@PutMapping(value="/preferences", produces=MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
-	public DatabaseRequestResult updatePreferences(@RequestBody ClientPreferences preferences) {
+	public DatabaseRequestResult updatePreferences(@AuthenticationPrincipal UserDetailsImpl userDetails, @RequestBody ClientPreferences preferences) {
 		int count = 0;
+		String clientId = userDetails.getClientId();
+		preferences.setClientId(clientId);
 		try {
 			count = service.updateClientPreferences(preferences);
 		}

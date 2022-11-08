@@ -1,0 +1,4664 @@
+[
+	{
+		"instrumentId": "Q123",
+		"externalIdType": "CUSIP",
+		"externalId": "02079K107",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Alphabet Inc. Class C Capital Stock",
+		"maxQuantity": 1000,
+		"minQuantity": 1
+	},
+	{
+		"instrumentId": "Q456",
+		"externalIdType": "CUSIP",
+		"externalId": "88160R101",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Tesla, Inc. Common Stock",
+		"maxQuantity": 1000,
+		"minQuantity": 1
+	},
+	{
+		"instrumentId": "N123456",
+		"externalIdType": "CUSIP",
+		"externalId": "46625H100",
+		"categoryId": "STOCK",
+		"instrumentDescription": "JPMorgan Chase & Co. Capital Stock",
+		"maxQuantity": 1000,
+		"minQuantity": 1
+	},
+	{
+		"instrumentId": "N123789",
+		"externalIdType": "ISIN",
+		"externalId": "US0846707026",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Berkshire Hathaway Inc. Class A",
+		"maxQuantity": 10,
+		"minQuantity": 1
+	},
+	{
+		"instrumentId": "C100",
+		"externalIdType": "CUSIP",
+		"externalId": "48123Y5A0",
+		"categoryId": "CD",
+		"instrumentDescription": "JPMorgan Chase Bank, National Association 01/19",
+		"maxQuantity": 1000,
+		"minQuantity": 100
+	},
+	{
+		"instrumentId": "T67890",
+		"externalIdType": "CUSIP",
+		"externalId": "9128285M8",
+		"categoryId": "GOVT",
+		"instrumentDescription": "USA, Note 3.125 15nov2028 10Y",
+		"maxQuantity": 10000,
+		"minQuantity": 100
+	},
+	{
+		"instrumentId": "T67894",
+		"externalIdType": "CUSIP",
+		"externalId": "9128285Z9",
+		"categoryId": "GOVT",
+		"instrumentDescription": "USA, Note 2.5 31jan2024 5Y",
+		"maxQuantity": 10000,
+		"minQuantity": 100
+	},
+	{
+		"instrumentId": "T67895",
+		"externalIdType": "CUSIP",
+		"externalId": "9128286A3",
+		"categoryId": "GOVT",
+		"instrumentDescription": "USA, Note 2.625 31jan2026 7Y",
+		"maxQuantity": 10000,
+		"minQuantity": 100
+	},
+	{
+		"instrumentId": "T67897",
+		"externalIdType": "CUSIP",
+		"externalId": "9128285X4",
+		"categoryId": "GOVT",
+		"instrumentDescription": "USA, Note 2.5 31jan2021 2Y",
+		"maxQuantity": 10000,
+		"minQuantity": 100
+	},
+	{
+		"instrumentId": "T67899",
+		"externalIdType": "CUSIP",
+		"externalId": "9128285V8",
+		"categoryId": "GOVT",
+		"instrumentDescription": "USA, Notes 2.5% 15jan2022 3Y",
+		"maxQuantity": 10000,
+		"minQuantity": 100
+	},
+	{
+		"instrumentId": "T67880",
+		"externalIdType": "CUSIP",
+		"externalId": "9128285U0",
+		"categoryId": "GOVT",
+		"instrumentDescription": "USA, Note 1.5 31dec2023 5Y",
+		"maxQuantity": 10000,
+		"minQuantity": 100
+	},
+	{
+		"instrumentId": "T67883",
+		"externalIdType": "CUSIP",
+		"externalId": "912810SE9",
+		"categoryId": "GOVT",
+		"instrumentDescription": "USA, Bond 3.375 15nov2048 30Y",
+		"maxQuantity": 10000,
+		"minQuantity": 100
+	},
+	{
+		"instrumentId": "T67878",
+		"externalIdType": "CUSIP",
+		"externalId": "912810SD1",
+		"categoryId": "GOVT",
+		"instrumentDescription": "USA, Bond 3 15aug2048 30Y",
+		"maxQuantity": 10000,
+		"minQuantity": 100
+	},
+	{
+		"instrumentId": "MMM",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "3M Company",
+		"maxQuantity": 137.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "AOS",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "A.O. Smith Corp",
+		"maxQuantity": 535.0,
+		"minQuantity": 6.0
+	},
+	{
+		"instrumentId": "ABT",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Abbott Laboratories",
+		"maxQuantity": 6645.0,
+		"minQuantity": 67.0
+	},
+	{
+		"instrumentId": "ABBV",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "AbbVie Inc.",
+		"maxQuantity": 2213.0,
+		"minQuantity": 23.0
+	},
+	{
+		"instrumentId": "ACN",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Accenture plc",
+		"maxQuantity": 352.0,
+		"minQuantity": 4.0
+	},
+	{
+		"instrumentId": "ATVI",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Activision Blizzard",
+		"maxQuantity": 2735.0,
+		"minQuantity": 28.0
+	},
+	{
+		"instrumentId": "AYI",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Acuity Brands Inc",
+		"maxQuantity": 14.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "ADBE",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Adobe Systems Inc",
+		"maxQuantity": 219.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "AAP",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Advance Auto Parts",
+		"maxQuantity": 56.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "AMD",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Advanced Micro Devices Inc",
+		"maxQuantity": 65708.0,
+		"minQuantity": 658.0
+	},
+	{
+		"instrumentId": "AES",
+		"externalIdType": "Sector",
+		"externalId": "Utilities",
+		"categoryId": "STOCK",
+		"instrumentDescription": "AES Corp",
+		"maxQuantity": 57092.0,
+		"minQuantity": 571.0
+	},
+	{
+		"instrumentId": "AET",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Aetna Inc",
+		"maxQuantity": 144.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "AMG",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Affiliated Managers Group Inc",
+		"maxQuantity": 19.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "AFL",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "AFLAC Inc",
+		"maxQuantity": 637.0,
+		"minQuantity": 7.0
+	},
+	{
+		"instrumentId": "A",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Agilent Technologies Inc",
+		"maxQuantity": 916.0,
+		"minQuantity": 10.0
+	},
+	{
+		"instrumentId": "APD",
+		"externalIdType": "Sector",
+		"externalId": "Materials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Air Products & Chemicals Inc",
+		"maxQuantity": 97.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "AKAM",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Akamai Technologies Inc",
+		"maxQuantity": 562.0,
+		"minQuantity": 6.0
+	},
+	{
+		"instrumentId": "ALK",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Alaska Air Group Inc",
+		"maxQuantity": 206.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "ALB",
+		"externalIdType": "Sector",
+		"externalId": "Materials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Albemarle Corp",
+		"maxQuantity": 86.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "ARE",
+		"externalIdType": "Sector",
+		"externalId": "Real Estate",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Alexandria Real Estate Equities Inc",
+		"maxQuantity": 74.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "ALXN",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Alexion Pharmaceuticals",
+		"maxQuantity": 168.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "ALGN",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Align Technology",
+		"maxQuantity": 32.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "ALLE",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Allegion",
+		"maxQuantity": 165.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "AGN",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Allergan, Plc",
+		"maxQuantity": 84.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "ADS",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Alliance Data Systems",
+		"maxQuantity": 10.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "LNT",
+		"externalIdType": "Sector",
+		"externalId": "Utilities",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Alliant Energy Corp",
+		"maxQuantity": 1392.0,
+		"minQuantity": 14.0
+	},
+	{
+		"instrumentId": "ALL",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Allstate Corp",
+		"maxQuantity": 472.0,
+		"minQuantity": 5.0
+	},
+	{
+		"instrumentId": "GOOGL",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Alphabet Inc Class A",
+		"maxQuantity": 8.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "GOOG",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Alphabet Inc Class C",
+		"maxQuantity": 8.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "MO",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Staples",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Altria Group Inc",
+		"maxQuantity": 4248.0,
+		"minQuantity": 43.0
+	},
+	{
+		"instrumentId": "AMZN",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Amazon.com Inc",
+		"maxQuantity": 5.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "AEE",
+		"externalIdType": "Sector",
+		"externalId": "Utilities",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Ameren Corp",
+		"maxQuantity": 730.0,
+		"minQuantity": 8.0
+	},
+	{
+		"instrumentId": "AAL",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "American Airlines Group",
+		"maxQuantity": 2185.0,
+		"minQuantity": 22.0
+	},
+	{
+		"instrumentId": "AEP",
+		"externalIdType": "Sector",
+		"externalId": "Utilities",
+		"categoryId": "STOCK",
+		"instrumentDescription": "American Electric Power",
+		"maxQuantity": 1022.0,
+		"minQuantity": 11.0
+	},
+	{
+		"instrumentId": "AXP",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "American Express Co",
+		"maxQuantity": 1178.0,
+		"minQuantity": 12.0
+	},
+	{
+		"instrumentId": "AIG",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "American International Group, Inc.",
+		"maxQuantity": 2396.0,
+		"minQuantity": 24.0
+	},
+	{
+		"instrumentId": "AMT",
+		"externalIdType": "Sector",
+		"externalId": "Real Estate",
+		"categoryId": "STOCK",
+		"instrumentDescription": "American Tower Corp A",
+		"maxQuantity": 277.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "AWK",
+		"externalIdType": "Sector",
+		"externalId": "Utilities",
+		"categoryId": "STOCK",
+		"instrumentDescription": "American Water Works Company Inc",
+		"maxQuantity": 276.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "AMP",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Ameriprise Financial",
+		"maxQuantity": 71.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "ABC",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "AmerisourceBergen Corp",
+		"maxQuantity": 295.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "AME",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "AMETEK Inc",
+		"maxQuantity": 591.0,
+		"minQuantity": 6.0
+	},
+	{
+		"instrumentId": "AMGN",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Amgen Inc",
+		"maxQuantity": 242.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "APH",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Amphenol Corp",
+		"maxQuantity": 507.0,
+		"minQuantity": 6.0
+	},
+	{
+		"instrumentId": "APC",
+		"externalIdType": "Sector",
+		"externalId": "Energy",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Anadarko Petroleum Corp",
+		"maxQuantity": 2044.0,
+		"minQuantity": 21.0
+	},
+	{
+		"instrumentId": "ADI",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Analog Devices, Inc.",
+		"maxQuantity": 524.0,
+		"minQuantity": 6.0
+	},
+	{
+		"instrumentId": "ANDV",
+		"externalIdType": "Sector",
+		"externalId": "Energy",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Andeavor",
+		"maxQuantity": 178.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "ANSS",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "ANSYS",
+		"maxQuantity": 57.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "ANTM",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Anthem Inc.",
+		"maxQuantity": 64.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "AON",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Aon plc",
+		"maxQuantity": 150.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "APA",
+		"externalIdType": "Sector",
+		"externalId": "Energy",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Apache Corporation",
+		"maxQuantity": 1809.0,
+		"minQuantity": 19.0
+	},
+	{
+		"instrumentId": "AIV",
+		"externalIdType": "Sector",
+		"externalId": "Real Estate",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Apartment Investment & Management",
+		"maxQuantity": 886.0,
+		"minQuantity": 9.0
+	},
+	{
+		"instrumentId": "AAPL",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Apple Inc.",
+		"maxQuantity": 2210.0,
+		"minQuantity": 23.0
+	},
+	{
+		"instrumentId": "AMAT",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Applied Materials Inc",
+		"maxQuantity": 5326.0,
+		"minQuantity": 54.0
+	},
+	{
+		"instrumentId": "APTV",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Aptiv Plc",
+		"maxQuantity": 347.0,
+		"minQuantity": 4.0
+	},
+	{
+		"instrumentId": "ADM",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Staples",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Archer-Daniels-Midland Co",
+		"maxQuantity": 3117.0,
+		"minQuantity": 32.0
+	},
+	{
+		"instrumentId": "ARNC",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Arconic Inc",
+		"maxQuantity": 7313.0,
+		"minQuantity": 74.0
+	},
+	{
+		"instrumentId": "AJG",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Arthur J. Gallagher & Co.",
+		"maxQuantity": 492.0,
+		"minQuantity": 5.0
+	},
+	{
+		"instrumentId": "AIZ",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Assurant Inc",
+		"maxQuantity": 60.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "T",
+		"externalIdType": "Sector",
+		"externalId": "Telecommunication Services",
+		"categoryId": "STOCK",
+		"instrumentDescription": "AT&T Inc",
+		"maxQuantity": 45858.0,
+		"minQuantity": 459.0
+	},
+	{
+		"instrumentId": "ADSK",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Autodesk Inc",
+		"maxQuantity": 217.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "ADP",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Automatic Data Processing",
+		"maxQuantity": 389.0,
+		"minQuantity": 4.0
+	},
+	{
+		"instrumentId": "AZO",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "AutoZone Inc",
+		"maxQuantity": 1.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "AVB",
+		"externalIdType": "Sector",
+		"externalId": "Real Estate",
+		"categoryId": "STOCK",
+		"instrumentDescription": "AvalonBay Communities, Inc.",
+		"maxQuantity": 46.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "AVY",
+		"externalIdType": "Sector",
+		"externalId": "Materials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Avery Dennison Corp",
+		"maxQuantity": 95.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "BHGE",
+		"externalIdType": "Sector",
+		"externalId": "Energy",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Baker Hughes, a GE Company",
+		"maxQuantity": 7415.0,
+		"minQuantity": 75.0
+	},
+	{
+		"instrumentId": "BLL",
+		"externalIdType": "Sector",
+		"externalId": "Materials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Ball Corp",
+		"maxQuantity": 2327.0,
+		"minQuantity": 24.0
+	},
+	{
+		"instrumentId": "BAC",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Bank of America Corp",
+		"maxQuantity": 149920.0,
+		"minQuantity": 1500.0
+	},
+	{
+		"instrumentId": "BAX",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Baxter International Inc.",
+		"maxQuantity": 1634.0,
+		"minQuantity": 17.0
+	},
+	{
+		"instrumentId": "BBT",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "BB&T Corporation",
+		"maxQuantity": 3576.0,
+		"minQuantity": 36.0
+	},
+	{
+		"instrumentId": "BDX",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Becton Dickinson",
+		"maxQuantity": 56.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "BRK.B",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Berkshire Hathaway",
+		"maxQuantity": 390.0,
+		"minQuantity": 4.0
+	},
+	{
+		"instrumentId": "BBY",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Best Buy Co. Inc.",
+		"maxQuantity": 925.0,
+		"minQuantity": 10.0
+	},
+	{
+		"instrumentId": "BIIB",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Biogen Inc.",
+		"maxQuantity": 25.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "BLK",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "BlackRock",
+		"maxQuantity": 8.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "HRB",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Block H&R",
+		"maxQuantity": 3385.0,
+		"minQuantity": 34.0
+	},
+	{
+		"instrumentId": "BA",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Boeing Company",
+		"maxQuantity": 106.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "BWA",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "BorgWarner",
+		"maxQuantity": 1022.0,
+		"minQuantity": 11.0
+	},
+	{
+		"instrumentId": "BXP",
+		"externalIdType": "Sector",
+		"externalId": "Real Estate",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Boston Properties",
+		"maxQuantity": 102.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "BSX",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Boston Scientific",
+		"maxQuantity": 20576.0,
+		"minQuantity": 206.0
+	},
+	{
+		"instrumentId": "BHF",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Brighthouse Financial Inc",
+		"maxQuantity": 323.0,
+		"minQuantity": 4.0
+	},
+	{
+		"instrumentId": "BMY",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Bristol-Myers Squibb",
+		"maxQuantity": 4840.0,
+		"minQuantity": 49.0
+	},
+	{
+		"instrumentId": "AVGO",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Broadcom",
+		"maxQuantity": 70.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "BF.B",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Staples",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Brown-Forman Corp.",
+		"maxQuantity": 274.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "CHRW",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "C. H. Robinson Worldwide",
+		"maxQuantity": 226.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "CA",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "CA, Inc.",
+		"maxQuantity": 3899.0,
+		"minQuantity": 39.0
+	},
+	{
+		"instrumentId": "COG",
+		"externalIdType": "Sector",
+		"externalId": "Energy",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Cabot Oil & Gas",
+		"maxQuantity": 7424.0,
+		"minQuantity": 75.0
+	},
+	{
+		"instrumentId": "CDNS",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Cadence Design Systems",
+		"maxQuantity": 2217.0,
+		"minQuantity": 23.0
+	},
+	{
+		"instrumentId": "CPB",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Staples",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Campbell Soup",
+		"maxQuantity": 1076.0,
+		"minQuantity": 11.0
+	},
+	{
+		"instrumentId": "COF",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Capital One Financial",
+		"maxQuantity": 641.0,
+		"minQuantity": 7.0
+	},
+	{
+		"instrumentId": "CAH",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Cardinal Health Inc.",
+		"maxQuantity": 663.0,
+		"minQuantity": 7.0
+	},
+	{
+		"instrumentId": "KMX",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Carmax Inc",
+		"maxQuantity": 437.0,
+		"minQuantity": 5.0
+	},
+	{
+		"instrumentId": "CCL",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Carnival Corp.",
+		"maxQuantity": 1851.0,
+		"minQuantity": 19.0
+	},
+	{
+		"instrumentId": "CAT",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Caterpillar Inc.",
+		"maxQuantity": 402.0,
+		"minQuantity": 5.0
+	},
+	{
+		"instrumentId": "CBOE",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "CBOE Holdings",
+		"maxQuantity": 110.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "CBG",
+		"externalIdType": "Sector",
+		"externalId": "Real Estate",
+		"categoryId": "STOCK",
+		"instrumentDescription": "CBRE Group",
+		"maxQuantity": 2430.0,
+		"minQuantity": 25.0
+	},
+	{
+		"instrumentId": "CBS",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "CBS Corp.",
+		"maxQuantity": 1067.0,
+		"minQuantity": 11.0
+	},
+	{
+		"instrumentId": "CELG",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Celgene Corp.",
+		"maxQuantity": 603.0,
+		"minQuantity": 7.0
+	},
+	{
+		"instrumentId": "CNC",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Centene Corporation",
+		"maxQuantity": 246.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "CNP",
+		"externalIdType": "Sector",
+		"externalId": "Utilities",
+		"categoryId": "STOCK",
+		"instrumentDescription": "CenterPoint Energy",
+		"maxQuantity": 5659.0,
+		"minQuantity": 57.0
+	},
+	{
+		"instrumentId": "CTL",
+		"externalIdType": "Sector",
+		"externalId": "Telecommunication Services",
+		"categoryId": "STOCK",
+		"instrumentDescription": "CenturyLink Inc",
+		"maxQuantity": 30981.0,
+		"minQuantity": 310.0
+	},
+	{
+		"instrumentId": "CERN",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Cerner",
+		"maxQuantity": 911.0,
+		"minQuantity": 10.0
+	},
+	{
+		"instrumentId": "CF",
+		"externalIdType": "Sector",
+		"externalId": "Materials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "CF Industries Holdings Inc",
+		"maxQuantity": 2233.0,
+		"minQuantity": 23.0
+	},
+	{
+		"instrumentId": "SCHW",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Charles Schwab Corporation",
+		"maxQuantity": 6824.0,
+		"minQuantity": 69.0
+	},
+	{
+		"instrumentId": "CHTR",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Charter Communications",
+		"maxQuantity": 20.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "CHK",
+		"externalIdType": "Sector",
+		"externalId": "Energy",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Chesapeake Energy",
+		"maxQuantity": 504684.0,
+		"minQuantity": 5047.0
+	},
+	{
+		"instrumentId": "CVX",
+		"externalIdType": "Sector",
+		"externalId": "Energy",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Chevron Corp.",
+		"maxQuantity": 1421.0,
+		"minQuantity": 15.0
+	},
+	{
+		"instrumentId": "CMG",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Chipotle Mexican Grill",
+		"maxQuantity": 3.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "CB",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Chubb Limited",
+		"maxQuantity": 238.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "CHD",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Staples",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Church & Dwight",
+		"maxQuantity": 1068.0,
+		"minQuantity": 11.0
+	},
+	{
+		"instrumentId": "CI",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "CIGNA Corp.",
+		"maxQuantity": 79.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "XEC",
+		"externalIdType": "Sector",
+		"externalId": "Energy",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Cimarex Energy",
+		"maxQuantity": 83.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "CINF",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Cincinnati Financial",
+		"maxQuantity": 303.0,
+		"minQuantity": 4.0
+	},
+	{
+		"instrumentId": "CTAS",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Cintas Corporation",
+		"maxQuantity": 58.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "CSCO",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Cisco Systems",
+		"maxQuantity": 39421.0,
+		"minQuantity": 395.0
+	},
+	{
+		"instrumentId": "C",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Citigroup Inc.",
+		"maxQuantity": 5919.0,
+		"minQuantity": 60.0
+	},
+	{
+		"instrumentId": "CFG",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Citizens Financial Group",
+		"maxQuantity": 3433.0,
+		"minQuantity": 35.0
+	},
+	{
+		"instrumentId": "CTXS",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Citrix Systems",
+		"maxQuantity": 225.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "CME",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "CME Group Inc.",
+		"maxQuantity": 191.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "CMS",
+		"externalIdType": "Sector",
+		"externalId": "Utilities",
+		"categoryId": "STOCK",
+		"instrumentDescription": "CMS Energy",
+		"maxQuantity": 1362.0,
+		"minQuantity": 14.0
+	},
+	{
+		"instrumentId": "KO",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Staples",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Coca-Cola Company (The)",
+		"maxQuantity": 22529.0,
+		"minQuantity": 226.0
+	},
+	{
+		"instrumentId": "CTSH",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Cognizant Technology Solutions",
+		"maxQuantity": 1383.0,
+		"minQuantity": 14.0
+	},
+	{
+		"instrumentId": "CL",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Staples",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Colgate-Palmolive",
+		"maxQuantity": 1732.0,
+		"minQuantity": 18.0
+	},
+	{
+		"instrumentId": "CMCSA",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Comcast Corp.",
+		"maxQuantity": 31908.0,
+		"minQuantity": 320.0
+	},
+	{
+		"instrumentId": "CMA",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Comerica Inc.",
+		"maxQuantity": 291.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "CAG",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Staples",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Conagra Brands",
+		"maxQuantity": 3023.0,
+		"minQuantity": 31.0
+	},
+	{
+		"instrumentId": "CXO",
+		"externalIdType": "Sector",
+		"externalId": "Energy",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Concho Resources",
+		"maxQuantity": 91.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "COP",
+		"externalIdType": "Sector",
+		"externalId": "Energy",
+		"categoryId": "STOCK",
+		"instrumentDescription": "ConocoPhillips",
+		"maxQuantity": 4747.0,
+		"minQuantity": 48.0
+	},
+	{
+		"instrumentId": "ED",
+		"externalIdType": "Sector",
+		"externalId": "Utilities",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Consolidated Edison",
+		"maxQuantity": 480.0,
+		"minQuantity": 5.0
+	},
+	{
+		"instrumentId": "STZ",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Staples",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Constellation Brands",
+		"maxQuantity": 58.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "GLW",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Corning Inc.",
+		"maxQuantity": 9805.0,
+		"minQuantity": 99.0
+	},
+	{
+		"instrumentId": "COST",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Staples",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Costco Wholesale Corp.",
+		"maxQuantity": 151.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "COTY",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Staples",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Coty, Inc",
+		"maxQuantity": 21768.0,
+		"minQuantity": 218.0
+	},
+	{
+		"instrumentId": "CCI",
+		"externalIdType": "Sector",
+		"externalId": "Real Estate",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Crown Castle International Corp.",
+		"maxQuantity": 426.0,
+		"minQuantity": 5.0
+	},
+	{
+		"instrumentId": "CSRA",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "CSRA Inc.",
+		"maxQuantity": 1799.0,
+		"minQuantity": 18.0
+	},
+	{
+		"instrumentId": "CSX",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "CSX Corp.",
+		"maxQuantity": 3441.0,
+		"minQuantity": 35.0
+	},
+	{
+		"instrumentId": "CMI",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Cummins Inc.",
+		"maxQuantity": 62.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "CVS",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Staples",
+		"categoryId": "STOCK",
+		"instrumentDescription": "CVS Health",
+		"maxQuantity": 1913.0,
+		"minQuantity": 20.0
+	},
+	{
+		"instrumentId": "DHI",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "D. R. Horton",
+		"maxQuantity": 2493.0,
+		"minQuantity": 25.0
+	},
+	{
+		"instrumentId": "DHR",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Danaher Corp.",
+		"maxQuantity": 870.0,
+		"minQuantity": 9.0
+	},
+	{
+		"instrumentId": "DRI",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Darden Restaurants",
+		"maxQuantity": 180.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "DVA",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "DaVita Inc.",
+		"maxQuantity": 450.0,
+		"minQuantity": 5.0
+	},
+	{
+		"instrumentId": "DE",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Deere & Co.",
+		"maxQuantity": 186.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "DAL",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Delta Air Lines Inc.",
+		"maxQuantity": 2815.0,
+		"minQuantity": 29.0
+	},
+	{
+		"instrumentId": "XRAY",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Dentsply Sirona",
+		"maxQuantity": 650.0,
+		"minQuantity": 7.0
+	},
+	{
+		"instrumentId": "DVN",
+		"externalIdType": "Sector",
+		"externalId": "Energy",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Devon Energy Corp.",
+		"maxQuantity": 4064.0,
+		"minQuantity": 41.0
+	},
+	{
+		"instrumentId": "DLR",
+		"externalIdType": "Sector",
+		"externalId": "Real Estate",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Digital Realty Trust Inc",
+		"maxQuantity": 169.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "DFS",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Discover Financial Services",
+		"maxQuantity": 805.0,
+		"minQuantity": 9.0
+	},
+	{
+		"instrumentId": "DISCA",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Discovery Communications-A",
+		"maxQuantity": 7923.0,
+		"minQuantity": 80.0
+	},
+	{
+		"instrumentId": "DISCK",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Discovery Communications-C",
+		"maxQuantity": 8815.0,
+		"minQuantity": 89.0
+	},
+	{
+		"instrumentId": "DISH",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Dish Network",
+		"maxQuantity": 1702.0,
+		"minQuantity": 18.0
+	},
+	{
+		"instrumentId": "DG",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Dollar General",
+		"maxQuantity": 401.0,
+		"minQuantity": 5.0
+	},
+	{
+		"instrumentId": "DLTR",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Dollar Tree",
+		"maxQuantity": 324.0,
+		"minQuantity": 4.0
+	},
+	{
+		"instrumentId": "D",
+		"externalIdType": "Sector",
+		"externalId": "Utilities",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Dominion Energy",
+		"maxQuantity": 1063.0,
+		"minQuantity": 11.0
+	},
+	{
+		"instrumentId": "DOV",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Dover Corp.",
+		"maxQuantity": 197.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "DWDP",
+		"externalIdType": "Sector",
+		"externalId": "Materials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "DowDuPont",
+		"maxQuantity": 4909.0,
+		"minQuantity": 50.0
+	},
+	{
+		"instrumentId": "DPS",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Staples",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Dr Pepper Snapple Group",
+		"maxQuantity": 173.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "DTE",
+		"externalIdType": "Sector",
+		"externalId": "Utilities",
+		"categoryId": "STOCK",
+		"instrumentDescription": "DTE Energy Co.",
+		"maxQuantity": 161.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "DUK",
+		"externalIdType": "Sector",
+		"externalId": "Utilities",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Duke Energy",
+		"maxQuantity": 1047.0,
+		"minQuantity": 11.0
+	},
+	{
+		"instrumentId": "DRE",
+		"externalIdType": "Sector",
+		"externalId": "Real Estate",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Duke Realty Corp",
+		"maxQuantity": 4944.0,
+		"minQuantity": 50.0
+	},
+	{
+		"instrumentId": "DXC",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "DXC Technology",
+		"maxQuantity": 428.0,
+		"minQuantity": 5.0
+	},
+	{
+		"instrumentId": "ETFC",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "E*Trade",
+		"maxQuantity": 1572.0,
+		"minQuantity": 16.0
+	},
+	{
+		"instrumentId": "EMN",
+		"externalIdType": "Sector",
+		"externalId": "Materials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Eastman Chemical",
+		"maxQuantity": 193.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "ETN",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Eaton Corporation",
+		"maxQuantity": 726.0,
+		"minQuantity": 8.0
+	},
+	{
+		"instrumentId": "EBAY",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "eBay Inc.",
+		"maxQuantity": 7194.0,
+		"minQuantity": 72.0
+	},
+	{
+		"instrumentId": "ECL",
+		"externalIdType": "Sector",
+		"externalId": "Materials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Ecolab Inc.",
+		"maxQuantity": 180.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "EIX",
+		"externalIdType": "Sector",
+		"externalId": "Utilities",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Edison Int'l",
+		"maxQuantity": 684.0,
+		"minQuantity": 7.0
+	},
+	{
+		"instrumentId": "EW",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Edwards Lifesciences",
+		"maxQuantity": 180.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "EA",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Electronic Arts",
+		"maxQuantity": 306.0,
+		"minQuantity": 4.0
+	},
+	{
+		"instrumentId": "EMR",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Emerson Electric Company",
+		"maxQuantity": 1570.0,
+		"minQuantity": 16.0
+	},
+	{
+		"instrumentId": "ETR",
+		"externalIdType": "Sector",
+		"externalId": "Utilities",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Entergy Corp.",
+		"maxQuantity": 298.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "EVHC",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Envision Healthcare",
+		"maxQuantity": 687.0,
+		"minQuantity": 7.0
+	},
+	{
+		"instrumentId": "EOG",
+		"externalIdType": "Sector",
+		"externalId": "Energy",
+		"categoryId": "STOCK",
+		"instrumentDescription": "EOG Resources",
+		"maxQuantity": 621.0,
+		"minQuantity": 7.0
+	},
+	{
+		"instrumentId": "EQT",
+		"externalIdType": "Sector",
+		"externalId": "Energy",
+		"categoryId": "STOCK",
+		"instrumentDescription": "EQT Corporation",
+		"maxQuantity": 855.0,
+		"minQuantity": 9.0
+	},
+	{
+		"instrumentId": "EFX",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Equifax Inc.",
+		"maxQuantity": 93.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "EQIX",
+		"externalIdType": "Sector",
+		"externalId": "Real Estate",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Equinix",
+		"maxQuantity": 5.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "EQR",
+		"externalIdType": "Sector",
+		"externalId": "Real Estate",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Equity Residential",
+		"maxQuantity": 959.0,
+		"minQuantity": 10.0
+	},
+	{
+		"instrumentId": "ESS",
+		"externalIdType": "Sector",
+		"externalId": "Real Estate",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Essex Property Trust, Inc.",
+		"maxQuantity": 12.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "EL",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Staples",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Estee Lauder Cos.",
+		"maxQuantity": 333.0,
+		"minQuantity": 4.0
+	},
+	{
+		"instrumentId": "RE",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Everest Re Group Ltd.",
+		"maxQuantity": 8.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "ES",
+		"externalIdType": "Sector",
+		"externalId": "Utilities",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Eversource Energy",
+		"maxQuantity": 880.0,
+		"minQuantity": 9.0
+	},
+	{
+		"instrumentId": "EXC",
+		"externalIdType": "Sector",
+		"externalId": "Utilities",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Exelon Corp.",
+		"maxQuantity": 6795.0,
+		"minQuantity": 68.0
+	},
+	{
+		"instrumentId": "EXPE",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Expedia Inc.",
+		"maxQuantity": 87.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "EXPD",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Expeditors International",
+		"maxQuantity": 522.0,
+		"minQuantity": 6.0
+	},
+	{
+		"instrumentId": "ESRX",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Express Scripts",
+		"maxQuantity": 1243.0,
+		"minQuantity": 13.0
+	},
+	{
+		"instrumentId": "EXR",
+		"externalIdType": "Sector",
+		"externalId": "Real Estate",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Extra Space Storage",
+		"maxQuantity": 207.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "XOM",
+		"externalIdType": "Sector",
+		"externalId": "Energy",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Exxon Mobil Corp.",
+		"maxQuantity": 6314.0,
+		"minQuantity": 64.0
+	},
+	{
+		"instrumentId": "FFIV",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "F5 Networks",
+		"maxQuantity": 38.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "FB",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Facebook, Inc.",
+		"maxQuantity": 1180.0,
+		"minQuantity": 12.0
+	},
+	{
+		"instrumentId": "FAST",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Fastenal Co",
+		"maxQuantity": 1277.0,
+		"minQuantity": 13.0
+	},
+	{
+		"instrumentId": "FRT",
+		"externalIdType": "Sector",
+		"externalId": "Real Estate",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Federal Realty Investment Trust",
+		"maxQuantity": 48.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "FDX",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "FedEx Corporation",
+		"maxQuantity": 56.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "FIS",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Fidelity National Information Services",
+		"maxQuantity": 433.0,
+		"minQuantity": 5.0
+	},
+	{
+		"instrumentId": "FITB",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Fifth Third Bancorp",
+		"maxQuantity": 9171.0,
+		"minQuantity": 92.0
+	},
+	{
+		"instrumentId": "FE",
+		"externalIdType": "Sector",
+		"externalId": "Utilities",
+		"categoryId": "STOCK",
+		"instrumentDescription": "FirstEnergy Corp",
+		"maxQuantity": 4548.0,
+		"minQuantity": 46.0
+	},
+	{
+		"instrumentId": "FISV",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Fiserv Inc",
+		"maxQuantity": 133.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "FLIR",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "FLIR Systems",
+		"maxQuantity": 809.0,
+		"minQuantity": 9.0
+	},
+	{
+		"instrumentId": "FLS",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Flowserve Corporation",
+		"maxQuantity": 683.0,
+		"minQuantity": 7.0
+	},
+	{
+		"instrumentId": "FLR",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Fluor Corp.",
+		"maxQuantity": 628.0,
+		"minQuantity": 7.0
+	},
+	{
+		"instrumentId": "FMC",
+		"externalIdType": "Sector",
+		"externalId": "Materials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "FMC Corporation",
+		"maxQuantity": 250.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "FL",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Foot Locker Inc",
+		"maxQuantity": 574.0,
+		"minQuantity": 6.0
+	},
+	{
+		"instrumentId": "F",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Ford Motor",
+		"maxQuantity": 296050.0,
+		"minQuantity": 2961.0
+	},
+	{
+		"instrumentId": "FTV",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Fortive Corp",
+		"maxQuantity": 857.0,
+		"minQuantity": 9.0
+	},
+	{
+		"instrumentId": "FBHS",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Fortune Brands Home & Security",
+		"maxQuantity": 379.0,
+		"minQuantity": 4.0
+	},
+	{
+		"instrumentId": "BEN",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Franklin Resources",
+		"maxQuantity": 3247.0,
+		"minQuantity": 33.0
+	},
+	{
+		"instrumentId": "FCX",
+		"externalIdType": "Sector",
+		"externalId": "Materials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Freeport-McMoRan Inc.",
+		"maxQuantity": 67333.0,
+		"minQuantity": 674.0
+	},
+	{
+		"instrumentId": "GPS",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Gap Inc.",
+		"maxQuantity": 5426.0,
+		"minQuantity": 55.0
+	},
+	{
+		"instrumentId": "GRMN",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Garmin Ltd.",
+		"maxQuantity": 615.0,
+		"minQuantity": 7.0
+	},
+	{
+		"instrumentId": "IT",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Gartner Inc",
+		"maxQuantity": 69.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "GD",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "General Dynamics",
+		"maxQuantity": 75.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "GE",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "General Electric",
+		"maxQuantity": 203392.0,
+		"minQuantity": 2034.0
+	},
+	{
+		"instrumentId": "GGP",
+		"externalIdType": "Sector",
+		"externalId": "Real Estate",
+		"categoryId": "STOCK",
+		"instrumentDescription": "General Growth Properties Inc.",
+		"maxQuantity": 20074.0,
+		"minQuantity": 201.0
+	},
+	{
+		"instrumentId": "GIS",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Staples",
+		"categoryId": "STOCK",
+		"instrumentDescription": "General Mills",
+		"maxQuantity": 1821.0,
+		"minQuantity": 19.0
+	},
+	{
+		"instrumentId": "GM",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "General Motors",
+		"maxQuantity": 10118.0,
+		"minQuantity": 102.0
+	},
+	{
+		"instrumentId": "GPC",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Genuine Parts",
+		"maxQuantity": 176.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "GILD",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Gilead Sciences",
+		"maxQuantity": 2421.0,
+		"minQuantity": 25.0
+	},
+	{
+		"instrumentId": "GPN",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Global Payments Inc.",
+		"maxQuantity": 195.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "GS",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Goldman Sachs Group",
+		"maxQuantity": 69.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "GT",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Goodyear Tire & Rubber",
+		"maxQuantity": 2502.0,
+		"minQuantity": 26.0
+	},
+	{
+		"instrumentId": "GWW",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Grainger (W.W.) Inc.",
+		"maxQuantity": 13.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "HAL",
+		"externalIdType": "Sector",
+		"externalId": "Energy",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Halliburton Co.",
+		"maxQuantity": 4140.0,
+		"minQuantity": 42.0
+	},
+	{
+		"instrumentId": "HBI",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Hanesbrands Inc",
+		"maxQuantity": 8413.0,
+		"minQuantity": 85.0
+	},
+	{
+		"instrumentId": "HOG",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Harley-Davidson",
+		"maxQuantity": 609.0,
+		"minQuantity": 7.0
+	},
+	{
+		"instrumentId": "HRS",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Harris Corporation",
+		"maxQuantity": 73.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "HIG",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Hartford Financial Svc.Gp.",
+		"maxQuantity": 1362.0,
+		"minQuantity": 14.0
+	},
+	{
+		"instrumentId": "HAS",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Hasbro Inc.",
+		"maxQuantity": 130.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "HCA",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "HCA Holdings",
+		"maxQuantity": 473.0,
+		"minQuantity": 5.0
+	},
+	{
+		"instrumentId": "HCP",
+		"externalIdType": "Sector",
+		"externalId": "Real Estate",
+		"categoryId": "STOCK",
+		"instrumentDescription": "HCP Inc.",
+		"maxQuantity": 6311.0,
+		"minQuantity": 64.0
+	},
+	{
+		"instrumentId": "HP",
+		"externalIdType": "Sector",
+		"externalId": "Energy",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Helmerich & Payne",
+		"maxQuantity": 359.0,
+		"minQuantity": 4.0
+	},
+	{
+		"instrumentId": "HSIC",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Henry Schein",
+		"maxQuantity": 265.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "HES",
+		"externalIdType": "Sector",
+		"externalId": "Energy",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Hess Corporation",
+		"maxQuantity": 1578.0,
+		"minQuantity": 16.0
+	},
+	{
+		"instrumentId": "HPE",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Hewlett Packard Enterprise",
+		"maxQuantity": 51719.0,
+		"minQuantity": 518.0
+	},
+	{
+		"instrumentId": "HLT",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Hilton Worldwide Holdings Inc",
+		"maxQuantity": 679.0,
+		"minQuantity": 7.0
+	},
+	{
+		"instrumentId": "HOLX",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Hologic",
+		"maxQuantity": 1722.0,
+		"minQuantity": 18.0
+	},
+	{
+		"instrumentId": "HD",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Home Depot",
+		"maxQuantity": 434.0,
+		"minQuantity": 5.0
+	},
+	{
+		"instrumentId": "HON",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Honeywell Int'l Inc.",
+		"maxQuantity": 398.0,
+		"minQuantity": 4.0
+	},
+	{
+		"instrumentId": "HRL",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Staples",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Hormel Foods Corp.",
+		"maxQuantity": 4762.0,
+		"minQuantity": 48.0
+	},
+	{
+		"instrumentId": "HST",
+		"externalIdType": "Sector",
+		"externalId": "Real Estate",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Host Hotels & Resorts",
+		"maxQuantity": 20660.0,
+		"minQuantity": 207.0
+	},
+	{
+		"instrumentId": "HPQ",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "HP Inc.",
+		"maxQuantity": 47231.0,
+		"minQuantity": 473.0
+	},
+	{
+		"instrumentId": "HUM",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Humana Inc.",
+		"maxQuantity": 26.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "HBAN",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Huntington Bancshares",
+		"maxQuantity": 55332.0,
+		"minQuantity": 554.0
+	},
+	{
+		"instrumentId": "HII",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Huntington Ingalls Industries",
+		"maxQuantity": 11.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "IDXX",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "IDEXX Laboratories",
+		"maxQuantity": 33.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "INFO",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "IHS Markit Ltd.",
+		"maxQuantity": 2209.0,
+		"minQuantity": 23.0
+	},
+	{
+		"instrumentId": "ITW",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Illinois Tool Works",
+		"maxQuantity": 159.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "ILMN",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Illumina Inc",
+		"maxQuantity": 40.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "INCY",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Incyte",
+		"maxQuantity": 169.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "IR",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Ingersoll-Rand PLC",
+		"maxQuantity": 345.0,
+		"minQuantity": 4.0
+	},
+	{
+		"instrumentId": "INTC",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Intel Corp.",
+		"maxQuantity": 29284.0,
+		"minQuantity": 293.0
+	},
+	{
+		"instrumentId": "ICE",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Intercontinental Exchange",
+		"maxQuantity": 1428.0,
+		"minQuantity": 15.0
+	},
+	{
+		"instrumentId": "IBM",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "International Business Machines",
+		"maxQuantity": 380.0,
+		"minQuantity": 4.0
+	},
+	{
+		"instrumentId": "IP",
+		"externalIdType": "Sector",
+		"externalId": "Materials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "International Paper",
+		"maxQuantity": 1315.0,
+		"minQuantity": 14.0
+	},
+	{
+		"instrumentId": "IPG",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Interpublic Group",
+		"maxQuantity": 8245.0,
+		"minQuantity": 83.0
+	},
+	{
+		"instrumentId": "IFF",
+		"externalIdType": "Sector",
+		"externalId": "Materials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Intl Flavors & Fragrances",
+		"maxQuantity": 45.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "INTU",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Intuit Inc.",
+		"maxQuantity": 142.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "ISRG",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Intuitive Surgical Inc.",
+		"maxQuantity": 12.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "IVZ",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Invesco Ltd.",
+		"maxQuantity": 3782.0,
+		"minQuantity": 38.0
+	},
+	{
+		"instrumentId": "IQV",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "IQVIA Holdings Inc.",
+		"maxQuantity": 256.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "IRM",
+		"externalIdType": "Sector",
+		"externalId": "Real Estate",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Iron Mountain Incorporated",
+		"maxQuantity": 2205.0,
+		"minQuantity": 23.0
+	},
+	{
+		"instrumentId": "JBHT",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "J. B. Hunt Transport Services",
+		"maxQuantity": 107.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "JEC",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Jacobs Engineering Group",
+		"maxQuantity": 418.0,
+		"minQuantity": 5.0
+	},
+	{
+		"instrumentId": "SJM",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Staples",
+		"categoryId": "STOCK",
+		"instrumentDescription": "JM Smucker",
+		"maxQuantity": 81.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "JNJ",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Johnson & Johnson",
+		"maxQuantity": 1665.0,
+		"minQuantity": 17.0
+	},
+	{
+		"instrumentId": "JCI",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Johnson Controls International",
+		"maxQuantity": 6223.0,
+		"minQuantity": 63.0
+	},
+	{
+		"instrumentId": "JPM",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "JPMorgan Chase & Co.",
+		"maxQuantity": 3741.0,
+		"minQuantity": 38.0
+	},
+	{
+		"instrumentId": "JNPR",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Juniper Networks",
+		"maxQuantity": 5086.0,
+		"minQuantity": 51.0
+	},
+	{
+		"instrumentId": "KSU",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Kansas City Southern",
+		"maxQuantity": 114.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "K",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Staples",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Kellogg Co.",
+		"maxQuantity": 747.0,
+		"minQuantity": 8.0
+	},
+	{
+		"instrumentId": "KEY",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "KeyCorp",
+		"maxQuantity": 31100.0,
+		"minQuantity": 311.0
+	},
+	{
+		"instrumentId": "KMB",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Staples",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Kimberly-Clark",
+		"maxQuantity": 237.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "KIM",
+		"externalIdType": "Sector",
+		"externalId": "Real Estate",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Kimco Realty",
+		"maxQuantity": 12241.0,
+		"minQuantity": 123.0
+	},
+	{
+		"instrumentId": "KMI",
+		"externalIdType": "Sector",
+		"externalId": "Energy",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Kinder Morgan",
+		"maxQuantity": 61007.0,
+		"minQuantity": 611.0
+	},
+	{
+		"instrumentId": "KLAC",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "KLA-Tencor Corp.",
+		"maxQuantity": 156.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "KSS",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Kohl's Corp.",
+		"maxQuantity": 721.0,
+		"minQuantity": 8.0
+	},
+	{
+		"instrumentId": "KHC",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Staples",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Kraft Heinz Co",
+		"maxQuantity": 1778.0,
+		"minQuantity": 18.0
+	},
+	{
+		"instrumentId": "KR",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Staples",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Kroger Co.",
+		"maxQuantity": 13503.0,
+		"minQuantity": 136.0
+	},
+	{
+		"instrumentId": "LB",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "L Brands Inc.",
+		"maxQuantity": 1314.0,
+		"minQuantity": 14.0
+	},
+	{
+		"instrumentId": "LLL",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "L-3 Communications Holdings",
+		"maxQuantity": 24.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "LH",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Laboratory Corp. of America Holding",
+		"maxQuantity": 45.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "LRCX",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Lam Research",
+		"maxQuantity": 70.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "LEG",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Leggett & Platt",
+		"maxQuantity": 595.0,
+		"minQuantity": 6.0
+	},
+	{
+		"instrumentId": "LEN",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Lennar Corp.",
+		"maxQuantity": 785.0,
+		"minQuantity": 8.0
+	},
+	{
+		"instrumentId": "LUK",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Leucadia National Corp.",
+		"maxQuantity": 5937.0,
+		"minQuantity": 60.0
+	},
+	{
+		"instrumentId": "LLY",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Lilly (Eli) & Co.",
+		"maxQuantity": 1688.0,
+		"minQuantity": 17.0
+	},
+	{
+		"instrumentId": "LNC",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Lincoln National",
+		"maxQuantity": 436.0,
+		"minQuantity": 5.0
+	},
+	{
+		"instrumentId": "LKQ",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "LKQ Corporation",
+		"maxQuantity": 2628.0,
+		"minQuantity": 27.0
+	},
+	{
+		"instrumentId": "LMT",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Lockheed Martin Corp.",
+		"maxQuantity": 32.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "L",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Loews Corp.",
+		"maxQuantity": 1451.0,
+		"minQuantity": 15.0
+	},
+	{
+		"instrumentId": "LOW",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Lowe's Cos.",
+		"maxQuantity": 1132.0,
+		"minQuantity": 12.0
+	},
+	{
+		"instrumentId": "LYB",
+		"externalIdType": "Sector",
+		"externalId": "Materials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "LyondellBasell",
+		"maxQuantity": 433.0,
+		"minQuantity": 5.0
+	},
+	{
+		"instrumentId": "MTB",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "M&T Bank Corp.",
+		"maxQuantity": 58.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "MAC",
+		"externalIdType": "Sector",
+		"externalId": "Real Estate",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Macerich",
+		"maxQuantity": 400.0,
+		"minQuantity": 4.0
+	},
+	{
+		"instrumentId": "M",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Macy's Inc.",
+		"maxQuantity": 5353.0,
+		"minQuantity": 54.0
+	},
+	{
+		"instrumentId": "MRO",
+		"externalIdType": "Sector",
+		"externalId": "Energy",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Marathon Oil Corp.",
+		"maxQuantity": 42969.0,
+		"minQuantity": 430.0
+	},
+	{
+		"instrumentId": "MPC",
+		"externalIdType": "Sector",
+		"externalId": "Energy",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Marathon Petroleum",
+		"maxQuantity": 1446.0,
+		"minQuantity": 15.0
+	},
+	{
+		"instrumentId": "MAR",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Marriott Int'l.",
+		"maxQuantity": 299.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "MMC",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Marsh & McLennan",
+		"maxQuantity": 879.0,
+		"minQuantity": 9.0
+	},
+	{
+		"instrumentId": "MLM",
+		"externalIdType": "Sector",
+		"externalId": "Materials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Martin Marietta Materials",
+		"maxQuantity": 15.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "MAS",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Masco Corp.",
+		"maxQuantity": 2271.0,
+		"minQuantity": 23.0
+	},
+	{
+		"instrumentId": "MA",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Mastercard Inc.",
+		"maxQuantity": 622.0,
+		"minQuantity": 7.0
+	},
+	{
+		"instrumentId": "MAT",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Mattel Inc.",
+		"maxQuantity": 10926.0,
+		"minQuantity": 110.0
+	},
+	{
+		"instrumentId": "MKC",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Staples",
+		"categoryId": "STOCK",
+		"instrumentDescription": "McCormick & Co.",
+		"maxQuantity": 135.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "MCD",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "McDonald's Corp.",
+		"maxQuantity": 374.0,
+		"minQuantity": 4.0
+	},
+	{
+		"instrumentId": "MCK",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "McKesson Corp.",
+		"maxQuantity": 88.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "MDT",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Medtronic plc",
+		"maxQuantity": 2076.0,
+		"minQuantity": 21.0
+	},
+	{
+		"instrumentId": "MRK",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Merck & Co.",
+		"maxQuantity": 7765.0,
+		"minQuantity": 78.0
+	},
+	{
+		"instrumentId": "MET",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "MetLife Inc.",
+		"maxQuantity": 4359.0,
+		"minQuantity": 44.0
+	},
+	{
+		"instrumentId": "MTD",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Mettler Toledo",
+		"maxQuantity": 1.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "MGM",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "MGM Resorts International",
+		"maxQuantity": 6068.0,
+		"minQuantity": 61.0
+	},
+	{
+		"instrumentId": "KORS",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Michael Kors Holdings",
+		"maxQuantity": 740.0,
+		"minQuantity": 8.0
+	},
+	{
+		"instrumentId": "MCHP",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Microchip Technology",
+		"maxQuantity": 351.0,
+		"minQuantity": 4.0
+	},
+	{
+		"instrumentId": "MU",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Micron Technology",
+		"maxQuantity": 10752.0,
+		"minQuantity": 108.0
+	},
+	{
+		"instrumentId": "MSFT",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Microsoft Corp.",
+		"maxQuantity": 13364.0,
+		"minQuantity": 134.0
+	},
+	{
+		"instrumentId": "MAA",
+		"externalIdType": "Sector",
+		"externalId": "Real Estate",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Mid-America Apartments",
+		"maxQuantity": 122.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "MHK",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Mohawk Industries",
+		"maxQuantity": 13.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "TAP",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Staples",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Molson Coors Brewing Company",
+		"maxQuantity": 215.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "MDLZ",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Staples",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Mondelez International",
+		"maxQuantity": 8333.0,
+		"minQuantity": 84.0
+	},
+	{
+		"instrumentId": "MON",
+		"externalIdType": "Sector",
+		"externalId": "Materials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Monsanto Co.",
+		"maxQuantity": 339.0,
+		"minQuantity": 4.0
+	},
+	{
+		"instrumentId": "MNST",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Staples",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Monster Beverage",
+		"maxQuantity": 2039.0,
+		"minQuantity": 21.0
+	},
+	{
+		"instrumentId": "MCO",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Moody's Corp",
+		"maxQuantity": 112.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "MS",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Morgan Stanley",
+		"maxQuantity": 8099.0,
+		"minQuantity": 81.0
+	},
+	{
+		"instrumentId": "MSI",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Motorola Solutions Inc.",
+		"maxQuantity": 203.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "MYL",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Mylan N.V.",
+		"maxQuantity": 3934.0,
+		"minQuantity": 40.0
+	},
+	{
+		"instrumentId": "NDAQ",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Nasdaq, Inc.",
+		"maxQuantity": 311.0,
+		"minQuantity": 4.0
+	},
+	{
+		"instrumentId": "NOV",
+		"externalIdType": "Sector",
+		"externalId": "Energy",
+		"categoryId": "STOCK",
+		"instrumentDescription": "National Oilwell Varco Inc.",
+		"maxQuantity": 3165.0,
+		"minQuantity": 32.0
+	},
+	{
+		"instrumentId": "NAVI",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Navient",
+		"maxQuantity": 14166.0,
+		"minQuantity": 142.0
+	},
+	{
+		"instrumentId": "NTAP",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "NetApp",
+		"maxQuantity": 1149.0,
+		"minQuantity": 12.0
+	},
+	{
+		"instrumentId": "NFLX",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Netflix Inc.",
+		"maxQuantity": 116.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "NWL",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Newell Brands",
+		"maxQuantity": 3938.0,
+		"minQuantity": 40.0
+	},
+	{
+		"instrumentId": "NFX",
+		"externalIdType": "Sector",
+		"externalId": "Energy",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Newfield Exploration Co",
+		"maxQuantity": 2023.0,
+		"minQuantity": 21.0
+	},
+	{
+		"instrumentId": "NEM",
+		"externalIdType": "Sector",
+		"externalId": "Materials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Newmont Mining Corporation",
+		"maxQuantity": 4085.0,
+		"minQuantity": 41.0
+	},
+	{
+		"instrumentId": "NWSA",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "News Corp. Class A",
+		"maxQuantity": 28817.0,
+		"minQuantity": 289.0
+	},
+	{
+		"instrumentId": "NWS",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "News Corp. Class B",
+		"maxQuantity": 27410.0,
+		"minQuantity": 275.0
+	},
+	{
+		"instrumentId": "NEE",
+		"externalIdType": "Sector",
+		"externalId": "Utilities",
+		"categoryId": "STOCK",
+		"instrumentDescription": "NextEra Energy",
+		"maxQuantity": 242.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "NLSN",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Nielsen Holdings",
+		"maxQuantity": 2522.0,
+		"minQuantity": 26.0
+	},
+	{
+		"instrumentId": "NKE",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Nike",
+		"maxQuantity": 4931.0,
+		"minQuantity": 50.0
+	},
+	{
+		"instrumentId": "NI",
+		"externalIdType": "Sector",
+		"externalId": "Utilities",
+		"categoryId": "STOCK",
+		"instrumentDescription": "NiSource Inc.",
+		"maxQuantity": 5675.0,
+		"minQuantity": 57.0
+	},
+	{
+		"instrumentId": "NBL",
+		"externalIdType": "Sector",
+		"externalId": "Energy",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Noble Energy Inc",
+		"maxQuantity": 5694.0,
+		"minQuantity": 57.0
+	},
+	{
+		"instrumentId": "JWN",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Nordstrom",
+		"maxQuantity": 869.0,
+		"minQuantity": 9.0
+	},
+	{
+		"instrumentId": "NSC",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Norfolk Southern Corp.",
+		"maxQuantity": 173.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "NTRS",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Northern Trust Corp.",
+		"maxQuantity": 263.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "NOC",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Northrop Grumman Corp.",
+		"maxQuantity": 23.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "NCLH",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Norwegian Cruise Line",
+		"maxQuantity": 816.0,
+		"minQuantity": 9.0
+	},
+	{
+		"instrumentId": "NRG",
+		"externalIdType": "Sector",
+		"externalId": "Utilities",
+		"categoryId": "STOCK",
+		"instrumentDescription": "NRG Energy",
+		"maxQuantity": 7738.0,
+		"minQuantity": 78.0
+	},
+	{
+		"instrumentId": "NUE",
+		"externalIdType": "Sector",
+		"externalId": "Materials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Nucor Corp.",
+		"maxQuantity": 910.0,
+		"minQuantity": 10.0
+	},
+	{
+		"instrumentId": "NVDA",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Nvidia Corporation",
+		"maxQuantity": 269.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "ORLY",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "O'Reilly Automotive",
+		"maxQuantity": 18.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "OXY",
+		"externalIdType": "Sector",
+		"externalId": "Energy",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Occidental Petroleum",
+		"maxQuantity": 1749.0,
+		"minQuantity": 18.0
+	},
+	{
+		"instrumentId": "OMC",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Omnicom Group",
+		"maxQuantity": 405.0,
+		"minQuantity": 5.0
+	},
+	{
+		"instrumentId": "OKE",
+		"externalIdType": "Sector",
+		"externalId": "Energy",
+		"categoryId": "STOCK",
+		"instrumentDescription": "ONEOK",
+		"maxQuantity": 1398.0,
+		"minQuantity": 14.0
+	},
+	{
+		"instrumentId": "ORCL",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Oracle Corp.",
+		"maxQuantity": 20314.0,
+		"minQuantity": 204.0
+	},
+	{
+		"instrumentId": "PCAR",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "PACCAR Inc.",
+		"maxQuantity": 731.0,
+		"minQuantity": 8.0
+	},
+	{
+		"instrumentId": "PKG",
+		"externalIdType": "Sector",
+		"externalId": "Materials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Packaging Corporation of America",
+		"maxQuantity": 86.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "PH",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Parker-Hannifin",
+		"maxQuantity": 46.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "PDCO",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Patterson Companies",
+		"maxQuantity": 631.0,
+		"minQuantity": 7.0
+	},
+	{
+		"instrumentId": "PAYX",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Paychex Inc.",
+		"maxQuantity": 949.0,
+		"minQuantity": 10.0
+	},
+	{
+		"instrumentId": "PYPL",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "PayPal",
+		"maxQuantity": 3640.0,
+		"minQuantity": 37.0
+	},
+	{
+		"instrumentId": "PNR",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Pentair Ltd.",
+		"maxQuantity": 434.0,
+		"minQuantity": 5.0
+	},
+	{
+		"instrumentId": "PBCT",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "People's United Financial",
+		"maxQuantity": 10939.0,
+		"minQuantity": 110.0
+	},
+	{
+		"instrumentId": "PEP",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Staples",
+		"categoryId": "STOCK",
+		"instrumentDescription": "PepsiCo Inc.",
+		"maxQuantity": 1142.0,
+		"minQuantity": 12.0
+	},
+	{
+		"instrumentId": "PKI",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "PerkinElmer",
+		"maxQuantity": 261.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "PRGO",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Perrigo",
+		"maxQuantity": 239.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "PFE",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Pfizer Inc.",
+		"maxQuantity": 49650.0,
+		"minQuantity": 497.0
+	},
+	{
+		"instrumentId": "PCG",
+		"externalIdType": "Sector",
+		"externalId": "Utilities",
+		"categoryId": "STOCK",
+		"instrumentDescription": "PG&E Corp.",
+		"maxQuantity": 1930.0,
+		"minQuantity": 20.0
+	},
+	{
+		"instrumentId": "PM",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Staples",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Philip Morris International",
+		"maxQuantity": 1282.0,
+		"minQuantity": 13.0
+	},
+	{
+		"instrumentId": "PSX",
+		"externalIdType": "Sector",
+		"externalId": "Energy",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Phillips 66",
+		"maxQuantity": 644.0,
+		"minQuantity": 7.0
+	},
+	{
+		"instrumentId": "PNW",
+		"externalIdType": "Sector",
+		"externalId": "Utilities",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Pinnacle West Capital",
+		"maxQuantity": 166.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "PXD",
+		"externalIdType": "Sector",
+		"externalId": "Energy",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Pioneer Natural Resources",
+		"maxQuantity": 71.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "PNC",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "PNC Financial Services",
+		"maxQuantity": 267.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "RL",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Polo Ralph Lauren Corp.",
+		"maxQuantity": 110.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "PPG",
+		"externalIdType": "Sector",
+		"externalId": "Materials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "PPG Industries",
+		"maxQuantity": 217.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "PPL",
+		"externalIdType": "Sector",
+		"externalId": "Utilities",
+		"categoryId": "STOCK",
+		"instrumentDescription": "PPL Corp.",
+		"maxQuantity": 6014.0,
+		"minQuantity": 61.0
+	},
+	{
+		"instrumentId": "PX",
+		"externalIdType": "Sector",
+		"externalId": "Materials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Praxair Inc.",
+		"maxQuantity": 155.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "PCLN",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Priceline.com Inc",
+		"maxQuantity": 1.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "PFG",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Principal Financial Group",
+		"maxQuantity": 687.0,
+		"minQuantity": 7.0
+	},
+	{
+		"instrumentId": "PG",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Staples",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Procter & Gamble",
+		"maxQuantity": 3392.0,
+		"minQuantity": 34.0
+	},
+	{
+		"instrumentId": "PGR",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Progressive Corp.",
+		"maxQuantity": 2835.0,
+		"minQuantity": 29.0
+	},
+	{
+		"instrumentId": "PLD",
+		"externalIdType": "Sector",
+		"externalId": "Real Estate",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Prologis",
+		"maxQuantity": 1667.0,
+		"minQuantity": 17.0
+	},
+	{
+		"instrumentId": "PRU",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Prudential Financial",
+		"maxQuantity": 367.0,
+		"minQuantity": 4.0
+	},
+	{
+		"instrumentId": "PEG",
+		"externalIdType": "Sector",
+		"externalId": "Utilities",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Public Serv. Enterprise Inc.",
+		"maxQuantity": 2327.0,
+		"minQuantity": 24.0
+	},
+	{
+		"instrumentId": "PSA",
+		"externalIdType": "Sector",
+		"externalId": "Real Estate",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Public Storage",
+		"maxQuantity": 43.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "PHM",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Pulte Homes Inc.",
+		"maxQuantity": 4136.0,
+		"minQuantity": 42.0
+	},
+	{
+		"instrumentId": "PVH",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "PVH Corp.",
+		"maxQuantity": 61.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "QRVO",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Qorvo",
+		"maxQuantity": 241.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "QCOM",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "QUALCOMM Inc.",
+		"maxQuantity": 4552.0,
+		"minQuantity": 46.0
+	},
+	{
+		"instrumentId": "PWR",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Quanta Services Inc.",
+		"maxQuantity": 1312.0,
+		"minQuantity": 14.0
+	},
+	{
+		"instrumentId": "DGX",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Quest Diagnostics",
+		"maxQuantity": 139.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "RRC",
+		"externalIdType": "Sector",
+		"externalId": "Energy",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Range Resources Corp.",
+		"maxQuantity": 5866.0,
+		"minQuantity": 59.0
+	},
+	{
+		"instrumentId": "RJF",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Raymond James Financial Inc.",
+		"maxQuantity": 218.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "RTN",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Raytheon Co.",
+		"maxQuantity": 95.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "O",
+		"externalIdType": "Sector",
+		"externalId": "Real Estate",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Realty Income Corporation",
+		"maxQuantity": 933.0,
+		"minQuantity": 10.0
+	},
+	{
+		"instrumentId": "RHT",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Red Hat Inc.",
+		"maxQuantity": 172.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "REG",
+		"externalIdType": "Sector",
+		"externalId": "Real Estate",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Regency Centers Corporation",
+		"maxQuantity": 435.0,
+		"minQuantity": 5.0
+	},
+	{
+		"instrumentId": "REGN",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Regeneron",
+		"maxQuantity": 7.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "RF",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Regions Financial Corp.",
+		"maxQuantity": 46431.0,
+		"minQuantity": 465.0
+	},
+	{
+		"instrumentId": "RSG",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Republic Services Inc",
+		"maxQuantity": 863.0,
+		"minQuantity": 9.0
+	},
+	{
+		"instrumentId": "RMD",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "ResMed",
+		"maxQuantity": 212.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "RHI",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Robert Half International",
+		"maxQuantity": 519.0,
+		"minQuantity": 6.0
+	},
+	{
+		"instrumentId": "ROK",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Rockwell Automation Inc.",
+		"maxQuantity": 44.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "COL",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Rockwell Collins",
+		"maxQuantity": 133.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "ROP",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Roper Technologies",
+		"maxQuantity": 19.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "ROST",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Ross Stores",
+		"maxQuantity": 878.0,
+		"minQuantity": 9.0
+	},
+	{
+		"instrumentId": "RCL",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Royal Caribbean Cruises Ltd",
+		"maxQuantity": 177.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "SPGI",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "S&P Global, Inc.",
+		"maxQuantity": 117.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "CRM",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Salesforce.com",
+		"maxQuantity": 838.0,
+		"minQuantity": 9.0
+	},
+	{
+		"instrumentId": "SBAC",
+		"externalIdType": "Sector",
+		"externalId": "Real Estate",
+		"categoryId": "STOCK",
+		"instrumentDescription": "SBA Communications",
+		"maxQuantity": 67.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "SCG",
+		"externalIdType": "Sector",
+		"externalId": "Utilities",
+		"categoryId": "STOCK",
+		"instrumentDescription": "SCANA Corp",
+		"maxQuantity": 584.0,
+		"minQuantity": 6.0
+	},
+	{
+		"instrumentId": "SLB",
+		"externalIdType": "Sector",
+		"externalId": "Energy",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Schlumberger Ltd.",
+		"maxQuantity": 2838.0,
+		"minQuantity": 29.0
+	},
+	{
+		"instrumentId": "SNI",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Scripps Networks Interactive Inc.",
+		"maxQuantity": 228.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "STX",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Seagate Technology",
+		"maxQuantity": 1723.0,
+		"minQuantity": 18.0
+	},
+	{
+		"instrumentId": "SEE",
+		"externalIdType": "Sector",
+		"externalId": "Materials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Sealed Air",
+		"maxQuantity": 900.0,
+		"minQuantity": 9.0
+	},
+	{
+		"instrumentId": "SRE",
+		"externalIdType": "Sector",
+		"externalId": "Utilities",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Sempra Energy",
+		"maxQuantity": 205.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "SHW",
+		"externalIdType": "Sector",
+		"externalId": "Materials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Sherwin-Williams",
+		"maxQuantity": 8.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "SIG",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Signet Jewelers",
+		"maxQuantity": 172.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "SPG",
+		"externalIdType": "Sector",
+		"externalId": "Real Estate",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Simon Property Group Inc",
+		"maxQuantity": 113.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "SWKS",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Skyworks Solutions",
+		"maxQuantity": 176.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "SLG",
+		"externalIdType": "Sector",
+		"externalId": "Real Estate",
+		"categoryId": "STOCK",
+		"instrumentDescription": "SL Green Realty",
+		"maxQuantity": 91.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "SNA",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Snap-On Inc.",
+		"maxQuantity": 24.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "SO",
+		"externalIdType": "Sector",
+		"externalId": "Utilities",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Southern Co.",
+		"maxQuantity": 4394.0,
+		"minQuantity": 44.0
+	},
+	{
+		"instrumentId": "LUV",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Southwest Airlines",
+		"maxQuantity": 1853.0,
+		"minQuantity": 19.0
+	},
+	{
+		"instrumentId": "SWK",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Stanley Black & Decker",
+		"maxQuantity": 75.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "SBUX",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Starbucks Corp.",
+		"maxQuantity": 4174.0,
+		"minQuantity": 42.0
+	},
+	{
+		"instrumentId": "STT",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "State Street Corp.",
+		"maxQuantity": 450.0,
+		"minQuantity": 5.0
+	},
+	{
+		"instrumentId": "SRCL",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Stericycle Inc",
+		"maxQuantity": 164.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "SYK",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Stryker Corp.",
+		"maxQuantity": 188.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "STI",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "SunTrust Banks",
+		"maxQuantity": 1320.0,
+		"minQuantity": 14.0
+	},
+	{
+		"instrumentId": "SYMC",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Symantec Corp.",
+		"maxQuantity": 7360.0,
+		"minQuantity": 74.0
+	},
+	{
+		"instrumentId": "SYF",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Synchrony Financial",
+		"maxQuantity": 7824.0,
+		"minQuantity": 79.0
+	},
+	{
+		"instrumentId": "SNPS",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Synopsys Inc.",
+		"maxQuantity": 252.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "SYY",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Staples",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Sysco Corp.",
+		"maxQuantity": 1702.0,
+		"minQuantity": 18.0
+	},
+	{
+		"instrumentId": "TROW",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "T. Rowe Price Group",
+		"maxQuantity": 316.0,
+		"minQuantity": 4.0
+	},
+	{
+		"instrumentId": "TPR",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Tapestry, Inc.",
+		"maxQuantity": 1568.0,
+		"minQuantity": 16.0
+	},
+	{
+		"instrumentId": "TGT",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Target Corp.",
+		"maxQuantity": 1466.0,
+		"minQuantity": 15.0
+	},
+	{
+		"instrumentId": "TEL",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "TE Connectivity Ltd.",
+		"maxQuantity": 472.0,
+		"minQuantity": 5.0
+	},
+	{
+		"instrumentId": "FTI",
+		"externalIdType": "Sector",
+		"externalId": "Energy",
+		"categoryId": "STOCK",
+		"instrumentDescription": "TechnipFMC",
+		"maxQuantity": 5669.0,
+		"minQuantity": 57.0
+	},
+	{
+		"instrumentId": "TXN",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Texas Instruments",
+		"maxQuantity": 1141.0,
+		"minQuantity": 12.0
+	},
+	{
+		"instrumentId": "TXT",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Textron Inc.",
+		"maxQuantity": 982.0,
+		"minQuantity": 10.0
+	},
+	{
+		"instrumentId": "BK",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "The Bank of New York Mellon Corp.",
+		"maxQuantity": 3973.0,
+		"minQuantity": 40.0
+	},
+	{
+		"instrumentId": "CLX",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Staples",
+		"categoryId": "STOCK",
+		"instrumentDescription": "The Clorox Company",
+		"maxQuantity": 70.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "COO",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "The Cooper Companies",
+		"maxQuantity": 11.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "HSY",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Staples",
+		"categoryId": "STOCK",
+		"instrumentDescription": "The Hershey Company",
+		"maxQuantity": 186.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "MOS",
+		"externalIdType": "Sector",
+		"externalId": "Materials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "The Mosaic Company",
+		"maxQuantity": 6101.0,
+		"minQuantity": 62.0
+	},
+	{
+		"instrumentId": "TRV",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "The Travelers Companies Inc.",
+		"maxQuantity": 169.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "DIS",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "The Walt Disney Company",
+		"maxQuantity": 1395.0,
+		"minQuantity": 14.0
+	},
+	{
+		"instrumentId": "TMO",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Thermo Fisher Scientific",
+		"maxQuantity": 122.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "TIF",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Tiffany & Co.",
+		"maxQuantity": 149.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "TWX",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Time Warner Inc.",
+		"maxQuantity": 894.0,
+		"minQuantity": 9.0
+	},
+	{
+		"instrumentId": "TJX",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "TJX Companies Inc.",
+		"maxQuantity": 1198.0,
+		"minQuantity": 12.0
+	},
+	{
+		"instrumentId": "TMK",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Torchmark Corp.",
+		"maxQuantity": 174.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "TSS",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Total System Services",
+		"maxQuantity": 422.0,
+		"minQuantity": 5.0
+	},
+	{
+		"instrumentId": "TSCO",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Tractor Supply Company",
+		"maxQuantity": 312.0,
+		"minQuantity": 4.0
+	},
+	{
+		"instrumentId": "TDG",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "TransDigm Group",
+		"maxQuantity": 9.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "TRIP",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "TripAdvisor",
+		"maxQuantity": 906.0,
+		"minQuantity": 10.0
+	},
+	{
+		"instrumentId": "FOXA",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Twenty-First Century Fox Class A",
+		"maxQuantity": 13121.0,
+		"minQuantity": 132.0
+	},
+	{
+		"instrumentId": "FOX",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Twenty-First Century Fox Class B",
+		"maxQuantity": 20705.0,
+		"minQuantity": 208.0
+	},
+	{
+		"instrumentId": "TSN",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Staples",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Tyson Foods",
+		"maxQuantity": 754.0,
+		"minQuantity": 8.0
+	},
+	{
+		"instrumentId": "USB",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "U.S. Bancorp",
+		"maxQuantity": 5961.0,
+		"minQuantity": 60.0
+	},
+	{
+		"instrumentId": "UDR",
+		"externalIdType": "Sector",
+		"externalId": "Real Estate",
+		"categoryId": "STOCK",
+		"instrumentDescription": "UDR Inc",
+		"maxQuantity": 2028.0,
+		"minQuantity": 21.0
+	},
+	{
+		"instrumentId": "ULTA",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Ulta Salon Cosmetics & Fragrance Inc",
+		"maxQuantity": 11.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "UAA",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Under Armour Class A",
+		"maxQuantity": 16667.0,
+		"minQuantity": 167.0
+	},
+	{
+		"instrumentId": "UA",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Under Armour Class C",
+		"maxQuantity": 19881.0,
+		"minQuantity": 199.0
+	},
+	{
+		"instrumentId": "UNP",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Union Pacific",
+		"maxQuantity": 563.0,
+		"minQuantity": 6.0
+	},
+	{
+		"instrumentId": "UAL",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "United Continental Holdings",
+		"maxQuantity": 652.0,
+		"minQuantity": 7.0
+	},
+	{
+		"instrumentId": "UNH",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "United Health Group Inc.",
+		"maxQuantity": 258.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "UPS",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "United Parcel Service",
+		"maxQuantity": 638.0,
+		"minQuantity": 7.0
+	},
+	{
+		"instrumentId": "URI",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "United Rentals, Inc.",
+		"maxQuantity": 48.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "UTX",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "United Technologies",
+		"maxQuantity": 555.0,
+		"minQuantity": 6.0
+	},
+	{
+		"instrumentId": "UHS",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Universal Health Services, Inc.",
+		"maxQuantity": 79.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "UNM",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Unum Group",
+		"maxQuantity": 920.0,
+		"minQuantity": 10.0
+	},
+	{
+		"instrumentId": "VFC",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "V.F. Corp.",
+		"maxQuantity": 1014.0,
+		"minQuantity": 11.0
+	},
+	{
+		"instrumentId": "VLO",
+		"externalIdType": "Sector",
+		"externalId": "Energy",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Valero Energy",
+		"maxQuantity": 747.0,
+		"minQuantity": 8.0
+	},
+	{
+		"instrumentId": "VAR",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Varian Medical Systems",
+		"maxQuantity": 94.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "VTR",
+		"externalIdType": "Sector",
+		"externalId": "Real Estate",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Ventas Inc",
+		"maxQuantity": 989.0,
+		"minQuantity": 10.0
+	},
+	{
+		"instrumentId": "VRSN",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Verisign Inc.",
+		"maxQuantity": 107.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "VRSK",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Verisk Analytics",
+		"maxQuantity": 223.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "VZ",
+		"externalIdType": "Sector",
+		"externalId": "Telecommunication Services",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Verizon Communications",
+		"maxQuantity": 18102.0,
+		"minQuantity": 182.0
+	},
+	{
+		"instrumentId": "VRTX",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Vertex Pharmaceuticals Inc",
+		"maxQuantity": 176.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "VIAB",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Viacom Inc.",
+		"maxQuantity": 3135.0,
+		"minQuantity": 32.0
+	},
+	{
+		"instrumentId": "V",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Visa Inc.",
+		"maxQuantity": 2203.0,
+		"minQuantity": 23.0
+	},
+	{
+		"instrumentId": "VNO",
+		"externalIdType": "Sector",
+		"externalId": "Real Estate",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Vornado Realty Trust",
+		"maxQuantity": 262.0,
+		"minQuantity": 3.0
+	},
+	{
+		"instrumentId": "VMC",
+		"externalIdType": "Sector",
+		"externalId": "Materials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Vulcan Materials",
+		"maxQuantity": 91.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "WMT",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Staples",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Wal-Mart Stores",
+		"maxQuantity": 4141.0,
+		"minQuantity": 42.0
+	},
+	{
+		"instrumentId": "WBA",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Staples",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Walgreens Boots Alliance",
+		"maxQuantity": 1850.0,
+		"minQuantity": 19.0
+	},
+	{
+		"instrumentId": "WM",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Waste Management Inc.",
+		"maxQuantity": 719.0,
+		"minQuantity": 8.0
+	},
+	{
+		"instrumentId": "WAT",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Waters Corporation",
+		"maxQuantity": 27.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "WEC",
+		"externalIdType": "Sector",
+		"externalId": "Utilities",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Wec Energy Group Inc",
+		"maxQuantity": 800.0,
+		"minQuantity": 8.0
+	},
+	{
+		"instrumentId": "WFC",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Wells Fargo",
+		"maxQuantity": 15551.0,
+		"minQuantity": 156.0
+	},
+	{
+		"instrumentId": "HCN",
+		"externalIdType": "Sector",
+		"externalId": "Real Estate",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Welltower Inc.",
+		"maxQuantity": 887.0,
+		"minQuantity": 9.0
+	},
+	{
+		"instrumentId": "WDC",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Western Digital",
+		"maxQuantity": 453.0,
+		"minQuantity": 5.0
+	},
+	{
+		"instrumentId": "WU",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Western Union Co",
+		"maxQuantity": 11652.0,
+		"minQuantity": 117.0
+	},
+	{
+		"instrumentId": "WRK",
+		"externalIdType": "Sector",
+		"externalId": "Materials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "WestRock Company",
+		"maxQuantity": 766.0,
+		"minQuantity": 8.0
+	},
+	{
+		"instrumentId": "WY",
+		"externalIdType": "Sector",
+		"externalId": "Real Estate",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Weyerhaeuser Corp.",
+		"maxQuantity": 6617.0,
+		"minQuantity": 67.0
+	},
+	{
+		"instrumentId": "WHR",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Whirlpool Corp.",
+		"maxQuantity": 23.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "WMB",
+		"externalIdType": "Sector",
+		"externalId": "Energy",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Williams Cos.",
+		"maxQuantity": 9618.0,
+		"minQuantity": 97.0
+	},
+	{
+		"instrumentId": "WLTW",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Willis Towers Watson",
+		"maxQuantity": 69.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "WYN",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Wyndham Worldwide",
+		"maxQuantity": 104.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "WYNN",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Wynn Resorts Ltd",
+		"maxQuantity": 58.0,
+		"minQuantity": 1.0
+	},
+	{
+		"instrumentId": "XEL",
+		"externalIdType": "Sector",
+		"externalId": "Utilities",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Xcel Energy Inc",
+		"maxQuantity": 2364.0,
+		"minQuantity": 24.0
+	},
+	{
+		"instrumentId": "XRX",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Xerox Corp.",
+		"maxQuantity": 2673.0,
+		"minQuantity": 27.0
+	},
+	{
+		"instrumentId": "XLNX",
+		"externalIdType": "Sector",
+		"externalId": "Information Technology",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Xilinx Inc",
+		"maxQuantity": 640.0,
+		"minQuantity": 7.0
+	},
+	{
+		"instrumentId": "XL",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "XL Capital",
+		"maxQuantity": 1633.0,
+		"minQuantity": 17.0
+	},
+	{
+		"instrumentId": "XYL",
+		"externalIdType": "Sector",
+		"externalId": "Industrials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Xylem Inc.",
+		"maxQuantity": 511.0,
+		"minQuantity": 6.0
+	},
+	{
+		"instrumentId": "YUM",
+		"externalIdType": "Sector",
+		"externalId": "Consumer Discretionary",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Yum! Brands Inc",
+		"maxQuantity": 648.0,
+		"minQuantity": 7.0
+	},
+	{
+		"instrumentId": "ZBH",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Zimmer Biomet Holdings",
+		"maxQuantity": 147.0,
+		"minQuantity": 2.0
+	},
+	{
+		"instrumentId": "ZION",
+		"externalIdType": "Sector",
+		"externalId": "Financials",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Zions Bancorp",
+		"maxQuantity": 985.0,
+		"minQuantity": 10.0
+	},
+	{
+		"instrumentId": "ZTS",
+		"externalIdType": "Sector",
+		"externalId": "Health Care",
+		"categoryId": "STOCK",
+		"instrumentDescription": "Zoetis",
+		"maxQuantity": 1208.0,
+		"minQuantity": 13.0
+	}
+]

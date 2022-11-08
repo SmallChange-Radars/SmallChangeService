@@ -24,6 +24,7 @@ public interface PortfolioMapper {
 			SELECT clientId, instrumentId, quantity, value
 			FROM portfolio
             WHERE clientId = #{clientId}
+            AND quantity > 0
 			""")
 	public List<Portfolio> getPortfolioByClientId(String clientId);
 	

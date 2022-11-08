@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -19,6 +20,7 @@ import com.fidelity.smallchange.service.PortfolioService;
 import com.fidelity.smallchange.service.UserDetailsImpl;
 
 @RestController
+@RequestMapping("/api")
 public class PortfolioController {
 
 	@Autowired
@@ -32,14 +34,13 @@ public class PortfolioController {
 	public List<Portfolio> getAllPortfolios(Authentication authentication) {
 		UserDetailsImpl userDetails = (UserDetailsImpl) authentication
                 .getPrincipal();
-		System.out.println(userDetails.getClientId());
 		return portfolioService.getAllPortfolios();
 	}
 
 	@GetMapping(path = "portfolio")
-	public List<Portfolio> getPortfolioByClientId(@AuthenticationPrincipal UserDetailsImpl userDetails) {
-		System.out.println(userDetails.getClientId());
-		return portfolioService.getPortfolioByClientId(userDetails.getClientId());
+	public List<ClientPortfolio> getPortfolioByClientId(@AuthenticationPrincipal UserDetailsImpl userDetails) throws JsonProcessingException {
+//		return portfolioService.getPortfolioByClientId(userDetails.getClientId());
+		return portfolioService.getClientPortfolio(userDetails.getClientId());
 	}
 
 	@PostMapping(path = "insertportfolio")

@@ -68,11 +68,9 @@ public class PortfolioServiceImpl implements PortfolioService {
 		List<ClientPortfolio> cps = new ArrayList<>();
 		for (Portfolio p: portfolios) {
 			BigDecimal currentPrice = instrumentService.getAskPrice(p.getInstrumentId()).setScale(2, RoundingMode.HALF_EVEN);
-			System.out.println(currentPrice);
 			BigDecimal gains = currentPrice.multiply(new BigDecimal(p.getQuantity()).setScale(2, RoundingMode.HALF_EVEN)).subtract(p.getValue()).setScale(2, RoundingMode.HALF_EVEN);
 			double returns = gains.setScale(2, RoundingMode.HALF_EVEN).doubleValue();
 			returns = returns / p.getValue().setScale(2, RoundingMode.HALF_EVEN).doubleValue();
-			System.out.println(returns);
 			ClientPortfolio cp = new ClientPortfolio(p.getClientId(), p.getInstrumentId(), 
 					p.getQuantity(), p.getValue(), currentPrice, gains, returns);
 			cps.add(cp);

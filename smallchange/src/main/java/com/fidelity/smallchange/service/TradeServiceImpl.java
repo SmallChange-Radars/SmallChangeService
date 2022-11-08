@@ -22,25 +22,28 @@ import oracle.net.aso.f;
 
 @Service
 public class TradeServiceImpl implements TradeService {
-	
+
 	@Autowired
 	private TradeOrderDao dao;
-	
+
 	@Autowired
 	private ClientService clientService;
-	
+
 	@Autowired
 	private PortfolioDao portfolioDao;
-	
+
 	@Autowired
 	private FMTSRestClient fmtsRestClient;
-	
-	public List<Trade> getTradeActivityByClientId(String clientId) throws Exception{
-		
+
+	public List<Trade> getTradeActivityByClientId(String clientId,String q,int _page,int _limit,String _sort,String _order) throws Exception {
+
 		try {
-			return dao.getTradeActivityByClient(clientId);
+			int offset=(_page-1)*_limit;
+			q="%"+q+"%";
 			
-		}catch(Exception e) {
+			return dao.getTradeActivityByClient(clientId,q,_sort,_order,offset,_limit);
+
+		} catch (Exception e) {
 			throw new Exception("Error while connecting to DB");
 		}
 	}
@@ -53,106 +56,110 @@ public class TradeServiceImpl implements TradeService {
 			order.setClientId(clientId);
 			order.setToken(token.getToken());
 			order.setOrderId(orderId);
-			Trade trade=fmtsRestClient.tradeExecution(order);
-			System.out.println(trade.toString());
-			if(trade==null) {
+			Trade trade = fmtsRestClient.tradeExecution(order);
+			if (trade == null) {
 				System.out.println("hello");
 				return false;
 			}
-			
+
 			else {
-				if(verifyTrade(trade)) {
-					System.out.println(trade.getCashValue());
+				if (verifyTrade(trade)) {
 					dao.insertOrder(order);
-					
+
 					trade.getOrder().setOrderId(order.getOrderId());
 					trade.setTimestamp(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").format(new Date()));
 					dao.insertTrade(trade);
 					aggregateInPortfolio(trade);
-				}
-				else {
-					System.out.println("hello");
+				} else {
+
 					return false;
 				}
 				return true;
 			}
-			
-			
-		}catch(Exception e) {
-			throw new Exception("Error while executing trade",e);
+
+		} catch (Exception e) {
+			throw new Exception("Error while executing trade", e);
 		}
 	}
-	
+
 	public boolean verifyTrade(Trade trade) {
 		Portfolio portfolio;
-		if(trade.getDirection().compareTo("S")==0) {
-			portfolio=dao.getInstrumentQuantity(trade.getOrder().getClientId(), trade.getInstrumentId());
-			if(portfolio!=null) {
-				int availableQuantity=portfolio.getQuantity();
-				if(availableQuantity>=trade.getQuantity()) {
+		if (trade.getDirection().compareTo("S") == 0) {
+			portfolio = dao.getInstrumentQuantity(trade.getOrder().getClientId(), trade.getInstrumentId());
+			if (portfolio != null) {
+				int availableQuantity = portfolio.getQuantity();
+				if (availableQuantity >= trade.getQuantity()) {
 					return true;
-				}else {
-					
+				} else {
+
 					return false;
 				}
-			}
-			else {
-				
+			} else {
+
 				return false;
 			}
 		}
-		if(trade.getDirection().compareTo("B")==0) {
+		if (trade.getDirection().compareTo("B") == 0) {
 			BigDecimal walletAmount = dao.getWalletAmount(trade.getOrder().getClientId());
-			if(walletAmount.compareTo(trade.getCashValue()) <0) {
+			if (walletAmount.compareTo(trade.getCashValue()) < 0) {
 				return false;
 			}
 			return true;
 		}
 		return true;
 	}
-	
+
 	public void aggregateInPortfolio(Trade trade) throws Exception {
-		Portfolio portfolio=null;
+		Portfolio portfolio = null;
 		try {
-			portfolio = portfolioDao.getPortfolioByClientIdAndInstrumentId(trade.getOrder().getClientId(), trade.getInstrumentId());
-			if(portfolio == null) {
-				portfolio = new Portfolio(trade.getOrder().getClientId(),trade.getInstrumentId(),trade.getQuantity(),trade.getCashValue());
+			portfolio = portfolioDao.getPortfolioByClientIdAndInstrumentId(trade.getOrder().getClientId(),
+					trade.getInstrumentId());
+			if (portfolio == null) {
+				portfolio = new Portfolio(trade.getOrder().getClientId(), trade.getInstrumentId(), trade.getQuantity(),
+						trade.getCashValue());
 				portfolioDao.insertPortfolio(portfolio);
 				BigDecimal walletAmount = dao.getWalletAmount(trade.getOrder().getClientId());
-				walletAmount=walletAmount.subtract(trade.getCashValue());
+				walletAmount = walletAmount.subtract(trade.getCashValue());
 				clientService.updateClientWallet(trade.getOrder().getClientId(), walletAmount);
-			}
-			else {
-				
-				
-				if(trade.getDirection().compareTo("B") ==0) {
-					
+			} else {
+
+				if (trade.getDirection().compareTo("B") == 0) {
+
 					BigDecimal originalValue = portfolio.getValue();
-					originalValue=originalValue.add(trade.getCashValue());
-					if(portfolio.getQuantity()==0)
-						originalValue=trade.getCashValue();
+					originalValue = originalValue.add(trade.getCashValue());
+					if (portfolio.getQuantity() == 0)
+						originalValue = trade.getCashValue();
 					portfolio.setValue(originalValue);
-					portfolio.setQuantity(portfolio.getQuantity()+trade.getQuantity());
+					portfolio.setQuantity(portfolio.getQuantity() + trade.getQuantity());
 					portfolioDao.updatePortfolio(portfolio);
 					BigDecimal walletAmount = dao.getWalletAmount(trade.getOrder().getClientId());
-					walletAmount=walletAmount.subtract(trade.getCashValue());
+					walletAmount = walletAmount.subtract(trade.getCashValue());
 					clientService.updateClientWallet(trade.getOrder().getClientId(), walletAmount);
-					
-				}else {
+
+				} else {
 					BigDecimal originalValue = portfolio.getValue();
-					originalValue=originalValue.subtract(trade.getCashValue());
+					originalValue = originalValue.subtract(trade.getCashValue());
 					portfolio.setValue(originalValue);
-					portfolio.setQuantity(portfolio.getQuantity()-trade.getQuantity());
+					portfolio.setQuantity(portfolio.getQuantity() - trade.getQuantity());
 					portfolioDao.updatePortfolio(portfolio);
 					BigDecimal walletAmount = dao.getWalletAmount(trade.getOrder().getClientId());
-					walletAmount=walletAmount.add(trade.getCashValue());
+					walletAmount = walletAmount.add(trade.getCashValue());
 					clientService.updateClientWallet(trade.getOrder().getClientId(), walletAmount);
 				}
 			}
-		}catch(Exception e) {
+		} catch (Exception e) {
 			throw new Exception("Exception while aggregating portfolio");
 		}
-		
+
 	}
-	
+
+	@Override
+	public int totalTradesByClientId(String clientId) throws Exception {
+		try {
+			return dao.totalTradesByClientId(clientId);
+		}catch(Exception e) {
+			throw new Exception("Error while fetching total trades count");
+		}
+	}
+
 }

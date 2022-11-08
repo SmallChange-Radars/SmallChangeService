@@ -41,14 +41,26 @@ public interface TradeExecutionMapper {
 			+ "    t.executionprice,\r\n"
 			+ "    t.cashvalue,\r\n"
 			+ "    t.timestamp,\r\n"
-			+ "    o.targetprice,\r\n"
 			+ "    o.clientid,\r\n"
 			+ "    o.orderid\r\n"
 			+ "FROM\r\n"
 			+ "    trade            t\r\n"
-			+ "    LEFT JOIN orderinstrument  o ON t.clientid = o.clientid WHERE\r\n"
-			+ "    t.clientid = #{clientId}")
-	public List<Trade> getTradesByClient(String clientId);
+			+ "    LEFT JOIN orderinstrument  o ON t.orderid = o.orderid\r\n"
+			+ "WHERE\r\n"
+			+ "        t.clientid = #{clientId}\r\n"
+			+ "    AND t.instrumentid LIKE #{q}\r\n"
+			+ "ORDER BY\r\n"
+			+ "    ${_sort} ${_order}\r\n"
+			+ "OFFSET #{offset} ROWS FETCH NEXT #{_limit} ROWS ONLY")
+	public List<Trade> getTradesByClient(String clientId,String q,String _sort,String _order,int offset,int _limit);
+	
+	@Select("SELECT\r\n"
+			+ "    COUNT(*)\r\n"
+			+ "FROM\r\n"
+			+ "    trade\r\n"
+			+ "WHERE\r\n"
+			+ "    clientid = #{clientId}")
+	public int totalTradesByClientId(String clientId);
 
 	@Insert("INSERT INTO orderinstrument ( orderid,quantity, targetprice, direction, clientid, instrumentid)"
 			+ " values (#{orderId},#{quantity},#{targetPrice},#{direction},#{clientId},#{instrumentId})")

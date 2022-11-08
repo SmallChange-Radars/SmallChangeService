@@ -25,6 +25,7 @@ public interface TradeExecutionMapper {
 		@Result(property="direction", column="DIRECTION"),
 		@Result(property="executionPrice", column="EXECUTIONPRICE"),
 		@Result(property="cashValue", column="CASHVALUE"),
+		@Result(property="timestamp", column="TIMESTAMP"),
 		@Result(property="order.instrumentId", column="INSTRUMENTID"),
 		@Result(property="order.quantity", column="QUANTITY"),
 		@Result(property="order.targetPrice", column="TARGETPRICE"),
@@ -39,6 +40,7 @@ public interface TradeExecutionMapper {
 			+ "    t.direction,\r\n"
 			+ "    t.executionprice,\r\n"
 			+ "    t.cashvalue,\r\n"
+			+ "    t.timestamp,\r\n"
 			+ "    o.targetprice,\r\n"
 			+ "    o.clientid,\r\n"
 			+ "    o.orderid\r\n"
@@ -52,9 +54,9 @@ public interface TradeExecutionMapper {
 			+ " values (#{orderId},#{quantity},#{targetPrice},#{direction},#{clientId},#{instrumentId})")
 	public int insertOrder(Order order);
 	
-	@Insert("INSERT INTO trade (tradeid, orderid,quantity, direction, clientid, instrumentid,executionprice,cashvalue)"
+	@Insert("INSERT INTO trade (tradeid, orderid,quantity, direction, clientid, instrumentid,executionprice,cashvalue, timestamp)"
 			+ " values (#{tradeId},#{order.orderId},#{quantity},#{direction},#{order.clientId},#{instrumentId},"
-			+ "#{executionPrice},#{cashValue})")
+			+ "#{executionPrice},#{cashValue}, #{timestamp})")
 	public int insertTrade(Trade trade);
 	
 	@Select("SELECT wallet from client where clientid=#{clientId}")

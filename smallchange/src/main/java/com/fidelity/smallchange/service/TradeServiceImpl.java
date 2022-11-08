@@ -1,6 +1,8 @@
 package com.fidelity.smallchange.service;
 
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -51,34 +53,43 @@ public class TradeServiceImpl implements TradeService {
 			order.setClientId(clientId);
 			order.setToken(token.getToken());
 			order.setOrderId(orderId);
-			// verify order (balance and all)
-			if(verifyTrade(order)) {
-				dao.insertOrder(order);
-				Trade trade = fmtsRestClient.tradeExecution(order);
-				if(trade==null) {
-					return false;
-				}
-				trade.getOrder().setOrderId(order.getOrderId());
-				dao.insertTrade(trade);
-				aggregateInPortfolio(trade);
-			}
-			else {
+			Trade trade=fmtsRestClient.tradeExecution(order);
+			System.out.println(trade.toString());
+			if(trade==null) {
+				System.out.println("hello");
 				return false;
 			}
-			return true;
+			
+			else {
+				if(verifyTrade(trade)) {
+					System.out.println(trade.getCashValue());
+					dao.insertOrder(order);
+					
+					trade.getOrder().setOrderId(order.getOrderId());
+					trade.setTimestamp(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").format(new Date()));
+					dao.insertTrade(trade);
+					aggregateInPortfolio(trade);
+				}
+				else {
+					System.out.println("hello");
+					return false;
+				}
+				return true;
+			}
+			
 			
 		}catch(Exception e) {
 			throw new Exception("Error while executing trade",e);
 		}
 	}
 	
-	public boolean verifyTrade(Order order) {
+	public boolean verifyTrade(Trade trade) {
 		Portfolio portfolio;
-		if(order.getDirection().compareTo("S")==0) {
-			portfolio=dao.getInstrumentQuantity(order.getClientId(), order.getInstrumentId());
+		if(trade.getDirection().compareTo("S")==0) {
+			portfolio=dao.getInstrumentQuantity(trade.getOrder().getClientId(), trade.getInstrumentId());
 			if(portfolio!=null) {
 				int availableQuantity=portfolio.getQuantity();
-				if(availableQuantity>=order.getQuantity()) {
+				if(availableQuantity>=trade.getQuantity()) {
 					return true;
 				}else {
 					
@@ -90,9 +101,9 @@ public class TradeServiceImpl implements TradeService {
 				return false;
 			}
 		}
-		if(order.getDirection().compareTo("B")==0) {
-			BigDecimal walletAmount = dao.getWalletAmount(order.getClientId());
-			if(walletAmount.compareTo(order.getTargetPrice()) <0) {
+		if(trade.getDirection().compareTo("B")==0) {
+			BigDecimal walletAmount = dao.getWalletAmount(trade.getOrder().getClientId());
+			if(walletAmount.compareTo(trade.getCashValue()) <0) {
 				return false;
 			}
 			return true;
@@ -108,7 +119,7 @@ public class TradeServiceImpl implements TradeService {
 				portfolio = new Portfolio(trade.getOrder().getClientId(),trade.getInstrumentId(),trade.getQuantity(),trade.getCashValue());
 				portfolioDao.insertPortfolio(portfolio);
 				BigDecimal walletAmount = dao.getWalletAmount(trade.getOrder().getClientId());
-				walletAmount=walletAmount.subtract(trade.getOrder().getTargetPrice());
+				walletAmount=walletAmount.subtract(trade.getCashValue());
 				clientService.updateClientWallet(trade.getOrder().getClientId(), walletAmount);
 			}
 			else {
@@ -118,12 +129,13 @@ public class TradeServiceImpl implements TradeService {
 					
 					BigDecimal originalValue = portfolio.getValue();
 					originalValue=originalValue.add(trade.getCashValue());
-					
+					if(portfolio.getQuantity()==0)
+						originalValue=trade.getCashValue();
 					portfolio.setValue(originalValue);
 					portfolio.setQuantity(portfolio.getQuantity()+trade.getQuantity());
 					portfolioDao.updatePortfolio(portfolio);
 					BigDecimal walletAmount = dao.getWalletAmount(trade.getOrder().getClientId());
-					walletAmount=walletAmount.subtract(trade.getOrder().getTargetPrice());
+					walletAmount=walletAmount.subtract(trade.getCashValue());
 					clientService.updateClientWallet(trade.getOrder().getClientId(), walletAmount);
 					
 				}else {
@@ -133,7 +145,7 @@ public class TradeServiceImpl implements TradeService {
 					portfolio.setQuantity(portfolio.getQuantity()-trade.getQuantity());
 					portfolioDao.updatePortfolio(portfolio);
 					BigDecimal walletAmount = dao.getWalletAmount(trade.getOrder().getClientId());
-					walletAmount=walletAmount.add(trade.getOrder().getTargetPrice());
+					walletAmount=walletAmount.add(trade.getCashValue());
 					clientService.updateClientWallet(trade.getOrder().getClientId(), walletAmount);
 				}
 			}

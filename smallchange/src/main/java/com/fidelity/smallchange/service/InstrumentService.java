@@ -5,9 +5,6 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Supplier;
-import java.util.stream.Stream;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,13 +16,13 @@ import com.fidelity.smallchange.model.Price;
 
 @Service
 public class InstrumentService {
-	static Map<String, Comparator<Price>> comparators = Map.of("instrumentId",
-			Comparator.comparing(p -> p.getInstrument().getInstrumentId()), "instrumentDescription",
-			Comparator.comparing(p -> p.getInstrument().getInstrumentDescription()), "categoryId",
-			Comparator.comparing(p -> p.getInstrument().getCategoryId()), "askPrice",
-			Comparator.comparing(p -> p.getAskPrice()), "minQuantity",
-			Comparator.comparing(p -> p.getInstrument().getMinQuantity()), "maxQuantity",
-			Comparator.comparing(p -> p.getInstrument().getMaxQuantity()));
+	static Map<String, Comparator<InstrumentPrice>> comparators = Map.of("instrumentId",
+			Comparator.comparing(InstrumentPrice::getInstrumentId), "instrumentDescription",
+			Comparator.comparing(InstrumentPrice::getInstrumentDescription), "categoryId",
+			Comparator.comparing(InstrumentPrice::getCategoryId), "askPrice",
+			Comparator.comparing(InstrumentPrice::getAskPrice), "minQuantity",
+			Comparator.comparing(InstrumentPrice::getMinQuantity), "maxQuantity",
+			Comparator.comparing(InstrumentPrice::getMaxQuantity));
 
 	@Autowired
 	private FMTSRestClient fmts;
@@ -38,41 +35,41 @@ public class InstrumentService {
 		try {
 			List<Price> prices = fmts.getPrices("");
 
-			Stream<Price> priceStream = prices.stream();
-
-			// search query
-			if (q != null && !q.equals(""))
-				priceStream = priceStream.filter(p -> p.toCheckString().toUpperCase().contains(q.toUpperCase()));
-
-			// filter by category
-			if (categoryId != null)
-				priceStream = priceStream.filter(
-						p -> p.getInstrument().getCategoryId().toUpperCase().contains(categoryId.toUpperCase()));
-
-			// after filtering and search query, store size
-			prices = priceStream.toList();
-			Integer originalSize = prices.size();
-			priceStream = prices.stream();
-			
-			// should sort before pagination
-			if (_sort != null && _order != null) {
-				if (_order.equals("asc"))
-					priceStream = priceStream.sorted(comparators.get(_sort));
-				else if (_order.equals("desc"))
-					priceStream = priceStream.sorted(comparators.get(_sort).reversed());
+			// only where both conditions satisfy not both and conversion to DTO
+			for (Price p : prices) {
+				// search query
+				if ((q == null || q.equals("")
+						|| (q != null && !q.equals("") && p.toCheckString().toUpperCase().contains(q.toUpperCase())))
+						// filter by category
+						&& (categoryId == null || (categoryId != null && p.getInstrument().getCategoryId().toUpperCase()
+								.contains(categoryId.toUpperCase())))) {
+					result.add(new InstrumentPrice(p.getInstrument().getInstrumentId(),
+							p.getInstrument().getInstrumentDescription(), p.getInstrument().getExternalIdType(),
+							p.getInstrument().getExternalId(), p.getInstrument().getCategoryId(),
+							p.getInstrument().getMinQuantity(), p.getInstrument().getMaxQuantity(), p.getBidPrice(),
+							p.getAskPrice()));
+				}
 			}
 
-			// pagination and conversion to DTO
-			result = priceStream.skip(_page != null ? (_page - 1) * _limit : 0)
-					.limit(_limit != null ? _limit : originalSize).map(p -> {
-						return new InstrumentPrice(p.getInstrument().getInstrumentId(),
-								p.getInstrument().getInstrumentDescription(), p.getInstrument().getExternalIdType(),
-								p.getInstrument().getExternalId(), p.getInstrument().getCategoryId(),
-								p.getInstrument().getMinQuantity(), p.getInstrument().getMaxQuantity(), p.getBidPrice(),
-								p.getAskPrice());
-					}).toList();
+			// after filtering and search query, store size, to return as header
+			Integer originalSize = result.size();
+
+			// should sort before pagination
+			if (_sort != null && _order != null && originalSize > 1) {
+				if (_order.equals("asc"))
+					result.sort(comparators.get(_sort));
+				else if (_order.equals("desc"))
+					result.sort(comparators.get(_sort).reversed());
+			}
+
+			// pagination
+			if (_page != null && _limit != null && originalSize > 1) {
+				result = result.subList((_page - 1) * _limit, Math.min(_page * _limit, originalSize));
+			}
+			
 			return new Pair<Integer, List<InstrumentPrice>>(originalSize, result);
 		} catch (Exception e) {
+			e.printStackTrace();
 			throw new IllegalArgumentException("Instruments cant be queried from fmts");
 		}
 	}

@@ -45,12 +45,26 @@ public class PortfolioServiceImpl implements PortfolioService {
 	}
 
 	@Override
-	public BigDecimal getPortfolioSummary(String clientId) {
-		BigDecimal summary = BigDecimal.ZERO;
-		for(Portfolio p: dao.getPortfolioByClientId(clientId)) {
-			summary = summary.add(p.getValue());
+	public BigDecimal getPortfolioSummaryValue(String clientId) {
+		/*
+		 * BigDecimal summary = BigDecimal.ZERO; for(Portfolio p:
+		 * dao.getPortfolioByClientId(clientId)) { summary = summary.add(p.getValue());
+		 * } return summary.setScale(2, RoundingMode.HALF_EVEN);
+		 */
+		return dao.getPortfolioSummary(clientId);
+	}
+	
+	@Override
+	public BigDecimal getPortfolioSummaryGains(String clientId) throws JsonProcessingException {
+		List<Portfolio> portfolios = dao.getPortfolioByClientId(clientId);
+		BigDecimal totalGains = BigDecimal.ZERO;
+		for (Portfolio p: portfolios) {
+			BigDecimal currentPrice = instrumentService.getAskPrice(p.getInstrumentId()).setScale(2, RoundingMode.HALF_EVEN);
+			BigDecimal gains = currentPrice.multiply(new BigDecimal(p.getQuantity()).setScale(2, RoundingMode.HALF_EVEN)).subtract(p.getValue()).setScale(2, RoundingMode.HALF_EVEN);
+			totalGains = totalGains.add(gains);
 		}
-		return summary.setScale(2, RoundingMode.HALF_EVEN);
+//		return cps;
+		return totalGains;
 	}
 	
 	@Override
@@ -77,4 +91,5 @@ public class PortfolioServiceImpl implements PortfolioService {
 		}
 		return cps;
 	}
+
 }

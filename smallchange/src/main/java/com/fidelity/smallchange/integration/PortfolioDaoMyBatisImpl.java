@@ -1,5 +1,6 @@
 package com.fidelity.smallchange.integration;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,10 @@ public class PortfolioDaoMyBatisImpl implements PortfolioDao {
 		return mapper.getPortfolioByClientId(clientId);
 	}
 
+	@Override
+	public BigDecimal getPortfolioSummary(String clientId) {
+		return mapper.getPortfolioSummaryValue(clientId);
+	}	
 
 	@Override
 	public void insertPortfolio(Portfolio portfolio) {
@@ -49,7 +54,9 @@ public class PortfolioDaoMyBatisImpl implements PortfolioDao {
 	public Portfolio getPortfolioByClientIdAndInstrumentId(String clientId, String instrumentId) {
 		return mapper.getPortfolioByClientIdAndInstrumentId(clientId, instrumentId);
 
-	}	
+	}
+
+
 
 	
 }

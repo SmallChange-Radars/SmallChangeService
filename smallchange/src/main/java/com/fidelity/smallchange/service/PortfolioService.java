@@ -11,7 +11,8 @@ public interface PortfolioService {
 	public List<Portfolio> getAllPortfolios();
 	public List<Portfolio> getPortfolioByClientId(String clientId);
 	public void insertPortfolio(Portfolio portfolio);
-	public BigDecimal getPortfolioSummary(String clientId);
+	public BigDecimal getPortfolioSummaryValue(String clientId);
+	public BigDecimal getPortfolioSummaryGains(String clientId) throws JsonProcessingException;
 	public Boolean checkAvailableQuantity(String clientId, String instrumentId, int quantity);
 	public List<ClientPortfolio> getClientPortfolio(String clientId) throws JsonProcessingException;
 }

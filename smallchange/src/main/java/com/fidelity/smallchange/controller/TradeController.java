@@ -31,14 +31,14 @@ public class TradeController {
 
 	@GetMapping(value = "/tradeActivity", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<Trade>> getTradeActivity(@AuthenticationPrincipal UserDetailsImpl userDetails,
-			@RequestParam(required = false) String q, @RequestParam(required = false) Integer _page,
+			@RequestParam(required = false) String q,@RequestParam(required = false) String _category, @RequestParam(required = false) Integer _page,
 			@RequestParam(required = false) Integer _limit, @RequestParam(required = false) String _sort,
 			@RequestParam(required = false) String _order) {
 		try {
 
-			List<Trade> tradeHistory = tradeService.getTradeActivityByClientId(userDetails.getClientId(), q, _page,
+			List<Trade> tradeHistory = tradeService.getTradeActivityByClientId(userDetails.getClientId(), q,_category, _page,
 					_limit, _sort, _order);
-			int totalTradesCount = tradeService.totalTradesByClientId(userDetails.getClientId());
+			int totalTradesCount = tradeService.totalTradesByClientId(userDetails.getClientId(),q,_category);
 			HttpHeaders responseHeaders = new HttpHeaders();
 			responseHeaders.set("Access-Control-Expose-Headers", "X-Total-Count");
 			responseHeaders.set("X-Total-Count", String.valueOf(totalTradesCount));
@@ -58,8 +58,19 @@ public class TradeController {
 			if (tradeService.tradeExecution(order, userDetails.getClientId())) {
 				return ResponseEntity.status(HttpStatus.OK).body(new MessageResponse("Trade executed successfully"));
 			}
-			return ResponseEntity.status(HttpStatus.CONFLICT)
-					.body(new MessageResponse("Price mismatch or unavailable resources to execute Trade."));
+			else {
+				if(order.getDirection().compareTo("B")==0) {
+					return ResponseEntity.status(HttpStatus.PAYMENT_REQUIRED)
+							.body(new MessageResponse("Not enough money in wallet to execute trade."));
+				}
+				if(order.getDirection().compareTo("S")==0) {
+					return ResponseEntity.status(HttpStatus.FORBIDDEN)
+							.body(new MessageResponse("Not enough stocks in portfolio to execute trade."));
+				}
+				return ResponseEntity.status(HttpStatus.CONFLICT)
+						.body(new MessageResponse("Price mismatch."));
+			}
+			
 		} catch (Exception e) {
 			throw new ServerErrorException("Error while conencting to DB", e);
 		}

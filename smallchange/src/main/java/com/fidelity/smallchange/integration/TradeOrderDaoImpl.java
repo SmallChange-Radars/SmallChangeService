@@ -20,9 +20,9 @@ public class TradeOrderDaoImpl implements TradeOrderDao {
 
 
 	@Override
-	public List<Trade> getTradeActivityByClient(String clientId,String q,String _sort,String _order,int offset,int _limit) {
+	public List<Trade> getTradeActivityByClient(String clientId,String q,String _category,String _sort,String _order,int offset,int _limit) {
 		
-		return tradeExecutionMapper.getTradesByClient(clientId,q,_sort,_order,offset,_limit);
+		return tradeExecutionMapper.getTradesByClient(clientId,q,_category,_sort,_order,offset,_limit);
 	}
 	
 	@Override
@@ -50,8 +50,8 @@ public class TradeOrderDaoImpl implements TradeOrderDao {
 	}
 
 	@Override
-	public int totalTradesByClientId(String clientId) {
-		return tradeExecutionMapper.totalTradesByClientId(clientId);
+	public int totalTradesByClientId(String clientId, String q, String _category) {
+		return tradeExecutionMapper.totalTradesByClientId(clientId,q,_category);
 	}
 
 }

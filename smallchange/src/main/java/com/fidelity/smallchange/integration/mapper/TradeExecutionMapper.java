@@ -28,10 +28,10 @@ public interface TradeExecutionMapper {
 		@Result(property="timestamp", column="TIMESTAMP"),
 		@Result(property="order.instrumentId", column="INSTRUMENTID"),
 		@Result(property="order.quantity", column="QUANTITY"),
-		@Result(property="order.targetPrice", column="TARGETPRICE"),
 		@Result(property="order.direction", column="DIRECTION"),
 		@Result(property="order.clientId", column="CLIENTID"),
-		@Result(property="order.orderId", column="ORDERID")
+		@Result(property="order.orderId", column="ORDERID"),
+		@Result(property="order.targetPrice", column="TARGETPRICE")
 	})
 	@Select("SELECT\r\n"
 			+ "    t.tradeid,\r\n"
@@ -42,17 +42,19 @@ public interface TradeExecutionMapper {
 			+ "    t.cashvalue,\r\n"
 			+ "    t.timestamp,\r\n"
 			+ "    o.clientid,\r\n"
-			+ "    o.orderid\r\n"
+			+ "    o.orderid,\r\n"
+			+ "    o.targetprice\r\n"
 			+ "FROM\r\n"
 			+ "    trade            t\r\n"
 			+ "    LEFT JOIN orderinstrument  o ON t.orderid = o.orderid\r\n"
 			+ "WHERE\r\n"
 			+ "        t.clientid = #{clientId}\r\n"
 			+ "    AND t.instrumentid LIKE #{q}\r\n"
+			+ "    AND t.direction LIKE #{_category}\r\n"
 			+ "ORDER BY\r\n"
 			+ "    ${_sort} ${_order}\r\n"
 			+ "OFFSET #{offset} ROWS FETCH NEXT #{_limit} ROWS ONLY")
-	public List<Trade> getTradesByClient(String clientId,String q,String _sort,String _order,int offset,int _limit);
+	public List<Trade> getTradesByClient(String clientId,String q,String _category,String _sort,String _order,int offset,int _limit);
 	
 	@Select("SELECT\r\n"
 			+ "    COUNT(*)\r\n"

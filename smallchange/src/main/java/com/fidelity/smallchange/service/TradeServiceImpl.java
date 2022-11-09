@@ -35,13 +35,13 @@ public class TradeServiceImpl implements TradeService {
 	@Autowired
 	private FMTSRestClient fmtsRestClient;
 
-	public List<Trade> getTradeActivityByClientId(String clientId,String q,int _page,int _limit,String _sort,String _order) throws Exception {
+	public List<Trade> getTradeActivityByClientId(String clientId,String q,String _category,int _page,int _limit,String _sort,String _order) throws Exception {
 
 		try {
 			int offset=(_page-1)*_limit;
 			q="%"+q+"%";
-			
-			return dao.getTradeActivityByClient(clientId,q,_sort,_order,offset,_limit);
+			_category="%"+_category+"%";
+			return dao.getTradeActivityByClient(clientId,q,_category,_sort,_order,offset,_limit);
 
 		} catch (Exception e) {
 			throw new Exception("Error while connecting to DB");

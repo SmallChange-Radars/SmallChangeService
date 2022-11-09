@@ -14,7 +14,7 @@ public interface TradeOrderDao {
 	
 	
 	
-	List<Trade> getTradeActivityByClient(String clientId,String q,String _sort,String _order,int offset,int _limit);
+	List<Trade> getTradeActivityByClient(String clientId,String q,String _category,String _sort,String _order,int offset,int _limit);
 	
 	int totalTradesByClientId(String clientId);
 	

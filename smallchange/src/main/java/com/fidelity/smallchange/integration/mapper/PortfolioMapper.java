@@ -29,6 +29,14 @@ public interface PortfolioMapper {
 	public List<Portfolio> getPortfolioByClientId(String clientId);
 	
 	@Select("""
+			SELECT SUM(value)
+			FROM portfolio
+            WHERE clientId = #{clientId}
+            AND quantity > 0
+			""")
+	public BigDecimal getPortfolioSummaryValue(String clientId);
+	
+	@Select("""
 			SELECT clientId, instrumentId, quantity, value
 			FROM portfolio
             WHERE clientId = #{clientId} AND instrumentId = #{instrumentId}

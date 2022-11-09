@@ -12,13 +12,10 @@ import org.springframework.stereotype.Service;
 import com.fidelity.smallchange.integration.FMTSRestClient;
 import com.fidelity.smallchange.integration.PortfolioDao;
 import com.fidelity.smallchange.integration.TradeOrderDao;
-import com.fidelity.smallchange.integration.mapper.PortfolioMapper;
 import com.fidelity.smallchange.model.Order;
 import com.fidelity.smallchange.model.Portfolio;
 import com.fidelity.smallchange.model.Token;
 import com.fidelity.smallchange.model.Trade;
-
-import oracle.net.aso.f;
 
 @Service
 public class TradeServiceImpl implements TradeService {

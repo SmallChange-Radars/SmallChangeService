@@ -6,28 +6,16 @@ import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.server.ServerErrorException;
 
-import com.fidelity.smallchange.integration.mapper.ClientMapper;
-import com.fidelity.smallchange.jwt.JwtUtils;
 import com.fidelity.smallchange.model.Client;
 import com.fidelity.smallchange.model.ClientDB;
 import com.fidelity.smallchange.model.JwtResponse;
 import com.fidelity.smallchange.model.MessageResponse;
 import com.fidelity.smallchange.service.ClientService;
-import com.fidelity.smallchange.service.UserDetailsImpl;
-
-import java.util.List;
-import java.util.stream.Collectors;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;

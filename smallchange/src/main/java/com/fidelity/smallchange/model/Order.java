@@ -17,7 +17,7 @@ public class Order {
 	}
 	
 	public Order(String instrumentId, int quantity, BigDecimal targetPrice, String direction, String clientId,
-			String orderId) {
+			String orderId, String token) {
 		super();
 		this.instrumentId = instrumentId;
 		this.quantity = quantity;
@@ -84,8 +84,15 @@ public class Order {
 	}
 
 	@Override
+	public String toString() {
+		return "Order [instrumentId=" + instrumentId + ", quantity=" + quantity + ", targetPrice=" + targetPrice
+				+ ", direction=" + direction + ", clientId=" + clientId + ", orderId=" + orderId + ", token=" + token
+				+ "]";
+	}
+
+	@Override
 	public int hashCode() {
-		return Objects.hash(clientId, direction, instrumentId, orderId, quantity, targetPrice);
+		return Objects.hash(clientId, direction, instrumentId, orderId, quantity, targetPrice, token);
 	}
 
 	@Override
@@ -99,14 +106,8 @@ public class Order {
 		Order other = (Order) obj;
 		return Objects.equals(clientId, other.clientId) && Objects.equals(direction, other.direction)
 				&& Objects.equals(instrumentId, other.instrumentId) && Objects.equals(orderId, other.orderId)
-				&& Objects.equals(quantity, other.quantity) && Objects.equals(targetPrice, other.targetPrice);
-	}
-
-	@Override
-	public String toString() {
-		return "Order [instrumentId=" + instrumentId + ", quantity=" + quantity + ", targetPrice=" + targetPrice
-				+ ", direction=" + direction + ", clientId=" + clientId + ", orderId=" + orderId + ", token=" + token
-				+ "]";
+				&& quantity == other.quantity && Objects.equals(targetPrice, other.targetPrice)
+				&& Objects.equals(token, other.token);
 	}
 
 	

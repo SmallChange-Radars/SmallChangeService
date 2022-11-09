@@ -39,7 +39,7 @@ class AuthTokenTest {
 
 	@Test
 	void testClientCreationFailure() {
-		ClientDB client = new ClientDB("", "d@gmail.com", "19260818", Country.of("US"), "90210", null, null,
+		ClientDB client = new ClientDB("", "dave101@gmail.com", "19260818", Country.of("US"), "90210", null, null,
 				"itsasecret", BigDecimal.TEN, "USD", "ROLE_CLIENT");
 
 		HttpHeaders headers = new HttpHeaders();
@@ -85,8 +85,8 @@ class AuthTokenTest {
 
 	@Test
 	void testClientSigninSuccess() {
-		ClientDB client = new ClientDB("", "d@gmail.com", "19260818", Country.of("US"), "90210", null, null,
-				"itsasecret", BigDecimal.TEN, "USD", "ROLE_CLIENT");
+		ClientDB client = new ClientDB("", "dave101@gmail.com", "19260818", Country.of("US"), "90210", null, null,
+				"FSE3fmr", BigDecimal.TEN, "USD", "ROLE_CLIENT");
 
 		HttpHeaders headers = new HttpHeaders();
 		headers.set("Content-Type", "application/json");

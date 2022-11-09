@@ -154,9 +154,11 @@ public class TradeServiceImpl implements TradeService {
 	}
 
 	@Override
-	public int totalTradesByClientId(String clientId) throws Exception {
+	public int totalTradesByClientId(String clientId, String q, String _category) throws Exception {
 		try {
-			return dao.totalTradesByClientId(clientId);
+			q="%"+q+"%";
+			_category="%"+_category+"%";
+			return dao.totalTradesByClientId(clientId,q,_category);
 		}catch(Exception e) {
 			throw new Exception("Error while fetching total trades count");
 		}

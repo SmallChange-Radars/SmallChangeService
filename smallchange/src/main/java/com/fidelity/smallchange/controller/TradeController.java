@@ -43,7 +43,7 @@ public class TradeController {
 
 			List<Trade> tradeHistory = tradeService.getTradeActivityByClientId(userDetails.getClientId(), q,_category, _page,
 					_limit, _sort, _order);
-			int totalTradesCount = tradeService.totalTradesByClientId(userDetails.getClientId());
+			int totalTradesCount = tradeService.totalTradesByClientId(userDetails.getClientId(),q,_category);
 			HttpHeaders responseHeaders = new HttpHeaders();
 			responseHeaders.set("Access-Control-Expose-Headers", "X-Total-Count");
 			responseHeaders.set("X-Total-Count", String.valueOf(totalTradesCount));

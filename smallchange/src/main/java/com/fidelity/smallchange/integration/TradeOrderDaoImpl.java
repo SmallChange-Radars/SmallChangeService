@@ -63,8 +63,8 @@ public class TradeOrderDaoImpl implements TradeOrderDao {
 	}
 
 	@Override
-	public int totalTradesByClientId(String clientId) {
-		return tradeExecutionMapper.totalTradesByClientId(clientId);
+	public int totalTradesByClientId(String clientId, String q, String _category) {
+		return tradeExecutionMapper.totalTradesByClientId(clientId,q,_category);
 	}
 
 }

@@ -61,8 +61,10 @@ public interface TradeExecutionMapper {
 			+ "FROM\r\n"
 			+ "    trade\r\n"
 			+ "WHERE\r\n"
-			+ "    clientid = #{clientId}")
-	public int totalTradesByClientId(String clientId);
+			+ "    clientid = #{clientId}\r\n"
+			+ "    AND instrumentid LIKE #{q}\r\n"
+			+ "    AND direction LIKE #{_category}")
+	public int totalTradesByClientId(String clientId,String q, String _category);
 
 	@Insert("INSERT INTO orderinstrument ( orderid,quantity, targetprice, direction, clientid, instrumentid)"
 			+ " values (#{orderId},#{quantity},#{targetPrice},#{direction},#{clientId},#{instrumentId})")

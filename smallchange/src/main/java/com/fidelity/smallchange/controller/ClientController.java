@@ -20,7 +20,7 @@ import com.fidelity.smallchange.service.ClientService;
 import com.fidelity.smallchange.service.UserDetailsImpl;
 
 @RestController
-@RequestMapping("/client")
+@RequestMapping("/api/client")
 public class ClientController {
 	private static final String DB_ERROR_MSG = "Error communicating with the Smallchange database";
 	
@@ -65,17 +65,17 @@ public class ClientController {
 		return result;
 	}
 	
-	@PutMapping(value="/wallet", produces=MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
-	public DatabaseRequestResult updateWallet(@RequestBody ClientDB client) {
-		int count = 0;
-		try {
-			count = service.updateClientWallet(client.getClientId(), client.getWallet());
-		}
-		catch (Exception e) {
-			throw new ServerErrorException(DB_ERROR_MSG, e);
-		}
-		return new DatabaseRequestResult(count);
-	}
+//	@PutMapping(value="/wallet", produces=MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
+//	public DatabaseRequestResult updateWallet(@RequestBody ClientDB client) {
+//		int count = 0;
+//		try {
+//			count = service.updateClientWallet(client.getClientId(), client.getWallet());
+//		}
+//		catch (Exception e) {
+//			throw new ServerErrorException(DB_ERROR_MSG, e);
+//		}
+//		return new DatabaseRequestResult(count);
+//	}
 	
 	@PostMapping(value="/preferences", produces=MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
 	public DatabaseRequestResult insertPreferences(@AuthenticationPrincipal UserDetailsImpl userDetails, @RequestBody ClientPreferences clientPref) {

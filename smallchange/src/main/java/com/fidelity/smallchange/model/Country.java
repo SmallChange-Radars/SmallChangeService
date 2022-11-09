@@ -13,10 +13,10 @@ public enum Country {
 	
 	public static Country of(String code) {
 		for(Country country: values()) {
-			if(country.code == code)
+			if(country.code.equals(code))
 				return country;
 		}
-		throw new IllegalArgumentException("Invalid Risk Tolerance Code");
+		throw new IllegalArgumentException("Invalid Country Code");
 	}
 	
 	public String getCode() {

@@ -38,8 +38,6 @@ public class ClientDB {
 		this.role = role;
 	}
 
-
-
 	@Override
 	public int hashCode() {
 		return Objects.hash(clientId, clientIdentification, country, dateOfBirth, email, password, postalCode, token,

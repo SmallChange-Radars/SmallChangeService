@@ -18,7 +18,7 @@ public class Trade {
 	}
 
 	public Trade(String tradeId, String instrumentId, int quantity, String direction, BigDecimal executionPrice,
-			BigDecimal cashValue, Order order) {
+			BigDecimal cashValue, String timestamp, Order order) {
 		super();
 		this.instrumentId = instrumentId;
 		this.quantity = quantity;
@@ -27,11 +27,7 @@ public class Trade {
 		this.tradeId = tradeId;
 		this.cashValue = cashValue;
 		this.order = order;
-	}
-
-	public Trade(String tradeId, String instrumentId, int quantity, String direction, BigDecimal executionPrice,
-			BigDecimal cashValue) {
-		this(tradeId, instrumentId, quantity, direction, executionPrice, cashValue, null);
+		this.timestamp=timestamp;
 	}
 
 	public String getInstrumentId() {

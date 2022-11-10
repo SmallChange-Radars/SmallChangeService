@@ -51,8 +51,10 @@ class TradeOrderDaoMyBatiImplTest {
 	@Test
 	void testGetTradeActivityByClient() {
 		List<Trade> trades = dao.getTradeActivityByClient("290988199", "%%", "%%", "timestamp", "desc", 0, 10);
+		
 		System.out.println(trades.get(0).toString());
 		assertEquals(10, trades.size());
+		
 	}
 	
 	@Test

@@ -2,6 +2,7 @@ package com.fidelity.smallchange.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +22,9 @@ public class InstrumentController {
 	private static final String DB_ERROR_MSG = "Error communicating with the Smallchange database";
 
 	@Autowired
+	private Logger logger;
+	
+	@Autowired
 	private InstrumentService service;
 
 	@GetMapping(path = "instruments-prices")
@@ -28,6 +32,7 @@ public class InstrumentController {
 			@RequestParam(required = false) Integer _page, @RequestParam(required = false) Integer _limit,
 			@RequestParam(required = false) String categoryId, @RequestParam(required = false) String _sort,
 			@RequestParam(required = false) String _order) {
+		logger.debug("Getting Instrument prices with pagination parameters: _page = "+_page+" _limit = "+_limit+" categoryId = "+categoryId+" _sort = "+_sort+" _order = "+_order);
 		List<InstrumentPrice> instrumentPrices;
 		ResponseEntity<List<InstrumentPrice>> responseEntity;
 		try {
@@ -47,6 +52,7 @@ public class InstrumentController {
 			}
 			return responseEntity;
 		} catch (Exception e) {
+			logger.error("Exception while getting Instrument prices with pagination parameters: _page = "+_page+" _limit = "+_limit+" categoryId = "+categoryId+" _sort = "+_sort+" _order = "+_order);
 			throw new ServerErrorException(DB_ERROR_MSG, e);
 		}
 	}

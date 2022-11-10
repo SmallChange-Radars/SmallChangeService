@@ -89,39 +89,39 @@ public class InstrumentService {
 		}
 	}
 
-	public BigDecimal getAskPrice(String instrumentId) throws JsonProcessingException {
-		List<Price> prices = fmts.getPrices("");
-		try {
-
-			BigDecimal askPrice = BigDecimal.ZERO;
-			for (Price p : prices) {
-				if (p.getInstrument().getInstrumentId().equals(instrumentId)) {
-					askPrice = p.getAskPrice();
-					break;
-				}
-			}
-			return askPrice;
-		} catch (Exception e) {
-			throw new IllegalArgumentException("InstrumentId doesn't exist");
-		}
-	}
-
-	public BigDecimal getBidPrice(String instrumentId) throws JsonProcessingException {
-		List<Price> prices = fmts.getPrices("");
-		try {
-
-			BigDecimal bidPrice = BigDecimal.ZERO;
-			for (Price p : prices) {
-				if (p.getInstrument().getInstrumentId().equals(instrumentId)) {
-					bidPrice = p.getBidPrice();
-					break;
-				}
-			}
-			return bidPrice;
-		} catch (Exception e) {
-			throw new IllegalArgumentException("InstrumentId doesn't exist");
-		}
-	}
+//	public BigDecimal getAskPrice(String instrumentId) throws JsonProcessingException {
+//		List<Price> prices = fmts.getPrices("");
+//		try {
+//
+//			BigDecimal askPrice = BigDecimal.ZERO;
+//			for (Price p : prices) {
+//				if (p.getInstrument().getInstrumentId().equals(instrumentId)) {
+//					askPrice = p.getAskPrice();
+//					break;
+//				}
+//			}
+//			return askPrice;
+//		} catch (Exception e) {
+//			throw new IllegalArgumentException("InstrumentId doesn't exist");
+//		}
+//	}
+//
+//	public BigDecimal getBidPrice(String instrumentId) throws JsonProcessingException {
+//		List<Price> prices = fmts.getPrices("");
+//		try {
+//
+//			BigDecimal bidPrice = BigDecimal.ZERO;
+//			for (Price p : prices) {
+//				if (p.getInstrument().getInstrumentId().equals(instrumentId)) {
+//					bidPrice = p.getBidPrice();
+//					break;
+//				}
+//			}
+//			return bidPrice;
+//		} catch (Exception e) {
+//			throw new IllegalArgumentException("InstrumentId doesn't exist");
+//		}
+//	}
 
 	public Boolean checkMinAndMaxQuantity(String instrumentId, int quantity) throws JsonProcessingException {
 		Instrument inst = this.getInstrumentFromInstrumentId(instrumentId);

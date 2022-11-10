@@ -6,11 +6,12 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,24 +27,26 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.jdbc.Sql;
 
 import com.fidelity.smallchange.SmallchangeApplication;
+import com.fidelity.smallchange.integration.ClientDao;
 import com.fidelity.smallchange.model.ClientDB;
-import com.fidelity.smallchange.model.ClientPortfolio;
 import com.fidelity.smallchange.model.Country;
 import com.fidelity.smallchange.model.Trade;
 
 @SpringBootTest(classes = SmallchangeApplication.class, webEnvironment = WebEnvironment.RANDOM_PORT)
-class PortfolioControllerTest {
-	
-	@Autowired
-	private TestRestTemplate restTemplate;
+class TradeControllerTest {
 
 	@Autowired
-	private JdbcTemplate jdbcTemplate;
+	private TestRestTemplate restTemplate;
+	
+	@Autowired
+	private JdbcTemplate jdbcTemplate; 
+	
+	@Autowired
+	private ClientDao dao;
 	
 	String token;
 	String clientId = "290988199";
 	
-	//endtoend only
 	@BeforeEach
 	void setUp() throws Exception {
 		JSONParser jsonParser = new JSONParser();
@@ -66,25 +69,25 @@ class PortfolioControllerTest {
 	}
 
 	@Test
-	void testGetPortfolio() {
-		String url = "/api/portfolio";
+	void testGetTradeActivity() {
+		String url = "/api/tradeActivity?q=RRC&_page=1&_limit=10&_sort=cashValue&_order=DESC&_category=B";
 		HttpHeaders headers = new HttpHeaders();
 		headers.set("Content-Type", "application/json");
 		headers.set("Authorization", "Bearer " + token);
 		HttpEntity<?> request = new HttpEntity<>(headers);
-		ResponseEntity<ClientPortfolio[]> responseEntity = restTemplate.exchange(url, HttpMethod.GET, request, ClientPortfolio[].class);
+		ResponseEntity<Trade[]> responseEntity = restTemplate.exchange(url, HttpMethod.GET, request, Trade[].class);
 		assertThat(responseEntity.getStatusCode(), is(equalTo(HttpStatus.OK)));
 	}
 	
 	@Test
-	void testGetPortfolio_Exception() {
-		String url = "/api/portfolio";
+	void testGetTradeActivity_NovalueInDB() {
+		String url = "/api/tradeActivity?q=QWER&_page=1&_limit=10&_sort=cashValue&_order=DESC&_category=B";
 		HttpHeaders headers = new HttpHeaders();
 		headers.set("Content-Type", "application/json");
-		//headers.set("Authorization", "Bearer " + token);
+		headers.set("Authorization", "Bearer " + token);
 		HttpEntity<?> request = new HttpEntity<>(headers);
-		ResponseEntity<ClientPortfolio[]> responseEntity = restTemplate.exchange(url, HttpMethod.GET, request, ClientPortfolio[].class);
-		assertThat(responseEntity.getStatusCode(), is(equalTo(HttpStatus.UNAUTHORIZED)));
+		ResponseEntity<Trade[]> responseEntity = restTemplate.exchange(url, HttpMethod.GET, request, Trade[].class);
+		assertThat(responseEntity.getStatusCode(), is(equalTo(HttpStatus.NO_CONTENT)));
 	}
 
 }

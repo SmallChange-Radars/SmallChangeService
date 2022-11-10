@@ -2,6 +2,7 @@ package com.fidelity.smallchange.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -27,6 +28,9 @@ import com.fidelity.smallchange.service.UserDetailsImpl;
 public class TradeController {
 
 	@Autowired
+	private Logger logger;
+	
+	@Autowired
 	private TradeService tradeService;
 
 	@GetMapping(value = "/tradeActivity", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -34,8 +38,8 @@ public class TradeController {
 			@RequestParam(required = false) String q,@RequestParam(required = false) String _category, @RequestParam(required = false) Integer _page,
 			@RequestParam(required = false) Integer _limit, @RequestParam(required = false) String _sort,
 			@RequestParam(required = false) String _order) {
+		logger.debug("Getting Instrument prices with pagination parameters: q = "+q+" _category = "+_category+" _page = "+_page+" _limit = "+_limit+" _sort = "+_sort+" _order = "+_order);
 		try {
-
 			List<Trade> tradeHistory = tradeService.getTradeActivityByClientId(userDetails.getClientId(), q,_category, _page,
 					_limit, _sort, _order);
 			int totalTradesCount = tradeService.totalTradesByClientId(userDetails.getClientId(),q,_category);
@@ -47,6 +51,7 @@ public class TradeController {
 			}
 			return ResponseEntity.ok().headers(responseHeaders).body(tradeHistory);
 		} catch (Exception e) {
+			logger.error("Exception while getting Instrument prices with pagination parameters: q = "+q+" _category = "+_category+" _page = "+_page+" _limit = "+_limit+" _sort = "+_sort+" _order = "+_order);
 			throw new ServerErrorException("Error while conencting to DB", e);
 		}
 	}
@@ -54,6 +59,7 @@ public class TradeController {
 	@PostMapping(value = "/tradeExecution", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> tradeExecution(@AuthenticationPrincipal UserDetailsImpl userDetails,
 			@RequestBody Order order) {
+		logger.debug("Executing trade for client with clientId = "+userDetails.getClientId()+"for orderId = "+order.getOrderId());
 		try {
 			if (tradeService.tradeExecution(order, userDetails.getClientId())) {
 				return ResponseEntity.status(HttpStatus.OK).body(new MessageResponse("Trade executed successfully"));
@@ -72,6 +78,7 @@ public class TradeController {
 			}
 			
 		} catch (Exception e) {
+			logger.error("Exception while executing trade for client with clientId = "+userDetails.getClientId()+"for orderId = "+order.getOrderId());
 			throw new ServerErrorException("Error while conencting to DB", e);
 		}
 

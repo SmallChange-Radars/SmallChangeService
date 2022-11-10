@@ -21,7 +21,7 @@ class PortfolioMapperTest {
 	@Test
 	void testGetAllPortfolios() {
 		List<Portfolio> p = mapper.getAllPortfolios();
-		assertEquals(169, p.size());
+		assertEquals(175, p.size());
 	}
 	
 	@Test

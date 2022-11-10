@@ -35,7 +35,6 @@ import com.fidelity.smallchange.model.Order;
 import com.fidelity.smallchange.model.Price;
 
 @SpringBootTest(classes = SmallchangeApplication.class, webEnvironment = WebEnvironment.RANDOM_PORT)
-@Disabled
 class Generate {
 	@Autowired
 	private TestRestTemplate restTemplate;

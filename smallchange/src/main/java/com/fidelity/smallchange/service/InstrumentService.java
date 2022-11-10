@@ -29,8 +29,6 @@ public class InstrumentService {
 
 	public Pair<Integer, List<InstrumentPrice>> getInstrumentPrices(String q, Integer _page, Integer _limit,
 			String categoryId, String _sort, String _order) throws JsonProcessingException {
-
-		System.out.println(q + " " + _page + " " + _limit + " " + categoryId + " " + _sort + " " + _order);
 		List<InstrumentPrice> result = new ArrayList<>();
 		try {
 			List<Price> prices = fmts.getPrices("");
@@ -64,9 +62,9 @@ public class InstrumentService {
 
 			// pagination
 			if (_page != null && _limit != null && originalSize > 1) {
-				result = result.subList((_page - 1) * _limit, Math.min(_page * _limit, originalSize));
+				result = ((_page - 1) * _limit) >= originalSize ? result.subList(0, Math.min(_limit, originalSize))
+						: result.subList((_page - 1) * _limit, Math.min(_page * _limit, originalSize));
 			}
-			
 			return new Pair<Integer, List<InstrumentPrice>>(originalSize, result);
 		} catch (Exception e) {
 			e.printStackTrace();

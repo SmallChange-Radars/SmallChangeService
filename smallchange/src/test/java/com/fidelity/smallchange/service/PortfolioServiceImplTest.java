@@ -17,7 +17,7 @@ import com.fidelity.smallchange.model.ClientPortfolio;
 import com.fidelity.smallchange.model.Portfolio;
 
 @SpringBootTest
-class PortfolioSserviceImplTest {
+class PortfolioServiceImplTest {
 	
 	@Autowired
 	private PortfolioService service;
@@ -64,11 +64,11 @@ class PortfolioSserviceImplTest {
 	}
 	
 	@Test
-    void testGetPortfolio() throws JsonProcessingException {
-        Pair<List<ClientPortfolio>, List<BigDecimal>> pair =
-                service.getClientPortfolio("744385865");
-        assertEquals(66, pair.getFirst().size());
-        assertEquals(new BigDecimal("1986855.91"), pair.getSecond().get(0));
-        assertEquals(new BigDecimal("-19671.86"), pair.getSecond().get(1));
-    }
+	void testGetPortfolio() throws JsonProcessingException {
+		Pair<List<ClientPortfolio>, List<BigDecimal>> pair = 
+				service.getClientPortfolio("744385865");
+		assertEquals(66, pair.getFirst().size());
+		assertEquals(new BigDecimal("1986855.91"), pair.getSecond().get(0));
+		assertEquals(new BigDecimal("-19671.86"), pair.getSecond().get(1));
+	}
 }

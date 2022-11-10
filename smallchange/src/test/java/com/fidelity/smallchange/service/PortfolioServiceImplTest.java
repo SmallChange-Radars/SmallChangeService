@@ -64,15 +64,6 @@ class PortfolioSserviceImplTest {
 	}
 	
 	@Test
-	void testGetPortfolio() throws JsonProcessingException {
-		Pair<List<ClientPortfolio>, List<BigDecimal>> pair = 
-				service.getClientPortfolio("744385865");
-		assertEquals(66, pair.getFirst().size());
-		assertEquals(new BigDecimal("1986855.91"), pair.getSecond().get(0));
-		assertEquals(new BigDecimal("-19671.86"), pair.getSecond().get(1));
-	}
-	
-	@Test
     void testGetPortfolio() throws JsonProcessingException {
         Pair<List<ClientPortfolio>, List<BigDecimal>> pair =
                 service.getClientPortfolio("744385865");

@@ -131,6 +131,7 @@ public class ClientServiceImpl implements ClientService {
 			}
 		}
 		catch(Exception e) {
+			e.printStackTrace();
 			String msg = "Error inserting Client in the Smallchange database.";
 			throw new DatabaseException(msg, e);
 		}

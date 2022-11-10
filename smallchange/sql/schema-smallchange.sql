@@ -10,7 +10,7 @@ DROP TABLE client cascade constraints;
 CREATE TABLE client (    
     clientId VARCHAR2(40) PRIMARY KEY,
     email VARCHAR2(100),
-    dob VARCHAR2(8),
+    dob VARCHAR2(20),
     country VARCHAR2(2),
     postalCode VARCHAR2(6),
     password VARCHAR2(200),

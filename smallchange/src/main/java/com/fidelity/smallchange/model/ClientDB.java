@@ -37,6 +37,23 @@ public class ClientDB {
 		this.walletCurrency = walletCurrency;
 		this.role = role;
 	}
+	
+//	public ClientDB(String clientId, String email, String dateOfBirth, String country, String postalCode,
+//			List<ClientIdentification> clientIdentification, String token, String password, BigDecimal wallet,
+//			String walletCurrency, String role) {
+//		super();
+//		this.clientId = clientId;
+//		this.email = email;
+//		this.dateOfBirth = dateOfBirth;
+//		this.country = Country.of(country);
+//		this.postalCode = postalCode;
+//		this.clientIdentification = clientIdentification;
+//		this.token = token;
+//		this.password = password;
+//		this.wallet = wallet;
+//		this.walletCurrency = walletCurrency;
+//		this.role = role;
+//	}
 
 	@Override
 	public int hashCode() {

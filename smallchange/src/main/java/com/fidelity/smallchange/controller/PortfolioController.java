@@ -3,6 +3,7 @@ package com.fidelity.smallchange.controller;
 import java.math.BigDecimal;
 import java.util.List;
 
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +22,9 @@ import com.fidelity.smallchange.service.UserDetailsImpl;
 @RequestMapping("/api")
 public class PortfolioController {
 
+	@Autowired
+	private Logger logger;
+	
 	@Autowired
 	private final PortfolioService portfolioService;
 
@@ -41,6 +45,7 @@ public class PortfolioController {
 	@GetMapping(path = "portfolio")
 	public ResponseEntity<List<ClientPortfolio>> getPortfolioByClientId(@AuthenticationPrincipal UserDetailsImpl userDetails) throws JsonProcessingException {
 //		return portfolioService.getPortfolioByClientId(userDetails.getClientId());
+		logger.debug("Getting Portfolio for Client with clientId = " + userDetails.getClientId());
 		try {
 			List<ClientPortfolio> portfolios = portfolioService.getClientPortfolio(userDetails.getClientId()).getFirst();
 			
@@ -56,6 +61,7 @@ public class PortfolioController {
 			}
 			return ResponseEntity.ok().headers(responseHeaders).body(portfolios);
 		} catch (Exception e) {
+			logger.error("Exception while getting Portfolio for Client with clientId = " + userDetails.getClientId());
 			throw new ServerErrorException("Error while conencting to DB", e);
 		}
 	}

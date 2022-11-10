@@ -33,7 +33,7 @@ class PortfolioSserviceImplTest {
 	@Test 
 	void testGetAllPortfolios() { 
 		List<Portfolio> p = service.getAllPortfolios(); 
-		assertEquals(175, p.size()); 
+		assertEquals(169, p.size()); 
 	}
 	
 	@Test
@@ -61,6 +61,15 @@ class PortfolioSserviceImplTest {
 	@Test
 	void testCheckAvailableQuantityReturnsFalse() {
 		assertFalse(service.checkAvailableQuantity("744385865", "MNST", 300000));
+	}
+	
+	@Test
+	void testGetPortfolio() throws JsonProcessingException {
+		Pair<List<ClientPortfolio>, List<BigDecimal>> pair = 
+				service.getClientPortfolio("744385865");
+		assertEquals(66, pair.getFirst().size());
+		assertEquals(new BigDecimal("1986855.91"), pair.getSecond().get(0));
+		assertEquals(new BigDecimal("-19671.86"), pair.getSecond().get(1));
 	}
 	
 	@Test

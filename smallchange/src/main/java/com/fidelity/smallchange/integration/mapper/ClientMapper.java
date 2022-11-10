@@ -16,17 +16,17 @@ import com.fidelity.smallchange.model.ClientDB;
 @Mapper
 public interface ClientMapper {
 	
-	@Select("""
-			SELECT clientId, email, dob as dateOfBirth, country, postalCode, wallet, walletCurrency
-			FROM client 
-			ORDER BY clientId
-			""")
-	@Results({
-		@Result(property="clientId", column="clientId", id=true),
-		@Result(property="clientIdentification", column="clientId",
-				many=@Many(select="com.fidelity.smallchange.integration.mapper.ClientIdentificationMapper.getClientIdentificationByClientId"))
-	})
-	public List<ClientDB> getAllClients();
+//	@Select("""
+//			SELECT clientId, email, dob as dateOfBirth, country, postalCode, wallet, walletCurrency
+//			FROM client 
+//			ORDER BY clientId
+//			""")
+//	@Results({
+//		@Result(property="clientId", column="clientId", id=true),
+//		@Result(property="clientIdentification", column="clientId",
+//				many=@Many(select="com.fidelity.smallchange.integration.mapper.ClientIdentificationMapper.getClientIdentificationByClientId"))
+//	})
+//	public List<ClientDB> getAllClients();
 	
 	@Select("""
 			SELECT clientId, email, dob as dateOfBirth, country, postalCode, wallet, walletCurrency
@@ -60,13 +60,13 @@ public interface ClientMapper {
 			""")
 	public int insertClient(ClientDB client);
 	
-	@Update("""
-			UPDATE client
-			SET email = #{email}, dob = #{dateOfBirth}, country = #{country},
-			postalCode = #{postalCode}, wallet = #{wallet}, walletCurrency = #{walletCurrency}, role=#{role}
-			WHERE clientId = #{clientId}
-			""")
-	public void updateClient(ClientDB client);
+//	@Update("""
+//			UPDATE client
+//			SET email = #{email}, dob = #{dateOfBirth}, country = #{country},
+//			postalCode = #{postalCode}, wallet = #{wallet}, walletCurrency = #{walletCurrency}, role=#{role}
+//			WHERE clientId = #{clientId}
+//			""")
+//	public void updateClient(ClientDB client);
 	
 	@Select("""
 			SELECT wallet, walletCurrency

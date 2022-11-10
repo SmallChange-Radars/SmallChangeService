@@ -138,10 +138,5 @@ class ClientControllerE2eTest {
 		ClientPreferences preferences = null;
 		assertThat(response.getBody(),is(equalTo(preferences)));
 	}
-	
-//	@Test
-//	void testInsertPreferences() {
-//		int rowCount = JdbcTestUtils.countRowsInTable(jdbcTemplate, "preferences");
-//	}
 
 }

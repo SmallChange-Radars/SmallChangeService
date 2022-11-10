@@ -11,6 +11,8 @@ import com.fidelity.smallchange.model.ClientDB;
 import com.fidelity.smallchange.model.JwtResponse;
 import com.fidelity.smallchange.model.MessageResponse;
 import com.fidelity.smallchange.service.ClientService;
+
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -27,6 +29,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class AuthController {
 
 	@Autowired
+	private Logger logger;
+	
+	@Autowired
 	ClientService cs;
 
 	
@@ -35,13 +40,14 @@ public class AuthController {
 	@PostMapping(value="/signin", produces=MediaType.APPLICATION_JSON_VALUE,
 			consumes=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> authenticateUser(@Validated @RequestBody ClientDB loginRequest) {
-
+		logger.debug("Signing in client with email = "+ loginRequest.getEmail());
 		JwtResponse response;
 		try {
 			response = cs.loginClient(loginRequest);
 			return ResponseEntity.ok(response);
 
 		} catch (BadCredentialsException ex) {
+			logger.error("Exception while Signing in client with email = "+ loginRequest.getEmail());
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
 		}
 	}
@@ -49,6 +55,7 @@ public class AuthController {
 	@PostMapping(value="/signup", produces=MediaType.APPLICATION_JSON_VALUE,
 			consumes=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> registerUser(@Validated @RequestBody ClientDB signUpRequest) {
+		logger.debug("Signing up client with email = "+ signUpRequest.getEmail());
 		if (cs.checkClientByEmail(signUpRequest.getEmail())) {
 			return ResponseEntity.badRequest().body(new MessageResponse("Error: Email is already in use!"));
 		}
@@ -57,6 +64,7 @@ public class AuthController {
 		try {
 			client = cs.clientVerification(signUpRequest);
 		} catch (HttpClientErrorException e) {
+			logger.error("Exception while Signing up client with email = "+ signUpRequest.getEmail());
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid Credentials", e);
 		}
 

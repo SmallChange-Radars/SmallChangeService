@@ -22,7 +22,7 @@ class PortfolioDaoMyBatisImplTest {
 	
 	@Test 
 	void testGetAllPortfolios() { 
-		List<Portfolio> p = dao.getAllPortfolios(); assertEquals(169, p.size()); 
+		List<Portfolio> p = dao.getAllPortfolios(); assertEquals(175, p.size()); 
 	}
 	
 	@Test

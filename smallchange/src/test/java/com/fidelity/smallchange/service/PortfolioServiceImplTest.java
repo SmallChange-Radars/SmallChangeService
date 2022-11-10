@@ -31,7 +31,7 @@ class PortfolioServiceImplTest {
 	@Test 
 	void testGetAllPortfolios() { 
 		List<Portfolio> p = dao.getAllPortfolios(); 
-		assertEquals(169, p.size()); 
+		assertEquals(175, p.size()); 
 	}
 	
 	@Test
